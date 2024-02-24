@@ -1,0 +1,444 @@
+/* line 3, static/scss/base/landing.scss */
+body, html {
+  margin: 0;
+  color: #1E2330;
+  width: 100%; }
+
+/* line 13, static/scss/base/landing.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 20, static/scss/base/landing.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 26, static/scss/base/landing.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* line 35, static/scss/base/landing.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 36, static/scss/base/landing.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 37, static/scss/base/landing.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 39, static/scss/base/landing.scss */
+.top-nav {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 49, static/scss/base/landing.scss */
+  .top-nav .brand {
+    position: relative;
+    left: 30px;
+    width: 300px;
+    cursor: pointer; }
+    /* line 58, static/scss/base/landing.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #1E2330;
+      width: 300px; }
+    /* line 68, static/scss/base/landing.scss */
+    .top-nav .brand svg {
+      position: relative;
+      left: 15px;
+      transform: scale(1.8);
+      fill: #1E2330;
+      float: left; }
+    /* line 80, static/scss/base/landing.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      width: 300px;
+      font-size: 40px; }
+  /* line 95, static/scss/base/landing.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -3px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 105, static/scss/base/landing.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 112, static/scss/base/landing.scss */
+    .top-nav .btns div {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      float: left; }
+      /* line 134, static/scss/base/landing.scss */
+      .top-nav .btns div svg {
+        position: absolute;
+        left: 20px;
+        fill: #1E2330; }
+      /* line 143, static/scss/base/landing.scss */
+      .top-nav .btns div .home {
+        transform: scale(1.3); }
+      /* line 149, static/scss/base/landing.scss */
+      .top-nav .btns div .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 157, static/scss/base/landing.scss */
+      .top-nav .btns div .login {
+        transform: scale(1.3); }
+      /* line 164, static/scss/base/landing.scss */
+      .top-nav .btns div span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 176, static/scss/base/landing.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #1E2330;
+      cursor: pointer; }
+
+/* line 188, static/scss/base/landing.scss */
+.main {
+  position: relative;
+  width: 100%; }
+  /* line 193, static/scss/base/landing.scss */
+  .main .circles {
+    position: absolute;
+    left: -20px;
+    top: 100px;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden; }
+    /* line 204, static/scss/base/landing.scss */
+    .main .circles div {
+      position: absolute;
+      transform: scale(1);
+      border-radius: 1000px; }
+    /* line 214, static/scss/base/landing.scss */
+    .main .circles .big {
+      top: 20px;
+      width: 1000px;
+      height: 1000px;
+      background-color: #e9812d;
+      transition: all 3s ease-in-out; }
+    /* line 227, static/scss/base/landing.scss */
+    .main .circles .medium {
+      top: 350px;
+      left: 100px;
+      width: 550px;
+      height: 550px;
+      background-color: #efca59;
+      transition: all 1.5s ease-in-out; }
+    /* line 241, static/scss/base/landing.scss */
+    .main .circles .small {
+      top: 50px;
+      left: 500px;
+      width: 400px;
+      height: 400px;
+      background-color: #efa4c1;
+      transition: all 1s ease-in-out; }
+  /* line 257, static/scss/base/landing.scss */
+  .main .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1122px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(190px);
+    -webkit-backdrop-filter: blur(180px); }
+    /* line 273, static/scss/base/landing.scss */
+    .main .content .info {
+      position: relative;
+      width: 100%;
+      height: 1000px;
+      overflow: hidden; }
+      /* line 282, static/scss/base/landing.scss */
+      .main .content .info .text {
+        position: relative;
+        top: 220px;
+        left: 125px;
+        width: calc(50% - 125px);
+        float: left; }
+        /* line 292, static/scss/base/landing.scss */
+        .main .content .info .text span {
+          font-size: 100px;
+          font-weight: bold;
+          text-shadow: 1px 1px 3px #1E2330; }
+        /* line 301, static/scss/base/landing.scss */
+        .main .content .info .text h2 {
+          font-weight: normal;
+          font-size: 52px; }
+        /* line 308, static/scss/base/landing.scss */
+        .main .content .info .text button {
+          position: relative;
+          top: 30px;
+          height: 70px;
+          width: 450px;
+          padding: 10px;
+          background: rgba(255, 255, 255, 0.2);
+          box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+          border: none;
+          border-radius: 100px;
+          font-family: Comfortaa;
+          cursor: pointer; }
+          /* line 330, static/scss/base/landing.scss */
+          .main .content .info .text button h1 {
+            margin: 0;
+            font-weight: normal;
+            font-size: 30px; }
+        /* line 341, static/scss/base/landing.scss */
+        .main .content .info .text button.in {
+          box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 352, static/scss/base/landing.scss */
+    .main .content .img {
+      position: relative;
+      top: 30px;
+      width: 50%;
+      float: right;
+      overflow: hidden; }
+      /* line 363, static/scss/base/landing.scss */
+      .main .content .img img {
+        position: relative; }
+
+/* line 376, static/scss/base/landing.scss */
+.bottom-nav {
+  position: relative;
+  top: -70px;
+  left: -15px;
+  width: 100%; }
+  /* line 384, static/scss/base/landing.scss */
+  .bottom-nav .links {
+    position: relative;
+    left: 5px;
+    bottom: 9px;
+    float: left; }
+    /* line 392, static/scss/base/landing.scss */
+    .bottom-nav .links ul {
+      list-style-type: none; }
+      /* line 396, static/scss/base/landing.scss */
+      .bottom-nav .links ul li {
+        display: inline-block;
+        margin-right: 30px;
+        /* Link hover effect */ }
+        /* line 402, static/scss/base/landing.scss */
+        .bottom-nav .links ul li a {
+          text-decoration: none;
+          color: #1E2330;
+          font-size: 23px; }
+          /* line 409, static/scss/base/landing.scss */
+          .bottom-nav .links ul li a .copyright {
+            width: 275px;
+            font-weight: normal;
+            font-size: 27px; }
+        /* line 422, static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before, .bottom-nav .links ul li .link:after, .bottom-nav .links ul li .link > span:before, .bottom-nav .links ul li .link > span:after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease; }
+        /* line 430, static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link, .bottom-nav .links ul li .link > span {
+          position: relative;
+          color: #1E2330;
+          text-decoration: none;
+          line-height: 24px; }
+        /* line 439, static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link {
+          display: inline-flex;
+          padding-top: 10px;
+          padding-bottom: 5px;
+          overflow: hidden; }
+        /* line 448, static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #492059;
+          transform: translateX(-100%); }
+        /* line 459, static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:hover:before {
+          transform: translateX(0); }
+  /* line 471, static/scss/base/landing.scss */
+  .bottom-nav .social-media {
+    position: absolute;
+    top: 34px;
+    right: 32px; }
+    /* line 477, static/scss/base/landing.scss */
+    .bottom-nav .social-media div {
+      cursor: pointer;
+      transform: scale(1);
+      transition: all 0.5s ease-in-out; }
+    /* line 487, static/scss/base/landing.scss */
+    .bottom-nav .social-media div:hover {
+      transform: scale(1.2); }
+
+@media screen and (max-width: 1330px) {
+  /* line 501, static/scss/base/landing.scss */
+  .main .circles {
+    height: 900px; }
+    /* line 505, static/scss/base/landing.scss */
+    .main .circles .big {
+      width: 850px;
+      height: 850px; }
+    /* line 512, static/scss/base/landing.scss */
+    .main .circles .medium {
+      width: 550px;
+      height: 550px; }
+    /* line 519, static/scss/base/landing.scss */
+    .main .circles .small {
+      width: 350px;
+      height: 350px; }
+  /* line 528, static/scss/base/landing.scss */
+  .main .content {
+    height: 1050px; }
+    /* line 534, static/scss/base/landing.scss */
+    .main .content .info .text {
+      top: 170px;
+      left: 100px; }
+      /* line 539, static/scss/base/landing.scss */
+      .main .content .info .text span {
+        font-size: 85px; }
+      /* line 545, static/scss/base/landing.scss */
+      .main .content .info .text h2 {
+        font-size: 50px; }
+      /* line 551, static/scss/base/landing.scss */
+      .main .content .info .text button {
+        height: 55px;
+        width: 320px;
+        font-size: 23px; }
+        /* line 558, static/scss/base/landing.scss */
+        .main .content .info .text button h1 {
+          font-size: 23px; }
+  /* line 574, static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 587, static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -120px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 603, static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 610, static/scss/base/landing.scss */
+  .main .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 616, static/scss/base/landing.scss */
+    .main .top-nav .btns #homeBtn, .main .top-nav .btns #logoutBtn, .main .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 618, static/scss/base/landing.scss */
+    .main .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 629, static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 635, static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 641, static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 649, static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 656, static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 668, static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 674, static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; }
+    /* line 678, static/scss/base/landing.scss */
+    .main .content .info {
+      height: 800px; }
+      /* line 682, static/scss/base/landing.scss */
+      .main .content .info .text {
+        top: 200px;
+        left: 40px;
+        width: 100%; }
+        /* line 689, static/scss/base/landing.scss */
+        .main .content .info .text span {
+          font-size: 55px; }
+        /* line 695, static/scss/base/landing.scss */
+        .main .content .info .text h2 {
+          font-size: 30px; }
+        /* line 701, static/scss/base/landing.scss */
+        .main .content .info .text button {
+          height: 55px;
+          width: 270px;
+          font-size: 20px; }
+      /* line 712, static/scss/base/landing.scss */
+      .main .content .info .img {
+        width: 100%;
+        display: none; }
+  /* line 726, static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 739, static/scss/base/landing.scss */
+  .bottom-nav {
+    left: -30px;
+    top: 40px; }
+    /* line 750, static/scss/base/landing.scss */
+    .bottom-nav .links ul li a {
+      font-size: 16px; }
+      /* line 754, static/scss/base/landing.scss */
+      .bottom-nav .links ul li a .copyright {
+        width: 190px;
+        margin: 0;
+        font-size: 19px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 782, static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 787, static/scss/base/landing.scss */
+    .main .top-nav .brand h1 {
+      display: none; }
+  /* line 797, static/scss/base/landing.scss */
+  .main .circles {
+    height: 800px; }
+  /* line 803, static/scss/base/landing.scss */
+  .main .content {
+    height: 950px; } }
+
+@media screen and (max-width: 589px) {
+  /* line 817, static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 824, static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; } }
+
+@media screen and (min-width: 850px) and (max-width: 915px) {
+  /* line 836, static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -140px; } }

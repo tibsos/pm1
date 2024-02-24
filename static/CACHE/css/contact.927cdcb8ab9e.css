@@ -1,0 +1,384 @@
+/* line 4, static/scss/base/contact.scss */
+body, html {
+  margin: 0;
+  color: #1E2330;
+  background: #fff;
+  width: 100%;
+  overflow: hidden;
+  overflow-y: visible; }
+
+/* line 17, static/scss/base/contact.scss */
+button {
+  outline: none; }
+
+/* line 23, static/scss/base/contact.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 30, static/scss/base/contact.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 36, static/scss/base/contact.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* line 46, static/scss/base/contact.scss */
+#Icon_feather-mail path {
+  stroke: #1E2330; }
+
+/* line 54, static/scss/base/contact.scss */
+#questionTheme {
+  background: #fff; }
+  /* line 58, static/scss/base/contact.scss */
+  #questionTheme option {
+    padding-left: 0; }
+
+/* line 66, static/scss/base/contact.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 67, static/scss/base/contact.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 68, static/scss/base/contact.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 70, static/scss/base/contact.scss */
+.top-nav {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 80, static/scss/base/contact.scss */
+  .top-nav .brand {
+    position: relative;
+    left: 30px;
+    cursor: pointer; }
+    /* line 87, static/scss/base/contact.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #1E2330; }
+    /* line 95, static/scss/base/contact.scss */
+    .top-nav .brand svg {
+      position: relative;
+      left: 15px;
+      transform: scale(1.8);
+      fill: #1E2330;
+      float: left; }
+    /* line 107, static/scss/base/contact.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      font-size: 40px; }
+  /* line 120, static/scss/base/contact.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -3px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 130, static/scss/base/contact.scss */
+    .top-nav .btns .auth-btn {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      float: left; }
+      /* line 152, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn svg {
+        position: absolute;
+        left: 20px;
+        fill: #1E2330; }
+      /* line 161, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 167, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 175, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 182, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 194, static/scss/base/contact.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 201, static/scss/base/contact.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #1E2330;
+      cursor: pointer; }
+
+/* line 213, static/scss/base/contact.scss */
+textarea {
+  font-family: Comfortaa; }
+
+/* line 219, static/scss/base/contact.scss */
+textarea:focus, input:focus, select:focus {
+  outline: none; }
+
+/* line 225, static/scss/base/contact.scss */
+textarea:hover {
+  border: none; }
+
+/* line 231, static/scss/base/contact.scss */
+.main {
+  position: relative;
+  top: -20px;
+  left: 0; }
+  /* line 237, static/scss/base/contact.scss */
+  .main .image {
+    display: flex;
+    justify-content: center; }
+    /* line 242, static/scss/base/contact.scss */
+    .main .image .contact-pic {
+      transform: scale(0.7);
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      border-radius: 2000px; }
+  /* line 254, static/scss/base/contact.scss */
+  .main .text {
+    position: relative;
+    bottom: 60px;
+    text-align: center; }
+    /* line 261, static/scss/base/contact.scss */
+    .main .text .t1 {
+      font-size: 50px;
+      margin-bottom: 10px; }
+    /* line 269, static/scss/base/contact.scss */
+    .main .text .t2 {
+      font-size: 33px;
+      font-weight: normal; }
+  /* line 278, static/scss/base/contact.scss */
+  .main .form {
+    position: relative;
+    bottom: 40px;
+    display: flex;
+    justify-content: center; }
+    /* line 286, static/scss/base/contact.scss */
+    .main .form .fields {
+      display: flex;
+      justify-content: center;
+      flex-direction: column; }
+      /* line 292, static/scss/base/contact.scss */
+      .main .form .fields input {
+        display: block;
+        height: 47px;
+        width: 300px;
+        padding: 3px 20px 0 20px;
+        margin: 0 0 20px 150px;
+        background: #F6F7F5;
+        border: none;
+        border-radius: 100px;
+        font-family: Comfortaa;
+        font-size: 18px; }
+      /* line 312, static/scss/base/contact.scss */
+      .main .form .fields #questionTheme {
+        display: block;
+        height: 47px;
+        width: 340px;
+        padding-left: 16px;
+        margin: 0 0 20px 150px;
+        border: none;
+        border-radius: 100px;
+        font-family: Comfortaa;
+        font-size: 18px;
+        background: #F6F7F5;
+        font-family: Comfortaa; }
+      /* line 333, static/scss/base/contact.scss */
+      .main .form .fields #message {
+        resize: vertical;
+        height: 300px;
+        width: 600px;
+        padding: 20px 20px 0 20px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 30px;
+        background: #F6F7F5;
+        font-family: Comfortaa;
+        font-size: 16px; }
+      /* line 353, static/scss/base/contact.scss */
+      .main .form .fields #submitForm {
+        width: 340px;
+        height: 50px;
+        display: block;
+        margin-left: 150px;
+        color: #fff;
+        border: none;
+        border-radius: 100px;
+        box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+        cursor: pointer;
+        font-family: Comfortaa;
+        font-size: 20px; }
+      /* line 377, static/scss/base/contact.scss */
+      .main .form .fields #submitForm:disabled {
+        opacity: 0.4;
+        cursor: not-allowed; }
+      /* line 385, static/scss/base/contact.scss */
+      .main .form .fields #submitForm:focus {
+        outline: none; }
+      /* line 391, static/scss/base/contact.scss */
+      .main .form .fields #submitForm.in {
+        box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+  /* line 402, static/scss/base/contact.scss */
+  .main .message-submitted {
+    position: relative;
+    bottom: 30px;
+    display: none;
+    opacity: 0;
+    text-align: center; }
+
+/* line 416, static/scss/base/contact.scss */
+.bottom-nav {
+  position: relative;
+  top: 30px;
+  left: -15px;
+  width: 100%; }
+  /* line 424, static/scss/base/contact.scss */
+  .bottom-nav .links {
+    position: relative;
+    left: 5px;
+    bottom: 9px; }
+    /* line 430, static/scss/base/contact.scss */
+    .bottom-nav .links ul {
+      list-style-type: none; }
+      /* line 434, static/scss/base/contact.scss */
+      .bottom-nav .links ul li {
+        display: inline-block;
+        margin-right: 30px;
+        /* Link hover effect */ }
+        /* line 440, static/scss/base/contact.scss */
+        .bottom-nav .links ul li a {
+          text-decoration: none;
+          color: #1E2330;
+          font-size: 23px; }
+          /* line 447, static/scss/base/contact.scss */
+          .bottom-nav .links ul li a .copyright {
+            width: 275px;
+            font-weight: normal;
+            font-size: 27px; }
+        /* line 460, static/scss/base/contact.scss */
+        .bottom-nav .links ul li .link:before, .bottom-nav .links ul li .link:after, .bottom-nav .links ul li .link > span:before, .bottom-nav .links ul li .link > span:after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease; }
+        /* line 468, static/scss/base/contact.scss */
+        .bottom-nav .links ul li .link, .bottom-nav .links ul li .link > span {
+          position: relative;
+          color: #1E2330;
+          text-decoration: none;
+          line-height: 24px; }
+        /* line 477, static/scss/base/contact.scss */
+        .bottom-nav .links ul li .link {
+          display: inline-flex;
+          padding-top: 10px;
+          padding-bottom: 5px;
+          overflow: hidden; }
+        /* line 486, static/scss/base/contact.scss */
+        .bottom-nav .links ul li .link:before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #492059;
+          transform: translateX(-100%); }
+        /* line 497, static/scss/base/contact.scss */
+        .bottom-nav .links ul li .link:hover:before {
+          transform: translateX(0); }
+
+/* Nav style */
+@media screen and (max-width: 850px) {
+  /* line 515, static/scss/base/contact.scss */
+  .main {
+    overflow-y: hidden; }
+  /* line 523, static/scss/base/contact.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 530, static/scss/base/contact.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 536, static/scss/base/contact.scss */
+    .top-nav .btns #homeBtn, .top-nav .btns #logoutBtn, .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 538, static/scss/base/contact.scss */
+    .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 549, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 555, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 561, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 569, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 576, static/scss/base/contact.scss */
+      .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 588, static/scss/base/contact.scss */
+  .bottom-nav {
+    left: -30px;
+    top: 40px;
+    height: 110px; }
+    /* line 601, static/scss/base/contact.scss */
+    .bottom-nav .links ul li a {
+      font-size: 16px; }
+      /* line 605, static/scss/base/contact.scss */
+      .bottom-nav .links ul li a .copyright {
+        width: 190px;
+        margin: 0;
+        font-size: 19px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 632, static/scss/base/contact.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 637, static/scss/base/contact.scss */
+    .top-nav .brand h1 {
+      display: none; } }
+
+@media screen and (max-width: 690px) {
+  /* line 656, static/scss/base/contact.scss */
+  .main .image .contact-pic {
+    transform: scale(0.5); }
+  /* line 666, static/scss/base/contact.scss */
+  .main .text .t1 {
+    font-size: 32px; }
+  /* line 672, static/scss/base/contact.scss */
+  .main .text .t2 {
+    font-size: 20px; }
+  /* line 682, static/scss/base/contact.scss */
+  .main .form .fields {
+    position: relative;
+    right: 75px; }
+    /* line 687, static/scss/base/contact.scss */
+    .main .form .fields #message {
+      position: relative;
+      left: 150px;
+      width: 300px; } }

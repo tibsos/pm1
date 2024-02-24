@@ -1,0 +1,214 @@
+/* line 11, static/scss/app/confirm-payment.scss */
+body {
+  width: 100%;
+  height: 100%;
+  background: #f6eadf;
+  color: #1E2330;
+  font-family: Comfortaa;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: background 1s ease-in-out; }
+
+/* line 28, static/scss/app/confirm-payment.scss */
+button {
+  outline: none; }
+
+/* Scrollbar */
+/* line 36, static/scss/app/confirm-payment.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 43, static/scss/app/confirm-payment.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 49, static/scss/app/confirm-payment.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* Defaults */
+/* line 58, static/scss/app/confirm-payment.scss */
+input {
+  font-size: 19px;
+  font-family: Comfortaa;
+  border: none;
+  border-radius: 100px;
+  color: #1E2330;
+  background: #f6eadf;
+  box-shadow: inset 3px 3px 8px #d8cec4, inset -3px -3px 8px #fffffa;
+  transition: all 0.75s ease-in-out; }
+
+/* line 76, static/scss/app/confirm-payment.scss */
+input::placeholder {
+  color: #6e7267; }
+
+/* line 82, static/scss/app/confirm-payment.scss */
+input:focus {
+  outline: none; }
+
+/* line 88, static/scss/app/confirm-payment.scss */
+button {
+  border: none;
+  border-radius: 100px;
+  background: #f6eadf;
+  color: #1E2330;
+  font-family: Comfortaa;
+  box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa;
+  cursor: pointer;
+  transition: background 1s ease-in-out;
+  transition: box-shadow 1s ease-in-out; }
+
+/* line 108, static/scss/app/confirm-payment.scss */
+button:focus {
+  outline: none; }
+
+/* line 110, static/scss/app/confirm-payment.scss */
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed; }
+
+/* line 118, static/scss/app/confirm-payment.scss */
+svg {
+  fill: #1E2330;
+  transition: fill 1s ease-in-out; }
+
+/* line 126, static/scss/app/confirm-payment.scss */
+.topnav {
+  position: fixed;
+  top: 0px;
+  left: 1.5%;
+  width: 97%;
+  background: #f6eadf;
+  z-index: 9;
+  transition: all 1s ease-in-out; }
+  /* line 141, static/scss/app/confirm-payment.scss */
+  .topnav .topnav-wrapper {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 70px;
+    background: #f6eadf;
+    border-radius: 100px;
+    box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa;
+    transition: all 1s ease-in-out; }
+    /* line 160, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .toggle-sidenav {
+      position: relative;
+      top: 0;
+      left: 10px;
+      height: 70px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: left; }
+      /* line 175, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .toggle-sidenav #toggleSidenavBtn {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa;
+        cursor: pointer;
+        transition: all 1s ease-in-out; }
+      /* line 195, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .toggle-sidenav #toggleSidenavBtn.active {
+        box-shadow: inset 3px 3px 8px #d8cec4, inset -3px -3px 8px #fffffa; }
+    /* line 204, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .search-notes {
+      position: relative;
+      left: 50px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      float: left; }
+      /* line 216, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .search-notes .search-icon {
+        position: absolute;
+        left: 19px;
+        padding-top: 2px;
+        float: left; }
+      /* line 227, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .search-notes #noteSearch {
+        width: 250px;
+        height: 45px;
+        padding: 5px 60px 0 55px; }
+      /* line 236, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .search-notes #cancelSearch {
+        position: relative;
+        right: 45px;
+        width: 50px;
+        height: 50px;
+        float: right;
+        padding-top: 4px;
+        border-radius: 100px;
+        font-size: 35px;
+        display: none;
+        opacity: 0; }
+    /* line 259, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .premium-btn {
+      position: relative;
+      top: 7.5px;
+      left: 70px;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      border-radius: 50px;
+      box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa;
+      cursor: pointer;
+      transition: box-shadow 1s ease-in-out; }
+      /* line 283, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .premium-btn #crownSVG {
+        width: 40px;
+        height: 40px; }
+    /* line 292, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .premium-btn.in {
+      box-shadow: inset 3px 3px 8px #d8cec4, inset -3px -3px 8px #fffffa; }
+    /* line 299, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .mode {
+      position: absolute;
+      bottom: -1px;
+      right: 130px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left; }
+      /* line 313, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .mode .toggle-mode {
+        position: absolute;
+        cursor: pointer;
+        transform: scale(0.2); }
+    /* line 324, static/scss/app/confirm-payment.scss */
+    .topnav .topnav-wrapper .profile {
+      position: absolute;
+      right: 10px;
+      height: 70px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: left;
+      cursor: pointer; }
+      /* line 340, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .profile .initials {
+        width: 55px;
+        height: 53px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2px;
+        border-radius: 50px;
+        box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 1s ease-in-out; }
+      /* line 363, static/scss/app/confirm-payment.scss */
+      .topnav .topnav-wrapper .profile .initials.active {
+        box-shadow: inset 3px 3px 8px #d8cec4, inset -3px -3px 8px #fffffa; }

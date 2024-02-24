@@ -1,0 +1,77 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Страница не найдена</title>
+
+        <link rel="icon" type="image/x-icon" href="{% static 'блокнотик.svg' %}">
+
+        {% compress css %}
+
+            <link rel="stylesheet" href="{% static 'scss/analytics/overview.scss' %}" type="text/x-scss">
+
+        {% endcompress %}
+
+    </head>
+
+
+    <body>
+        
+        <div class="sales-funnel" style="margin-bottom: 100px;">
+
+            <div class="field">
+
+                <span>Количество пользователей: {{ users }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Количество премиальных пользователей: {{ premium_users }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span id="revenue">Ежемесечная выручка: {{ revenue }} Р</span>
+
+            </div>
+
+        </div>
+
+        <div class="app-data">
+
+            <div class="field">
+
+                <span>Блокнотов: {{ notepads }}</span>
+
+            </div>
+
+            <div class="field">
+
+                <span>Заметок: {{ notes }}</span>
+
+            </div>
+            
+        </div>
+
+        <div class="page-analytics">
+
+            <div class="field">
+
+                <span>Главная: {{ landing_visits }}</span>
+                <span>Регистрация: {{ register_visits }}</span>
+                <span>Вход: {{ login_visits }}</span>
+                <span>Приложение: {{ home_visits }}</span>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

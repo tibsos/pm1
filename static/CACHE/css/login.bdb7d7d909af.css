@@ -1,0 +1,234 @@
+/* line 3, static/scss/auth/login.scss */
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #1E2330; }
+
+/* line 13, static/scss/auth/login.scss */
+body {
+  background: #fff; }
+
+/* line 19, static/scss/auth/login.scss */
+button {
+  outline: none; }
+
+/* line 25, static/scss/auth/login.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 32, static/scss/auth/login.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 38, static/scss/auth/login.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* line 45, static/scss/auth/login.scss */
+svg {
+  fill: #1E2330; }
+
+/* line 53, static/scss/auth/login.scss */
+#Icon_feather-mail path {
+  stroke: #1E2330; }
+
+/* line 61, static/scss/auth/login.scss */
+button:disabled {
+  opacity: 0.8; }
+
+/* line 68, static/scss/auth/login.scss */
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  /* line 80, static/scss/auth/login.scss */
+  .main .circle-animation {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 1000px;
+    background: #e9812d;
+    -webkit-filter: blur(200px);
+    -moz-filter: blur(200px);
+    -o-filter: blur(200px);
+    -ms-filter: blur(200px);
+    filter: blur(200px);
+    margin: auto;
+    animation-name: colorChange;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; }
+
+@keyframes colorChange {
+  0% {
+    background-color: #e9812d; }
+  50% {
+    background-color: #efca59; }
+  100% {
+    background-color: #efa4c1; } }
+  /* line 120, static/scss/auth/login.scss */
+  .main .wrapper {
+    position: relative;
+    width: 340px;
+    height: 600px;
+    background: #f6f6f6;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff; }
+    /* line 134, static/scss/auth/login.scss */
+    .main .wrapper .brand {
+      position: relative;
+      top: 20px;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      /* line 148, static/scss/auth/login.scss */
+      .main .wrapper .brand .wrapper {
+        width: 79px;
+        height: 79px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 0 0 1px;
+        border-radius: 50px;
+        box-shadow: 1px 1px 8px #a0a0a0, -1px -1px 8px #ffffff;
+        cursor: pointer; }
+        /* line 166, static/scss/auth/login.scss */
+        .main .wrapper .brand .wrapper svg {
+          transform: scale(2); }
+    /* line 176, static/scss/auth/login.scss */
+    .main .wrapper h1 {
+      position: relative;
+      top: 46px;
+      width: 340px;
+      text-align: center;
+      font-weight: normal;
+      font-size: 25px;
+      margin: 0; }
+    /* line 191, static/scss/auth/login.scss */
+    .main .wrapper form {
+      position: relative;
+      top: 70px; }
+      /* line 196, static/scss/auth/login.scss */
+      .main .wrapper form .fields {
+        width: 100%; }
+        /* line 200, static/scss/auth/login.scss */
+        .main .wrapper form .fields div {
+          position: relative;
+          left: 4%;
+          width: 80%; }
+          /* line 207, static/scss/auth/login.scss */
+          .main .wrapper form .fields div svg:first-child {
+            position: absolute;
+            left: 15px;
+            top: 16px;
+            cursor: pointer; }
+          /* line 217, static/scss/auth/login.scss */
+          .main .wrapper form .fields div svg:nth-child(2) {
+            position: absolute;
+            right: -25px;
+            top: 19px;
+            opacity: 0; }
+          /* line 227, static/scss/auth/login.scss */
+          .main .wrapper form .fields div #email {
+            top: 10px;
+            left: 10px;
+            transform: scale(0.75); }
+          /* line 236, static/scss/auth/login.scss */
+          .main .wrapper form .fields div #lock {
+            top: 9px;
+            left: 10px;
+            transform: scale(0.75); }
+          /* line 245, static/scss/auth/login.scss */
+          .main .wrapper form .fields div input {
+            width: calc(100% - 30px);
+            height: 47px;
+            margin-bottom: 15px;
+            padding: 6px 20px 0 50px;
+            color: #6e7267;
+            border-radius: 50px;
+            border: none;
+            background: none;
+            box-shadow: inset 1px 1px 8px #a0a0a0, inset -1px -1px 8px #ffffff;
+            font-size: 18px; }
+          /* line 266, static/scss/auth/login.scss */
+          .main .wrapper form .fields div input:focus {
+            outline: none; }
+      /* line 276, static/scss/auth/login.scss */
+      .main .wrapper form .error {
+        position: absolute;
+        top: 195px;
+        left: 40px;
+        color: red;
+        opacity: 0;
+        transform: scale(1.2); }
+      /* line 290, static/scss/auth/login.scss */
+      .main .wrapper form .error.reset {
+        top: 60px; }
+      /* line 296, static/scss/auth/login.scss */
+      .main .wrapper form .unique {
+        position: absolute;
+        left: 20px;
+        top: -21px;
+        opacity: 0;
+        color: red; }
+      /* line 308, static/scss/auth/login.scss */
+      .main .wrapper form .e {
+        display: block;
+        margin: 0 0 10px 20px;
+        color: red; }
+      /* line 317, static/scss/auth/login.scss */
+      .main .wrapper form a {
+        position: relative;
+        top: 5px;
+        left: 10%;
+        text-decoration: none;
+        color: #1E2330; }
+      /* line 328, static/scss/auth/login.scss */
+      .main .wrapper form a:hover {
+        color: red; }
+      /* line 334, static/scss/auth/login.scss */
+      .main .wrapper form .btns {
+        position: relative;
+        top: 40px; }
+        /* line 339, static/scss/auth/login.scss */
+        .main .wrapper form .btns a {
+          left: 0; }
+        /* line 345, static/scss/auth/login.scss */
+        .main .wrapper form .btns button {
+          position: relative;
+          left: 5%;
+          width: 90%;
+          height: 50px;
+          padding-top: 4px;
+          margin-bottom: 15px;
+          background: none;
+          box-shadow: 1px 1px 10px #a0a0a0, -1px -1px 10px #ffffff;
+          font-size: 18px; }
+        /* line 365, static/scss/auth/login.scss */
+        .main .wrapper form .btns button.in {
+          box-shadow: inset 1px 1px 10px #a0a0a0, inset -1px -1px 10px #ffffff; }
+  /* line 378, static/scss/auth/login.scss */
+  .main .oauth2 {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: calc(100% - 10px);
+    height: 50px;
+    border-radius: 50px;
+    background: #000; }
+
+/* line 395, static/scss/auth/login.scss */
+.wrapper.register {
+  height: 550px; }
+  /* line 399, static/scss/auth/login.scss */
+  .wrapper.register .btns.register {
+    top: 15px; }
