@@ -977,80 +977,33 @@
 
    <!-- Premium restrictions -->
 
-   {% if not user.premium %}
+   {% if not user.profile.premium %}
 
    <script>
 
        /* Notes */
 
-       if ($('.note-section').children('.note').length >= 3) {
+       setInterval(function() {
 
-            $('#newNoteNotAllowed').show();
-            $('#newNoteAllowed').hide();
+                if ($('.note-section').children('.note').length >= 3) {
 
-       }
+                    $('#newNoteNotAllowed').show();
+                    $('#newNoteAllowed').hide();
 
-       document.addEventListener('htmx:beforeRequest', function(event) {
-           
-           if ($('.note-section').children('.note').length - 1 >= 1) {
+            }
 
-                $('#newNoteNotAllowed').show();
-                $('#newNoteAllowed').hide();      
+            /* Folders */
 
-           } else {
-               
-                $('#newNoteNotAllowed').hide();
-                $('#newNoteAllowed').show();
+            if ($('.folders').children('.page').length >= 1) {
 
-           }
+                $('#newFolderInit').addClass('notAllowed');
+                $('#createFolderInNoteNew').hide();
+                $('#createFolderInNote').hide();
+                
+            }
 
-       });
-
-       $(document).ajaxSend(function(event, xhr, settings) {
-           
-           if ($('.note-section').children('.note').length - 1 >= 3) {
-
-                $('#newNoteNotAllowed').show();
-                $('#newNoteAllowed').hide();
-               
-           } else {
-               
-                $('#newNoteNotAllowed').hide();
-                $('#newNoteAllowed').show();
-
-
-           }
-
-       });
-
-       /* Folders */
-
-       if ($('.folders').children('.page').length >= 1) {
-
-           $('#newFolderInit').addClass('notAllowed');
-           $('#createFolderInNoteNew').hide();
-           $('#createFolderInNote').hide();
-           
-       }
+       }, 100);
        
-       document.addEventListener('htmx:beforeRequest', function(event) {
-           
-           if ($('.folders').children('.page').length - 1 >= 0) {
-               
-               $('#newFolderInit').addClass('notAllowed');
-               $('#createFolderInNoteNew').hide();
-               $('#createFolderInNote').hide();
-               
-           } else {
-               
-               $('#createFolderInNoteNew').show();
-               $('#createFolderInNote').show();
-               $('#newFolderInit').removeClass('notAllowed');
-
-           }
-
-       });
-
    </script>
 
 {% endif %}

@@ -5,11 +5,11 @@ from .models import *
 @a.register(Photo)
 class PhotoAdmin(a.ModelAdmin):
 
-    list_display = ['profile_name', 'image_size']
+    list_display = ['email', 'image_size']
 
-    def profile_name(self, image):
+    def email(self, image):
 
-        return image.uploader.profile.name
+        return image.uploader.username
 
     def image_size(self, image):
 
@@ -17,7 +17,11 @@ class PhotoAdmin(a.ModelAdmin):
 
         return f"{size_in_MB} MB"
 
-a.site.register(Note)
+@a.register(Note)
+class NoteAdmin(a.ModelAdmin):
+
+    list_display = ['author', 'created_at', 'updated_at']
+
 a.site.register(Folder)
 
 @a.register(UserPayment)

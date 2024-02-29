@@ -1,0 +1,40 @@
+/* line 4, static/scss/blog/post.scss */
+body {
+  background: #f6eadf; }
+
+/* line 10, static/scss/blog/post.scss */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  /* line 17, static/scss/blog/post.scss */
+  .main .post {
+    position: relative;
+    top: 100px;
+    width: 700px;
+    padding: 15px;
+    margin-bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa; }
+    /* line 37, static/scss/blog/post.scss */
+    .main .post #postImage {
+      width: 670px;
+      height: 400px; }
+      /* line 42, static/scss/blog/post.scss */
+      .main .post #postImage img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px; }
+    /* line 53, static/scss/blog/post.scss */
+    .main .post #postText {
+      max-width: 100%; }
+      /* line 59, static/scss/blog/post.scss */
+      .main .post #postText #content img {
+        width: 670px;
+        object-fit: cover;
+        border-radius: 30px; }

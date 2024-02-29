@@ -1,0 +1,190 @@
+/* line 5, static/scss/blog/top-nav.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 6, static/scss/blog/top-nav.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 7, static/scss/blog/top-nav.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 9, static/scss/blog/top-nav.scss */
+.top-nav {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 19, static/scss/blog/top-nav.scss */
+  .top-nav .brand {
+    position: relative;
+    left: 30px;
+    width: 300px;
+    cursor: pointer; }
+    /* line 28, static/scss/blog/top-nav.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #1E2330;
+      width: 300px; }
+    /* line 38, static/scss/blog/top-nav.scss */
+    .top-nav .brand svg {
+      position: relative;
+      left: 15px;
+      transform: scale(1.8);
+      fill: #1E2330;
+      float: left; }
+    /* line 50, static/scss/blog/top-nav.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      width: 300px;
+      font-size: 40px; }
+  /* line 65, static/scss/blog/top-nav.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -3px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 75, static/scss/blog/top-nav.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 82, static/scss/blog/top-nav.scss */
+    .top-nav .btns div {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      float: left; }
+      /* line 104, static/scss/blog/top-nav.scss */
+      .top-nav .btns div svg {
+        position: absolute;
+        left: 20px;
+        fill: #1E2330; }
+      /* line 113, static/scss/blog/top-nav.scss */
+      .top-nav .btns div .home {
+        transform: scale(1.3); }
+      /* line 119, static/scss/blog/top-nav.scss */
+      .top-nav .btns div .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 127, static/scss/blog/top-nav.scss */
+      .top-nav .btns div .login {
+        transform: scale(1.3); }
+      /* line 134, static/scss/blog/top-nav.scss */
+      .top-nav .btns div span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 146, static/scss/blog/top-nav.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #1E2330;
+      cursor: pointer; }
+
+@media screen and (max-width: 850px) {
+  /* line 164, static/scss/blog/top-nav.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 171, static/scss/blog/top-nav.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 177, static/scss/blog/top-nav.scss */
+    .top-nav .btns #homeBtn, .top-nav .btns #logoutBtn, .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 179, static/scss/blog/top-nav.scss */
+    .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 190, static/scss/blog/top-nav.scss */
+      .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 196, static/scss/blog/top-nav.scss */
+      .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 202, static/scss/blog/top-nav.scss */
+      .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 210, static/scss/blog/top-nav.scss */
+      .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 217, static/scss/blog/top-nav.scss */
+      .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 229, static/scss/blog/top-nav.scss */
+  .circles {
+    height: 850px; }
+  /* line 235, static/scss/blog/top-nav.scss */
+  .content {
+    height: 1000px; }
+    /* line 239, static/scss/blog/top-nav.scss */
+    .content .info {
+      height: 800px; }
+      /* line 243, static/scss/blog/top-nav.scss */
+      .content .info .text {
+        top: 200px;
+        left: 40px;
+        width: 100%; }
+        /* line 250, static/scss/blog/top-nav.scss */
+        .content .info .text span {
+          font-size: 55px; }
+        /* line 256, static/scss/blog/top-nav.scss */
+        .content .info .text h2 {
+          font-size: 30px; }
+        /* line 262, static/scss/blog/top-nav.scss */
+        .content .info .text button {
+          height: 55px;
+          width: 270px;
+          font-size: 20px; }
+      /* line 273, static/scss/blog/top-nav.scss */
+      .content .info .img {
+        width: 100%;
+        display: none; }
+  /* line 287, static/scss/blog/top-nav.scss */
+  .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); } }
+
+/* line 300, static/scss/blog/top-nav.scss */
+.bottom-nav {
+  left: -30px;
+  top: 40px; }
+  /* line 311, static/scss/blog/top-nav.scss */
+  .bottom-nav .links ul li a {
+    font-size: 16px; }
+    /* line 315, static/scss/blog/top-nav.scss */
+    .bottom-nav .links ul li a .copyright {
+      width: 190px;
+      margin: 0;
+      font-size: 19px; }
+
+@media screen and (max-width: 850px) {
+  /* line 340, static/scss/blog/top-nav.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 345, static/scss/blog/top-nav.scss */
+    .top-nav .brand h1 {
+      display: none; }
+  /* line 355, static/scss/blog/top-nav.scss */
+  .circles {
+    height: 800px; }
+  /* line 361, static/scss/blog/top-nav.scss */
+  .content {
+    height: 950px; } }

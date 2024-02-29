@@ -1,76 +1,22 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, get_object_or_404
 
-from .models import Message
-from analytics.models import Funnel      
+from .models import Post
 
-import re
-
-# Landing
-def l(request):
+def blog(request):
 
     c = {}
 
-    c['u'] = request.user
+    c['user'] = request.user
+    c['latest_post'] = Post.objects.latest('created_at')
 
-    MOBILE_AGENT_RE=re.compile(r".*(iphone|mobile|androidtouch)",re.IGNORECASE)
+    return render(request, 'blog.html', c)
 
-    if MOBILE_AGENT_RE.match(request.META['HTTP_USER_AGENT']):
-        c['m'] = True
-    else:
-        c['m'] = False
+def post(request, slug):
 
-    return render(request, 'landing.html', c)
-
-# Info
-def t(request):
-    return render(request, 'info/terms.html', {'u': request.user})
-
-def p(request):
-    return render(request, 'info/privacy.html', {'u': request.user})
-
-def j(request):
-    return render(request, 'info/juridical.html', {'u': request.user})
-
-# Contact
-def c(request):
+    post = get_object_or_404(Post, slug = slug)
 
     c = {}
+    c['user'] = request.user
+    c['post'] = post
 
-    c['u'] = request.user
-
-    MOBILE_AGENT_RE=re.compile(r".*(iphone|mobile|androidtouch)",re.IGNORECASE)
-
-    if MOBILE_AGENT_RE.match(request.META['HTTP_USER_AGENT']):
-        c['m'] = True
-    else:
-        c['m'] = False
-
-    return render(request, 'contact.html', c)
-    
-# contact submit
-def cs(request):
-    
-    if request.user.is_authenticated:
-        
-        Message.objects.create(
-            
-            user = request.user,
-
-            topic = request.POST.get('t'),
-            message = request.POST.get('m'),
-            
-        )
-        
-    else:
-        
-        Message.objects.create(
-            
-            name = request.POST.get('n'),
-            email = request.POST.get('e'),
-            
-            topic = request.POST.get('t'),
-            message = request.POST.get('m'),
-
-        )
-    
-    return HttpResponse('K')
+    return render(request, 'post.html', c)

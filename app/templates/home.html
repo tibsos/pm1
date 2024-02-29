@@ -1157,73 +1157,32 @@
 
     <!-- Premium restrictions -->
 
-    {% if not user.premium %}
+    {% if not user.profile.premium %}
 
         <script>
 
-            /* Notes */
+            setInterval(function() {
 
-            if ($('.note-section').children('.note').length >= 3) {
+                    /* Notes */
 
-                $('.new-note-title').attr('id', 'newFolderNotAllowed');
-
-            }
-
-            document.addEventListener('htmx:beforeRequest', function(event) {
-                
-                if ($('.note-section').children('.note').length - 1 >= 1) {
+                if ($('.note-section').children('.note').length >= 3) {
 
                     $('.new-note-title').attr('id', 'newFolderNotAllowed');
-                    
-                } else {
-                    
-                    $('.new-note-title').attr('id', '');
 
                 }
 
-            });
+                /* Folders */
 
-            $(document).ajaxSend(function(event, xhr, settings) {
-                
-                if ($('.note-section').children('.note').length - 1 >= 3) {
+                if ($('.folders').children('.page').length >= 1) {
 
-                    $('.new-note-title').attr('id', 'newFolderNotAllowed');
-                    
-                } else {
-                    
-                    $('.new-note-title').attr('id', '');
-
-                }
-
-            });
-
-            /* Folders */
-
-            if ($('.folders').children('.page').length >= 1) {
-
-                $('#newFolderInit').addClass('notAllowed');
-                $('#createFolderInNoteNew').hide();
-                $('#createFolderInNote').hide();
-                
-            }
-            
-            document.addEventListener('htmx:beforeRequest', function(event) {
-                
-                if ($('.folders').children('.page').length - 1 >= 0) {
-                    
                     $('#newFolderInit').addClass('notAllowed');
                     $('#createFolderInNoteNew').hide();
                     $('#createFolderInNote').hide();
                     
-                } else {
-                    
-                    $('#createFolderInNoteNew').show();
-                    $('#createFolderInNote').show();
-                    $('#newFolderInit').removeClass('notAllowed');
-
                 }
 
-            });
+            }, 100);
+            
 
         </script>
 

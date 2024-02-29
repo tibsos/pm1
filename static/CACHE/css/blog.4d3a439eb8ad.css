@@ -1,0 +1,234 @@
+/* line 4, static/scss/blog/blog.scss */
+body {
+  background: #f6eadf; }
+
+/* line 10, static/scss/blog/blog.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 17, static/scss/blog/blog.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 23, static/scss/blog/blog.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* line 32, static/scss/blog/blog.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 33, static/scss/blog/blog.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 34, static/scss/blog/blog.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 36, static/scss/blog/blog.scss */
+.top-nav {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 46, static/scss/blog/blog.scss */
+  .top-nav .brand {
+    position: relative;
+    left: 30px;
+    width: 300px;
+    cursor: pointer; }
+    /* line 55, static/scss/blog/blog.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #1E2330;
+      width: 300px; }
+    /* line 65, static/scss/blog/blog.scss */
+    .top-nav .brand svg {
+      position: relative;
+      left: 15px;
+      transform: scale(1.8);
+      fill: #1E2330;
+      float: left; }
+    /* line 77, static/scss/blog/blog.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      width: 300px;
+      font-size: 40px; }
+  /* line 92, static/scss/blog/blog.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -3px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 102, static/scss/blog/blog.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 109, static/scss/blog/blog.scss */
+    .top-nav .btns div {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      float: left; }
+      /* line 131, static/scss/blog/blog.scss */
+      .top-nav .btns div svg {
+        position: absolute;
+        left: 20px;
+        fill: #1E2330; }
+      /* line 140, static/scss/blog/blog.scss */
+      .top-nav .btns div .home {
+        transform: scale(1.3); }
+      /* line 146, static/scss/blog/blog.scss */
+      .top-nav .btns div .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 154, static/scss/blog/blog.scss */
+      .top-nav .btns div .login {
+        transform: scale(1.3); }
+      /* line 161, static/scss/blog/blog.scss */
+      .top-nav .btns div span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 173, static/scss/blog/blog.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #1E2330;
+      cursor: pointer; }
+
+/* line 185, static/scss/blog/blog.scss */
+.main {
+  position: relative;
+  top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  /* line 194, static/scss/blog/blog.scss */
+  .main #latestPost {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa; }
+    /* line 208, static/scss/blog/blog.scss */
+    .main #latestPost .image {
+      width: 700px;
+      height: 400px; }
+      /* line 213, static/scss/blog/blog.scss */
+      .main #latestPost .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px; }
+
+@media screen and (max-width: 850px) {
+  /* line 252, static/scss/blog/blog.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 259, static/scss/blog/blog.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 265, static/scss/blog/blog.scss */
+    .top-nav .btns #homeBtn, .top-nav .btns #logoutBtn, .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 267, static/scss/blog/blog.scss */
+    .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 278, static/scss/blog/blog.scss */
+      .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 284, static/scss/blog/blog.scss */
+      .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 290, static/scss/blog/blog.scss */
+      .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 298, static/scss/blog/blog.scss */
+      .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 305, static/scss/blog/blog.scss */
+      .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 317, static/scss/blog/blog.scss */
+  .circles {
+    height: 850px; }
+  /* line 323, static/scss/blog/blog.scss */
+  .content {
+    height: 1000px; }
+    /* line 327, static/scss/blog/blog.scss */
+    .content .info {
+      height: 800px; }
+      /* line 331, static/scss/blog/blog.scss */
+      .content .info .text {
+        top: 200px;
+        left: 40px;
+        width: 100%; }
+        /* line 338, static/scss/blog/blog.scss */
+        .content .info .text span {
+          font-size: 55px; }
+        /* line 344, static/scss/blog/blog.scss */
+        .content .info .text h2 {
+          font-size: 30px; }
+        /* line 350, static/scss/blog/blog.scss */
+        .content .info .text button {
+          height: 55px;
+          width: 270px;
+          font-size: 20px; }
+      /* line 361, static/scss/blog/blog.scss */
+      .content .info .img {
+        width: 100%;
+        display: none; }
+  /* line 375, static/scss/blog/blog.scss */
+  .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); } }
+
+/* line 388, static/scss/blog/blog.scss */
+.bottom-nav {
+  left: -30px;
+  top: 40px; }
+  /* line 399, static/scss/blog/blog.scss */
+  .bottom-nav .links ul li a {
+    font-size: 16px; }
+    /* line 403, static/scss/blog/blog.scss */
+    .bottom-nav .links ul li a .copyright {
+      width: 190px;
+      margin: 0;
+      font-size: 19px; }
+
+@media screen and (max-width: 850px) {
+  /* line 428, static/scss/blog/blog.scss */
+  .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 433, static/scss/blog/blog.scss */
+    .top-nav .brand h1 {
+      display: none; }
+  /* line 443, static/scss/blog/blog.scss */
+  .circles {
+    height: 800px; }
+  /* line 449, static/scss/blog/blog.scss */
+  .content {
+    height: 950px; } }

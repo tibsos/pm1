@@ -22,6 +22,7 @@ Configuration.account_id = 960322
 Configuration.secret_key = 'live_8C0vHeO91zTwiXBNSZl1JgXcy01ztZPuNN_4DVjYeX4'
 
 
+
 """ PAYMENT """
 
 @lr
@@ -199,6 +200,8 @@ def home(request):
 
     c = {}
 
+    c['user'] = request.user
+
     c['home'] = True
 
     c['pinned_notes'] = notes.filter(pinned = True)
@@ -213,6 +216,8 @@ def loved(request):
     
     c = {}
 
+    c['user'] = request.user
+
     c['loved'] = True
 
     c['pinned_notes'] = notes.filter(pinned = True)
@@ -226,6 +231,8 @@ def archive(request):
     notes = Note.objects.filter(author = request.user).filter(deleted = False).filter(archived = True)
     
     c = {}
+
+    c['user'] = request.user
 
     c['archive'] = True
 
@@ -347,6 +354,8 @@ def get_folder(request, uid):
         notes = Note.objects.filter(folders__in = [folder]).filter(deleted = False).filter(archived = False)
 
         c = {}
+
+        c['user'] = request.user
 
         c['folder'] = folder
 
@@ -665,11 +674,13 @@ def upload_photo_to_note(request):
 
     note = Note.objects.get(uid = request.POST.get('i'))
 
+    photo = request.FILES.get('p')
+
     photo = Photo.objects.create(
 
         uploader = request.user,
         note = note,
-        file = request.FILES.get('p'),
+        file = photo,
 
     )
 

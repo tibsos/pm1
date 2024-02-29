@@ -22,6 +22,7 @@ django-cron==0.6.0
 django-crontab==0.7.1
 django-ipware==6.0.4
 django-libsass==0.9
+django-tinymce==3.7.1
 frozenlist==1.4.1
 future==0.18.3
 geocoder==1.38.1

@@ -10,7 +10,9 @@ from uuid import uuid4 as u4
 
 from PIL import Image
 from io import BytesIO
+from django.core.files.uploadedfile import InMemoryUploadedFile
 import sys
+
 
 def upload_photo(instance, filename):
 
@@ -18,16 +20,6 @@ def upload_photo(instance, filename):
     new_filename = f"{u4}.{file_extenstion}"
 
     return os.path.join('uploads/note/images', new_filename)
-
-def compress_image(image):
-    image_temp = Image.open(image)
-    outputIoStream = BytesIO()
-    image_temp.thumbnail( (1600,1600) )
-    image_temp.save(outputIoStream , format='JPEG', quality=100)
-    outputIoStream.seek(0)
-    image = InMemoryUploadedFile(outputIoStream,'ImageField', "%s.jpg" % uploaded_image.name.split('.')[0], 'image/jpeg', sys.getsizeof(outputIoStream), None)
-    return image
-
 
 class UserPayment(m.Model):
 
@@ -56,15 +48,25 @@ class Photo(m.Model):
 
     def __str__(self):
 
-        return self.uploader.profile.name
+        return self.uploader.username
 
     def save(self, *args, **kwargs):
+        # Open the image
+        img = Image.open(self.file)
 
-        if not self.id:
+        if img.mode == 'RGBA':
+            img = img.convert('RGB')
 
-            self.image = compress_image(self.image)
+        # Resize and compress the image
+        output = BytesIO()
+        img = img.resize((300, 300))  # Resize the image as needed
+        img.save(output, format='JPEG', quality=10)  # Adjust quality as needed
 
-        super(ABC, self).save(*args, **kwargs)
+        output.seek(0)
+        self.image = InMemoryUploadedFile(output, 'ImageField', "%s.jpg" % self.file.name.split('.')[0],
+                                          'image/jpeg', sys.getsizeof(output), None)
+
+        super(Photo, self).save(*args, **kwargs)
 
 class Note(m.Model):
 

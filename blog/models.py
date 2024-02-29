@@ -1,21 +1,32 @@
 from django.db import models as m
 
-from django.contrib.auth.models import User
-        
-class Message(m.Model):
-    
-    user = m.ForeignKey(User, on_delete = m.CASCADE, blank = True, null = True)
-    
-    name = m.TextField(blank = True)
-    email = m.TextField(blank = True)
-    
-    topic = m.TextField()
-    message = m.TextField()
-    
-    resolved = m.BooleanField(default = False)
+from tinymce.models import HTMLField
+
+from django.urls import reverse
+
+class Post(m.Model):
+
+    title = m.TextField()
+    description = m.TextField()
+    content = HTMLField()
+
+    slug = m.SlugField(max_length = 60, unique = True)
+
+    thumbnail = m.ImageField(upload_to = 'blog/posts/thumbnails')
+
+    views = m.PositiveSmallIntegerField()
 
     created_at = m.DateTimeField(auto_now_add = True)
-    resolved_at = m.DateTimeField(auto_now = True)
+    updated_at = m.DateTimeField(auto_now = True)
+
+    def __str__(self):
+
+        return self.title
     
     class Meta:
-        ordering = ['-created_at']
+
+        ordering = ['-updated_at']
+
+    def get_absolute_url(self):
+
+        return reverse('blog:post', kwargs={'slug': self.slug})
