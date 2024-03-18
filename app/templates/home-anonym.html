@@ -1,0 +1,1412 @@
+{% load static %}
+{% load compress %}
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+                <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG2SLVG8BT"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-EG2SLVG8BT');
+        </script>
+
+                <!-- Yandex.Metrika counter -->
+        <script type="text/javascript" >
+            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        
+            ym(96442202, "init", {
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+            });
+        </script>
+        <noscript><div><img src="https://mc.yandex.ru/watch/96442202" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Блокнотик</title>
+        <meta name="description" content="Блокнотик | Дом">
+
+        <link rel="icon" type="image/png" href="{% static 'logo.png' %}">
+
+        <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
+        <script src="{% static 'packages/htmx.min.js' %}"></script>
+        <script src="{% static 'packages/iconify.min.js' %}"></script>
+
+        {% compress css %}
+
+            <link rel="stylesheet" href="{% static 'scss/app/home.scss' %}" type="text/x-scss">
+
+        {% endcompress %}
+
+    </head>
+    
+    <body>
+
+        <div class="everything">
+
+            <!-- Account details form -->
+            <div class="account-preferences">
+
+                <div class="wrapper">
+
+                    <div id="closeAccountPreferences">×</div>
+
+                    <span class="form-title">Мой аккаунт</span>
+
+                    <div class="fields">
+
+                        <!-- Name -->
+                        <div id="profileName" class="field">
+
+                            <svg class='field-icon' id="accountName" xmlns="http://www.w3.org/2000/svg" width="23.339" height="23.34" viewBox="0 0 23.339 23.34">
+                                <path id="Icon_ionic-ios-person" data-name="Icon ionic-ios-person" d="M27.828,27.251c-.438-1.933-2.936-2.875-3.8-3.179a28.323,28.323,0,0,0-3.167-.608,3.218,3.218,0,0,1-1.465-.675,12.8,12.8,0,0,1-.1-3,9.016,9.016,0,0,0,.693-1.319,17.013,17.013,0,0,0,.511-2.3s.5,0,.675-.875a8.612,8.612,0,0,0,.45-2.036c-.036-.7-.419-.681-.419-.681a10.657,10.657,0,0,0,.413-3.118c.055-2.5-1.9-4.96-5.446-4.96-3.592,0-5.507,2.462-5.452,4.96a11.116,11.116,0,0,0,.407,3.118s-.383-.018-.419.681a8.612,8.612,0,0,0,.45,2.036c.17.875.675.875.675.875a17.013,17.013,0,0,0,.511,2.3,9.016,9.016,0,0,0,.693,1.319,12.8,12.8,0,0,1-.1,3,3.218,3.218,0,0,1-1.465.675,28.323,28.323,0,0,0-3.167.608c-.863.3-3.361,1.246-3.8,3.179a.486.486,0,0,0,.48.59H27.354A.485.485,0,0,0,27.828,27.251Z" transform="translate(-4.501 -4.5)"/>
+                            </svg>
+
+                            <input 
+                                type="text"
+                                id="profileNameVal"
+                                value="{{ profile.name }}"
+                                placeholder="Имя" />
+
+                            <svg id="nameError" class="error" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" " role="img" aria-label="Warning Icon "><title>Warning Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.999756C4.13401 0.999756 1 4.13376 1 7.99976C1 11.8657 4.13401 14.9998 8 14.9998C11.866 14.9998 15 11.8657 15 7.99976C15 4.13376 11.866 0.999756 8 0.999756ZM0 7.99976C0 3.58148 3.58172 -0.000244141 8 -0.000244141C12.4183 -0.000244141 16 3.58148 16 7.99976C16 12.418 12.4183 15.9998 8 15.9998C3.58172 15.9998 0 12.418 0 7.99976ZM7.5 8.99951V3.99999H8.5V8.99951H7.5ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="currentColor"></path></svg>
+                            <svg id="nameOK" class="ok" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" text-carnation" role="img" aria-label="Complete Tick Icon "><title>Complete Tick Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.99854C4.13401 0.99854 1 4.13254 1 7.99854C1 11.8645 4.13401 14.9985 8 14.9985C11.866 14.9985 15 11.8645 15 7.99854C15 4.13254 11.866 0.99854 8 0.99854ZM0 7.99854C0 3.58026 3.58172 -0.00146484 8 -0.00146484C12.4183 -0.00146484 16 3.58026 16 7.99854C16 12.4168 12.4183 15.9985 8 15.9985C3.58172 15.9985 0 12.4168 0 7.99854Z" fill="green"></path><path d="M7.5 10.4985L7.14645 10.8521L7.92183 10.767L7.5 10.4985ZM4.64645 8.35209L7.14645 10.8521L7.85355 10.145L5.35355 7.64498L4.64645 8.35209ZM7.92183 10.767L11.4218 5.26697L10.5782 4.7301L7.07817 10.2301L7.92183 10.767Z" fill="green"></path></svg>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div id="profileEmail" class="field">
+
+                            <svg class='field-icon' id="accountEmail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                                <defs>
+                                  <clipPath id="clip-Пользовательский_размер_1">
+                                    <rect width="35" height="35"/>
+                                  </clipPath>
+                                </defs>
+                                <g id="Пользовательский_размер_1" data-name="Пользовательский размер – 1" clip-path="url(#clip-Пользовательский_размер_1)">
+                                  <rect width="35" height="35" fill="none"/>
+                                  <g id="Icon_feather-mail" data-name="Icon feather-mail" transform="translate(-0.891 0.157)">
+                                    <path id="Контур_3" data-name="Контур 3" d="M6.078,6H30.7a3.046,3.046,0,0,1,3.078,2.994V26.958A3.046,3.046,0,0,1,30.7,29.952H6.078A3.046,3.046,0,0,1,3,26.958V8.994A3.046,3.046,0,0,1,6.078,6Z" transform="translate(0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                    <path id="Контур_4" data-name="Контур 4" d="M33.782,9,18.391,18.973,3,9" transform="translate(0 -0.151)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+                                  </g>
+                                </g>
+                            </svg>
+
+                            <input 
+                                type="text"
+                                id="profileEmailVal"
+                                value="{{ user.username }}"
+                                placeholder="Почта" />
+
+                            <svg id="emailError" class="error" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" " role="img" aria-label="Warning Icon "><title>Warning Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.999756C4.13401 0.999756 1 4.13376 1 7.99976C1 11.8657 4.13401 14.9998 8 14.9998C11.866 14.9998 15 11.8657 15 7.99976C15 4.13376 11.866 0.999756 8 0.999756ZM0 7.99976C0 3.58148 3.58172 -0.000244141 8 -0.000244141C12.4183 -0.000244141 16 3.58148 16 7.99976C16 12.418 12.4183 15.9998 8 15.9998C3.58172 15.9998 0 12.418 0 7.99976ZM7.5 8.99951V3.99999H8.5V8.99951H7.5ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="currentColor"></path></svg>
+                            <svg id="emailOK" class="ok" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" text-carnation" role="img" aria-label="Complete Tick Icon "><title>Complete Tick Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.99854C4.13401 0.99854 1 4.13254 1 7.99854C1 11.8645 4.13401 14.9985 8 14.9985C11.866 14.9985 15 11.8645 15 7.99854C15 4.13254 11.866 0.99854 8 0.99854ZM0 7.99854C0 3.58026 3.58172 -0.00146484 8 -0.00146484C12.4183 -0.00146484 16 3.58026 16 7.99854C16 12.4168 12.4183 15.9985 8 15.9985C3.58172 15.9985 0 12.4168 0 7.99854Z" fill="green"></path><path d="M7.5 10.4985L7.14645 10.8521L7.92183 10.767L7.5 10.4985ZM4.64645 8.35209L7.14645 10.8521L7.85355 10.145L5.35355 7.64498L4.64645 8.35209ZM7.92183 10.767L11.4218 5.26697L10.5782 4.7301L7.07817 10.2301L7.92183 10.767Z" fill="green"></path></svg>
+
+                        </div>
+
+                        <!-- Password -->
+                        <div id="profilePassword" class="field">
+
+                            <svg class='field-icon' id="accountPassword" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="35" viewBox="0 0 35 35">
+                                <defs>
+                                  <clipPath id="clip-Пользовательский_размер_1">
+                                    <rect width="35" height="35"/>
+                                  </clipPath>
+                                </defs>
+                                <g id="Пользовательский_размер_1" data-name="Пользовательский размер – 1" clip-path="url(#clip-Пользовательский_размер_1)">
+                                  <rect width="35" height="35" fill="none"/>
+                                  <path id="Icon_ionic-ios-lock" data-name="Icon ionic-ios-lock" d="M30.072,15.369h-2v-3.89a8,8,0,1,0-15.992-.108v4h-2A3.341,3.341,0,0,0,6.75,18.7V34.693a3.341,3.341,0,0,0,3.332,3.332h19.99A3.341,3.341,0,0,0,33.4,34.693V18.7A3.341,3.341,0,0,0,30.072,15.369ZM21.243,25.764v5.731a1.194,1.194,0,0,1-1.108,1.2,1.167,1.167,0,0,1-1.224-1.166V25.764a2.665,2.665,0,1,1,2.332,0Zm4.5-10.395H14.413v-4a5.664,5.664,0,0,1,11.328,0Z" transform="translate(-2.577 -3.2)"/>
+                                </g>
+                            </svg> 
+
+                            <input 
+                                type="text"
+                                id="profilePasswordVal"
+                                placeholder="Новый пароль" />
+
+                            <svg id="passwordError" class="error" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" " role="img" aria-label="Warning Icon "><title>Warning Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.999756C4.13401 0.999756 1 4.13376 1 7.99976C1 11.8657 4.13401 14.9998 8 14.9998C11.866 14.9998 15 11.8657 15 7.99976C15 4.13376 11.866 0.999756 8 0.999756ZM0 7.99976C0 3.58148 3.58172 -0.000244141 8 -0.000244141C12.4183 -0.000244141 16 3.58148 16 7.99976C16 12.418 12.4183 15.9998 8 15.9998C3.58172 15.9998 0 12.418 0 7.99976ZM7.5 8.99951V3.99999H8.5V8.99951H7.5ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="currentColor"></path></svg>
+                            <svg id="passwordOK" class="ok" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" text-carnation" role="img" aria-label="Complete Tick Icon "><title>Complete Tick Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.99854C4.13401 0.99854 1 4.13254 1 7.99854C1 11.8645 4.13401 14.9985 8 14.9985C11.866 14.9985 15 11.8645 15 7.99854C15 4.13254 11.866 0.99854 8 0.99854ZM0 7.99854C0 3.58026 3.58172 -0.00146484 8 -0.00146484C12.4183 -0.00146484 16 3.58026 16 7.99854C16 12.4168 12.4183 15.9985 8 15.9985C3.58172 15.9985 0 12.4168 0 7.99854Z" fill="green"></path><path d="M7.5 10.4985L7.14645 10.8521L7.92183 10.767L7.5 10.4985ZM4.64645 8.35209L7.14645 10.8521L7.85355 10.145L5.35355 7.64498L4.64645 8.35209ZM7.92183 10.767L11.4218 5.26697L10.5782 4.7301L7.07817 10.2301L7.92183 10.767Z" fill="green"></path></svg>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>         
+
+            <!-- Create folder form -->
+            <div class="create-folder">
+
+                <div class="wrapper">
+
+                    <button id="closeNewFolderForm">×</button>
+
+                    <span class="form-title">Новый блокнот</span>
+
+                    <form>
+
+                        <input 
+                            type="text"
+                            name="t"
+                            id="newFolderTitle"
+                            maxlength="50"
+                            placeholder="Заголовок">
+
+                        <button 
+                            type="submit" 
+                            class="create-folder-btn"
+                            hx-post="{% url 'app:create-folder' %}"
+                            hx-target=".folders">Создать</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+            
+            <!-- Edit folder form -->
+            <div class="edit-folder">
+
+                <div class="wrapper">
+
+                    <button id="closeEditFolderForm">×</button>
+
+                    <span class="form-title">Редактировать блокнот</span>
+
+                    <div class="form">
+
+                        <input 
+                            type="text"
+                            id="editFolderTitle"
+                            placeholder="Заголовок">
+
+                        <button 
+                            type="submit" 
+                            class="edit-folder-btn">Сохранить</button>
+
+                    </div>
+
+                        <!-- htmx deletion form -->
+                    <form>
+
+                        <input 
+                            type="text"
+                            name="f"
+                            id="deleteFolderUID"
+                            hidden />
+
+                        <button 
+                            class="delete-folder-btn"
+                            hx-post="{% url 'app:delete-folder' %}"
+                            hx-target=".folders">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.008" height="24.68" viewBox="0 0 18.008 24.68">
+                                <g id="Icon_ionic-ios-trash" data-name="Icon ionic-ios-trash" transform="translate(-8.297 -4.5)">
+                                <path id="Контур_3" data-name="Контур 3" d="M9.359,9l1.525,20.44a1.981,1.981,0,0,0,1.894,2.06h9.114a1.981,1.981,0,0,0,1.894-2.06L25.292,9ZM13.34,27.633,12.907,11.25h1.2l.446,16.383Zm4.544,0H16.721V11.25h1.164Zm3.381,0h-1.2L20.5,11.25h1.2Z" transform="translate(0 -2.32)"/>
+                                <path id="Контур_4" data-name="Контур 4" d="M24.347,6.469H22L20.283,4.852a1.269,1.269,0,0,0-.861-.352H15.193a1.288,1.288,0,0,0-.874.352L12.6,6.469H10.254A1.733,1.733,0,0,0,8.3,8.3H26.3A1.733,1.733,0,0,0,24.347,6.469Z"/>
+                                </g>
+                            </svg>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Current note photo carousel -->
+            <div class="photo-carousel">
+                
+                <button id="closePhoto">×</button>
+
+                <button id="previousPhoto">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="-4.5 0 19 19" class="cf-icon-svg"><path d="M8.4 17.269a1.026 1.026 0 0 1-.727-.302l-6.801-6.8a1.03 1.03 0 0 1 0-1.456l6.8-6.8a1.03 1.03 0 0 1 1.456 1.455L3.055 9.439l6.073 6.073A1.03 1.03 0 0 1 8.4 17.27z"/></svg>
+
+                </button>
+                <button id="nextPhoto">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" transform="scale(-1,-1)" width="35px" height="35px" viewBox="-4.5 0 19 19" class="cf-icon-svg"><path d="M8.4 17.269a1.026 1.026 0 0 1-.727-.302l-6.801-6.8a1.03 1.03 0 0 1 0-1.456l6.8-6.8a1.03 1.03 0 0 1 1.456 1.455L3.055 9.439l6.073 6.073A1.03 1.03 0 0 1 8.4 17.27z"/></svg>
+
+                </button>
+            
+            </div>
+
+            <!-- Current note -->
+            <div class="current-note">
+
+                <div class="wrapper" id="currentNoteWrapper">
+
+                    <div class="top">
+                        
+                        <input type="text" placeholder="Заголовок" class="current-note-title">
+
+                        <button type="button" id="closeCurrentNote">×</button>
+                    
+                    </div>
+
+                    <div class="photos" id="photosCurrent">
+
+                        {% include 'components/current-note-photos.html' %}
+
+                    </div>
+
+                    <div class="rte">
+
+                        <div class="rte-wrapper">
+
+                            <button id="boldBtnCurrent" style="padding-top: 4px;"><b>Ж</b></button>
+                            <button id="italicBtnCurrent" style="padding: 2px 3px 0 0;"><i>К</i></button>
+                            <button id="underlineBtnCurrent" style="padding-top: 1px;"><u>С</u></button>
+                            <button id="strikeBtnCurrent" style="padding-top: 4px;"><s>О</s></button>
+                            
+                            <button id="ulBtnCurrent">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23.798" height="18.84" viewBox="0 0 23.798 18.84">
+                                    <g id="Icon_ionic-ios-list" data-name="Icon ionic-ios-list" transform="translate(-4.5 -7.313)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M7.971,17.767a1.735,1.735,0,1,1-1.735-1.735A1.735,1.735,0,0,1,7.971,17.767Z" transform="translate(0 -1.034)"/>
+                                    <path id="Контур_2" data-name="Контур 2" d="M7.971,9.048A1.735,1.735,0,1,1,6.235,7.313,1.735,1.735,0,0,1,7.971,9.048Z"/>
+                                    <path id="Контур_3" data-name="Контур 3" d="M7.971,26.485A1.735,1.735,0,1,1,6.235,24.75a1.735,1.735,0,0,1,1.735,1.735Z" transform="translate(0 -2.068)"/>
+                                    <path id="Контур_4" data-name="Контур 4" d="M28.236,16.875h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -1.134)"/>
+                                    <path id="Контур_5" data-name="Контур 5" d="M28.236,25.594h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -2.168)"/>
+                                    <path id="Контур_6" data-name="Контур 6" d="M13.331,10.139h14.9a.992.992,0,0,0,0-1.983h-14.9a.992.992,0,0,0,0,1.983Z" transform="translate(-0.93 -0.1)"/>
+                                    </g>
+                                </svg>
+
+                            </button>
+
+                            <button id="olBtnCurrent">
+
+                                <svg style="padding-top: 6px;" xmlns="http://www.w3.org/2000/svg" width="23.717" height="25.685" viewBox="0 0 23.717 25.685">
+                                    <g id="Icon_ionic-ios-list" data-name="Icon ionic-ios-list" transform="translate(-4.549 -3.733)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M6.235,16.031Z" transform="translate(0 -1.034)"/>
+                                    <path id="Контур_4" data-name="Контур 4" d="M28.236,16.875h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -1.134)"/>
+                                    <path id="Контур_5" data-name="Контур 5" d="M28.236,25.594h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -2.168)"/>
+                                    <path id="Контур_6" data-name="Контур 6" d="M13.331,10.139h14.9a.992.992,0,0,0,0-1.983h-14.9a.992.992,0,0,0,0,1.983Z" transform="translate(-0.93 -0.1)"/>
+                                    <text id="_2" data-name="2" transform="translate(4.549 27.417)" font-size="8" font-family="SG"><tspan x="0" y="0">3</tspan></text>
+                                    <text id="_2-2" data-name="2" transform="translate(4.549 11.733)" font-size="8" font-family="SG"><tspan x="0" y="0">1</tspan></text>
+                                    </g>
+                                    <text id="_2-3" data-name="2" transform="translate(0 15.842)" font-size="8" font-family="SG"><tspan x="0" y="0">2</tspan></text>
+                                </svg>
+
+                            </button>
+                            
+                            <button id="photoBtnCurrent">
+
+                                <svg style="padding-left: 1px;" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 0 24 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.93334 6.47005C1.93334 3.96453 3.96446 1.93341 6.46998 1.93341H17.5299C20.0354 1.93341 22.0665 3.96453 22.0665 6.47005V8.31337V17.53C22.0665 20.0355 20.0354 22.0666 17.5299 22.0666L8.3133 22.0666L6.46997 22.0666C3.96446 22.0666 1.93334 20.0355 1.93334 17.53V12.0198C1.93303 12.0067 1.93303 11.9935 1.93334 11.9804V6.47005ZM20.3665 6.47005V7.48245C15.4573 7.70571 12.2527 9.86213 10.2708 12.5638C7.97192 10.7456 5.3558 10.6106 3.63334 10.9059V6.47005C3.63334 4.90342 4.90334 3.63341 6.46998 3.63341H17.5299C19.0965 3.63341 20.3665 4.90342 20.3665 6.47005ZM3.63334 17.53V12.636C4.97128 12.3342 7.33257 12.3323 9.35002 14.0066C8.14528 16.1862 7.61609 18.5212 7.49255 20.3666H6.46997C4.90334 20.3666 3.63334 19.0966 3.63334 17.53ZM11.1527 14.2924C9.88823 16.3243 9.33147 18.5993 9.19679 20.3666H17.5299C19.0965 20.3666 20.3665 19.0966 20.3665 17.53V9.18438C15.5975 9.42387 12.7791 11.679 11.1527 14.2924ZM7.85247 8.31337C8.616 8.31337 9.23496 7.69441 9.23496 6.93088C9.23496 6.16735 8.616 5.54839 7.85247 5.54839C7.08894 5.54839 6.46998 6.16735 6.46998 6.93088C6.46998 7.69441 7.08894 8.31337 7.85247 8.31337Z" fill="#1C1C1C"/>
+                                </svg>
+
+                            </button>
+                            
+                            <button id="folderBtnCurrent">
+
+                                <svg style="padding-left: 1px;" xmlns="http://www.w3.org/2000/svg" width="21.364" height="23.313" viewBox="0 0 21.364 23.313">
+                                    <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-68 461.1)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M68-449.349V-437.7h2.444V-461H68Z" transform="translate(0 -0.094)"></path>
+                                    <path id="Контур_2" data-name="Контур 2" d="M137-449.443v11.657l7.121-.017,7.116-.017.438-.148a3.994,3.994,0,0,0,2.489-2.307c.29-.767.29-.642.273-9.4-.023-9.156.017-8.36-.455-9.315a3.938,3.938,0,0,0-2.347-1.938c-.392-.131-.449-.131-3.166-.154L145.7-461.1l-.011,4.354-.017,4.359-1.176-.943c-.648-.517-1.193-.943-1.211-.943s-.563.426-1.211.943l-1.176.943-.017-4.353-.011-4.353H137Z" transform="translate(-65.078 0)"></path>
+                                    </g>
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Note's folders -->
+                    <div class="current-note-folders-form">
+                        
+                        <div id="closeCurrentNoteFoldersForm">×</div>
+
+                        <input 
+                            type="text"
+                            class="folder-search"
+                            placeholder="Название блокнотика"
+                            maxlength="50">
+
+                        <span class="folder-title"><b>Блокноты заметки</b></span>
+
+                        <div class="folder-list"></div>
+
+                        <form class="create-new-folder-from-search-current">
+
+                            <input 
+                                type="text" 
+                                name="t" 
+                                id="searchFolderTitle" 
+                                hidden />
+
+                            <button
+                                id="createFolderInNote"
+                                hx-post="{% url 'app:create-folder' %}"
+                                hx-target=".folders">Создать</button>
+
+                        </form>
+
+                    </div>
+                    
+                    <!-- New photo form -->
+                    <form 
+                        hx-encoding="multipart/form-data"
+                        hx-post="{% url 'app:upload-photo-to-note' %}"
+                        hx-target="#photosCurrent">
+                    
+                        <input type="text" name="i" class="current-note-uid" hidden />
+                        <input type="file" name="p" id="currentNotePhotoInput" hidden />
+                        <button type="submit" id="currentNotePhotoSubmit" style="display: none;"></button>
+
+                    </form>
+
+                    <div class="content">
+
+                        <div contenteditable="true" 
+                            class="current-note-content"
+                            placeholder="Я помню чудное мгновенье..."></div>
+
+                    </div>
+
+                    <div class="current-note-folders"></div>
+
+                    <div id="currentNoteContents">{% include 'components/current-note.html' %}</div>
+
+                </div>
+                
+            </div>
+
+            <!-- TopNav -->
+            <div class="topnav">
+
+                <div class="topnav-wrapper">
+
+                    <div class="toggle-sidenav">
+
+                        <div id="toggleSidenavBtn">
+    
+                            <svg xmlns="http://www.w3.org/2000/svg" width="19.394" height="28.21" viewBox="0 0 19.394 28.21">
+                                <path id="Icon_awesome-lightbulb" data-name="Icon awesome-lightbulb" d="M5.293,25.033a1.764,1.764,0,0,0,.3.975l.942,1.415A1.763,1.763,0,0,0,8,28.21h3.4a1.763,1.763,0,0,0,1.468-.787l.942-1.415a1.762,1.762,0,0,0,.3-.975l0-2.113H5.29l0,2.113ZM0,9.7a9.643,9.643,0,0,0,2.4,6.379,15.834,15.834,0,0,1,2.877,5.039c0,.014.006.043.006.043h8.829c0-.014,0-.028.006-.043a15.834,15.834,0,0,1,2.877-5.039A9.7,9.7,0,1,0,0,9.7ZM9.7,5.289A4.413,4.413,0,0,0,5.289,9.7a.882.882,0,0,1-1.763,0A6.178,6.178,0,0,1,9.7,3.526a.882.882,0,0,1,0,1.763Z" transform="translate(0 0)"></path>
+                            </svg>
+    
+                        </div>
+    
+                    </div>
+    
+                    <!-- Light/dark mode btn -->
+                    <div class="mode">
+    
+                        <label class="toggle-mode">
+
+                            {% if profile.dark_mode %}
+                            
+                                <input class='toggle-checkbox' id="modeCB" type='checkbox' checked></input>
+    
+                                <script>
+    
+                                    $('body').addClass('dark');
+    
+                                </script>
+    
+                            {% else %}
+    
+                                <input class='toggle-checkbox' id="modeCB" type='checkbox'></input>
+    
+                            {% endif %}
+
+                            <div class='toggle-slot'>
+                            <div class='sun-icon-wrapper'>
+                                <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+                            </div>
+                            <div class='toggle-button'></div>
+                            <div class='moon-icon-wrapper'>
+                                <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+                            </div>
+                            </div>
+
+                        </label>
+    
+                    </div>
+
+                    <a id="loginBtn" href="/login">
+                    
+                        <div class="auth-btn" id="loginBtn">
+            
+                            <svg class="login" xmlns="http://www.w3.org/2000/svg" width="29.684" height="26.574" viewBox="0 0 29.684 26.574">
+                                <path id="Icon_open-account-login" data-name="Icon open-account-login" d="M8.115-.324c-3.83.766-3.064,2.3,0,3.064s9.192-3.83,12.256,0,3.064,11.49,0,15.321-9.192-.766-12.256,0-3.83,2.3,0,3.064,11.49,5.362,15.321,0,3.83-16.087,0-21.449S11.946-1.09,8.115-.324ZM11.18,5.8c-1.532-.383,0,3.064,0,3.064s-9.192-.766-12.256,0-3.064,2.3,0,3.064,12.256,0,12.256,0-1.532,3.447,0,3.064,8.1-2.193,8.1-4.491S12.712,6.187,11.18,5.8Z" transform="translate(3.375 2.887)"/>
+                            </svg>
+            
+            
+                        </div>
+            
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- SideNav -->
+            <div class="sidenav">
+
+                <a href="/register">
+
+                    <div 
+                        class="page active"
+                        id="homeSection"
+                        >
+
+                        <div class="icon">
+
+                            <svg class="home" xmlns="http://www.w3.org/2000/svg" width="29.174" height="25.726" viewBox="0 0 29.174 25.726">
+                                <path id="Icon_material-home" data-name="Icon material-home" d="M14.192,28.373c1.755-2.106-1.4-6.319,0-8.426a3.286,3.286,0,0,1,5.617,0c1.4,2.106-1.755,6.319,0,8.426s5.266,2.809,7.022,0,0-11.234,0-11.234,6.67,3.16,4.213,0S24.023,4.5,17,4.5,5.416,13.979,2.958,17.139s4.213,0,4.213,0-1.755,8.426,0,11.234S12.437,30.48,14.192,28.373Z" transform="translate(-2.414 -4.5)"/>
+                            </svg>
+
+                        </div>
+
+                        <span class="page-title">Дом</span>
+
+                    </div>
+
+                </a>
+
+                <a href="/register">
+
+                    <div 
+                        class="page" 
+                        id="lovedSection"
+                        >
+
+                        <div class="icon">
+
+                            <svg style="fill: #e31b23; padding-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="24.806" height="21.933" viewBox="0 0 24.806 21.933">
+                                <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M22.4,3.747a6.576,6.576,0,0,0-9.04.666l-.954.994-.954-.994a6.576,6.576,0,0,0-9.04-.666,7.08,7.08,0,0,0-.48,10.178L11.3,23.707a1.508,1.508,0,0,0,2.195,0l9.375-9.781A7.076,7.076,0,0,0,22.4,3.747Z" transform="translate(0.001 -2.248)"/>
+                            </svg>
+
+                        </div>
+
+                        <span class="page-title" style="color: #e31b23;">Любимое</span>
+
+                    </div>
+
+                </a>
+
+                <a href="/register">
+
+                    <div class="page" id="newFolderInit">
+
+                        <div class="icon">
+    
+                            <span>+</span>
+    
+                        </div>
+    
+                        <span class="page-title">Новый блокнот</span>
+    
+                    </div>
+
+                </a>
+
+                <a href="/register">
+
+                    <div 
+                        class="page"
+                        id="archiveSection"
+                        >
+
+                        <div class="icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25.015" height="22.657" viewBox="0 0 25.015 22.657">
+                                <g id="Icon_ionic-ios-archive" data-name="Icon ionic-ios-archive" transform="translate(-3.375 -4.5)">
+                                <path id="Контур_1" data-name="Контур 1" d="M28.149,7.761H3.616a.238.238,0,0,1-.241-.233V6.363A1.892,1.892,0,0,1,5.3,4.5H26.465A1.892,1.892,0,0,1,28.39,6.363V7.528A.238.238,0,0,1,28.149,7.761Z"/>
+                                <path id="Контур_2" data-name="Контур 2" d="M27.169,10.266H4.982a.476.476,0,0,0-.482.466V25.988a1.9,1.9,0,0,0,1.929,1.863H25.722a1.9,1.9,0,0,0,1.929-1.863V10.731A.476.476,0,0,0,27.169,10.266ZM19.09,18.534h-6a.856.856,0,0,1-.862-.716.826.826,0,0,1,.838-.914h6a.856.856,0,0,1,.862.716A.829.829,0,0,1,19.09,18.534Z" transform="translate(-0.193 -0.694)"/>
+                                </g>
+                            </svg>
+
+                        </div>
+
+                        <span class="page-title">Архив</span>
+
+                    </div>
+
+                </a>
+
+                <a href="/register">
+
+                    <div 
+                        class="page"
+                        id="trashSection"
+                        >
+
+                        <div class="icon">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18.008" height="24.68" viewBox="0 0 18.008 24.68">
+                                <g id="Icon_ionic-ios-trash" data-name="Icon ionic-ios-trash" transform="translate(-8.297 -4.5)">
+                                <path id="Контур_3" data-name="Контур 3" d="M9.359,9l1.525,20.44a1.981,1.981,0,0,0,1.894,2.06h9.114a1.981,1.981,0,0,0,1.894-2.06L25.292,9ZM13.34,27.633,12.907,11.25h1.2l.446,16.383Zm4.544,0H16.721V11.25h1.164Zm3.381,0h-1.2L20.5,11.25h1.2Z" transform="translate(0 -2.32)"/>
+                                <path id="Контур_4" data-name="Контур 4" d="M24.347,6.469H22L20.283,4.852a1.269,1.269,0,0,0-.861-.352H15.193a1.288,1.288,0,0,0-.874.352L12.6,6.469H10.254A1.733,1.733,0,0,0,8.3,8.3H26.3A1.733,1.733,0,0,0,24.347,6.469Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+
+                        <span class="page-title">Корзина</span>
+
+                    </div>
+
+                </a>
+
+            </div>
+            
+            <!-- New note form -->
+            <div class="new-note">
+
+                <div class="wrapper">
+
+                    <div class="top">
+
+                        <div class="filters">
+
+                            <div id="newNoteLove">
+
+                                <svg style="padding-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="24.806" height="21.933" viewBox="0 0 24.806 21.933">
+                                    <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M22.4,3.747a6.576,6.576,0,0,0-9.04.666l-.954.994-.954-.994a6.576,6.576,0,0,0-9.04-.666,7.08,7.08,0,0,0-.48,10.178L11.3,23.707a1.508,1.508,0,0,0,2.195,0l9.375-9.781A7.076,7.076,0,0,0,22.4,3.747Z" transform="translate(0.001 -2.248)"/>
+                                </svg>
+
+                            </div>
+
+                            <div id="newNotePin">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23.858" height="23.858" viewBox="0 0 23.858 23.858">
+                                    <path id="Icon_simple-pinboard" data-name="Icon simple-pinboard" d="M10.585,14.5l4.482,4.587-.716-4.038,6.1-7.522,3.408.182L16.323,0V2.936L9.152,9.542l-4.486-1.1L9.326,13.4,0,23.858,10.585,14.5Z"/>
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+                        <input 
+                            type="text" 
+                            class="new-note-title"
+                            placeholder="Я помню чудное мгновение...">
+
+                        <div id="closeNewNote">×</div>  
+
+                    </div>
+
+                    <div class="new-note-rte">
+
+                        <div class="rte-wrapper">
+
+                            <button id="boldBtnNew" style="padding-top: 4px;"><b>Ж</b></button>
+                            <button id="italicBtnNew" style="padding: 3px 3px 0 0;"><i>К</i></button>
+                            <button id="underlineBtnNew" style="padding-top: 3px;"><u>С</u></button>
+                            <button id="strikeBtnNew" style="padding: 4px 0 0 1px;"><s>О</s></button>
+                            
+                            <button id="ulBtnNew" style="padding-top: 2px;">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23.798" height="18.84" viewBox="0 0 23.798 18.84">
+                                    <g id="Icon_ionic-ios-list" data-name="Icon ionic-ios-list" transform="translate(-4.5 -7.313)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M7.971,17.767a1.735,1.735,0,1,1-1.735-1.735A1.735,1.735,0,0,1,7.971,17.767Z" transform="translate(0 -1.034)"/>
+                                    <path id="Контур_2" data-name="Контур 2" d="M7.971,9.048A1.735,1.735,0,1,1,6.235,7.313,1.735,1.735,0,0,1,7.971,9.048Z"/>
+                                    <path id="Контур_3" data-name="Контур 3" d="M7.971,26.485A1.735,1.735,0,1,1,6.235,24.75a1.735,1.735,0,0,1,1.735,1.735Z" transform="translate(0 -2.068)"/>
+                                    <path id="Контур_4" data-name="Контур 4" d="M28.236,16.875h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -1.134)"/>
+                                    <path id="Контур_5" data-name="Контур 5" d="M28.236,25.594h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -2.168)"/>
+                                    <path id="Контур_6" data-name="Контур 6" d="M13.331,10.139h14.9a.992.992,0,0,0,0-1.983h-14.9a.992.992,0,0,0,0,1.983Z" transform="translate(-0.93 -0.1)"/>
+                                    </g>
+                                </svg>
+
+                            </button>
+
+                            <button id="olBtnNew"  style="padding-top: 2px;">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23.717" height="25.685" viewBox="0 0 23.717 25.685">
+                                    <g id="Icon_ionic-ios-list" data-name="Icon ionic-ios-list" transform="translate(-4.549 -3.733)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M6.235,16.031Z" transform="translate(0 -1.034)"/>
+                                    <path id="Контур_4" data-name="Контур 4" d="M28.236,16.875h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -1.134)"/>
+                                    <path id="Контур_5" data-name="Контур 5" d="M28.236,25.594h-14.9a.992.992,0,0,0,0,1.983h14.9a.992.992,0,0,0,0-1.983Z" transform="translate(-0.93 -2.168)"/>
+                                    <path id="Контур_6" data-name="Контур 6" d="M13.331,10.139h14.9a.992.992,0,0,0,0-1.983h-14.9a.992.992,0,0,0,0,1.983Z" transform="translate(-0.93 -0.1)"/>
+                                    <text id="_2" data-name="2" transform="translate(4.549 27.417)" font-size="8" font-family="SG"><tspan x="0" y="0">3</tspan></text>
+                                    <text id="_2-2" data-name="2" transform="translate(4.549 11.733)" font-size="8" font-family="SG"><tspan x="0" y="0">1</tspan></text>
+                                    </g>
+                                    <text id="_2-3" data-name="2" transform="translate(0 15.842)" font-size="8" font-family="SG"><tspan x="0" y="0">2</tspan></text>
+                                </svg>
+
+                            </button>
+                            
+                            <button id="folderBtnNew">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.364" height="23.313" viewBox="0 0 21.364 23.313">
+                                    <g id="Сгруппировать_1" data-name="Сгруппировать 1" transform="translate(-68 461.1)">
+                                    <path id="Контур_1" data-name="Контур 1" d="M68-449.349V-437.7h2.444V-461H68Z" transform="translate(0 -0.094)"></path>
+                                    <path id="Контур_2" data-name="Контур 2" d="M137-449.443v11.657l7.121-.017,7.116-.017.438-.148a3.994,3.994,0,0,0,2.489-2.307c.29-.767.29-.642.273-9.4-.023-9.156.017-8.36-.455-9.315a3.938,3.938,0,0,0-2.347-1.938c-.392-.131-.449-.131-3.166-.154L145.7-461.1l-.011,4.354-.017,4.359-1.176-.943c-.648-.517-1.193-.943-1.211-.943s-.563.426-1.211.943l-1.176.943-.017-4.353-.011-4.353H137Z" transform="translate(-65.078 0)"></path>
+                                    </g>
+                                </svg>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div 
+                        contenteditable="true" 
+                        id="newNoteContentCE"
+                        placeholder="Я помню чудное мгновение..."></div>
+
+                    <form id="newNoteData">
+
+                        <!-- Sections -->
+                        <input 
+                            type="text" 
+                            name="f" 
+                            id="currentFolder" />
+
+                        <input 
+                            type="checkbox" 
+                            name="ls" 
+                            id="lovedSection" />
+
+                        <input 
+                            type="checkbox" 
+                            name="as" 
+                            class="archivedSection" />
+
+                        <!-- Content -->
+                        <input 
+                            type="text" 
+                            name='t' 
+                            id="newNoteTitle" />
+                    
+                        <input 
+                            type="text" 
+                            name='c' 
+                            id="newNoteContent" />
+
+                        <!-- Folders -->
+                        <input 
+                            type="text"
+                            name="b"
+                            id="newNoteFolders" />
+
+                        <!-- Filters -->
+                        <input 
+                            type="checkbox" 
+                            name="p" 
+                            id="newNotePinnedCB" />
+
+                        <input 
+                            type="checkbox" 
+                            name="l" 
+                            id="newNoteLoved" />
+                        
+
+                        <a href="/register">
+
+                            <button
+                                type="button"
+                                class="create-note-btn"
+                                >Создать</button>
+                            
+                        </a>
+        
+                    </form>
+
+                    <div class="new-note-folders-form">
+
+                        <div id="closeNewNoteFoldersForm">×</div>
+
+                        <input 
+                            type="text"
+                            id="newNoteFolderUIDS"
+                            hidden />
+
+                        <input 
+                            type="text"
+                            class="new-note-folder-search"
+                            placeholder="Название блокнота"
+                            maxlength="50">
+
+                        <span class="folder-title"><b>Блокноты заметки</b></span>
+
+                        <div class="new-note-folder-list"></div>
+
+                        <form class="create-new-folder-from-search">
+
+                            <input 
+                                type="text" 
+                                name="t" 
+                                id="searchFolderTitleNew" 
+                                hidden />
+
+                            <button
+                                id="createFolderInNoteNew"
+                                hx-post="{% url 'app:create-folder' %}"
+                                hx-target=".folders">Создать</button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Notes -->
+            <div class="notes">
+
+                {% include 'components/notes.html' %}
+
+                <div class="first-note">
+
+                    <span class="warn-text">Зафиксируй мгновение 💡</span>
+                    <span class="cta-text">Создай первую заметку ✍</span>
+                    <button class="cta-btn">Создать заметку</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <style>
+
+        @font-face {
+
+            font-family: Comfortaa;
+            src: url("{% static 'fonts/Comfortaa.ttf' %}");
+
+        }
+
+        @font-face {
+
+            font-family: SG;
+            src: url("{% static 'fonts/ShowcardGothic.otf' %}");
+        
+        }
+
+    </style>
+
+    <!-- Anal -->        
+    <script>
+
+        $(window).on('load', function() {
+
+            $.ajax({ 
+                
+                type: 'POST',
+
+                url: "{% url 'analytics:funnel' %}",
+                
+                data: {
+                    
+                    'csrfmiddlewaretoken': "{{ csrf_token }}",
+                    
+                }
+                
+            });
+
+        });
+
+    </script>
+
+    <!-- First note cta -->
+
+    <script>
+
+        if ($('.note-section').children('.note').length == 0) {
+
+            $('.first-note').css('display', 'flex');
+            $('.note-section-title').hide();
+
+        };
+        
+        $('.cta-btn').click(function() {
+
+            $('.new-note-title').focus();
+
+            $('.first-note').hide();
+
+        });
+
+       $('.new-note-title').focus(function(){
+
+            $('.first-note').hide();
+        
+       });
+
+    </script>
+
+    <!-- Mode -->
+    <script>
+
+        $('#modeCB').change(function() {
+
+            $('body').toggleClass('dark');
+
+        });
+
+    </script>
+
+    <!-- Neumorphism button animation -->
+
+    <script>
+
+        $('.auth-btn').click(function() {
+
+            $(this).addClass('in');
+
+            setTimeout(function() {
+
+                $('.auth-btn').removeClass('in');
+
+            }, 250);
+
+        });
+
+    </script>
+
+    <!-- Sidenav -->
+    <script>
+
+        sidenavOpen = false;
+
+        $('.sidenav').mouseenter(function() {
+
+            if (!sidenavOpen) {toggleSidenav();}
+
+            $('.sidenav').css('overflow-y', 'auto');
+            
+        });
+
+        $('.sidenav').mouseleave(function() {
+
+            if (!sidenavOpen) {toggleSidenav();}
+
+            $('.sidenav').css('overflow-y', 'hidden');
+
+        });
+
+        function toggleSidenav() {
+
+            if ($('.sidenav').hasClass('open')) {
+
+                $('.sidenav').removeClass('open');
+
+                $('.page-title').hide();
+                $('.page-title').css('opacity', 0);
+
+                $('.edit-folder-btn-init').hide();
+                $('.edit-folder-btn-init').css('opacity', 0);
+                
+            } else {
+
+                $('.sidenav').addClass('open');
+
+                $('.page-title').show();
+                $('.page-title').animate({'opacity': 1}, 750);
+
+                setTimeout(function() {
+
+                    $('.edit-folder-btn-init').css('display', 'flex');
+
+                    $('.edit-folder-btn-init').animate({
+
+                        'opacity': 1,
+
+                    }, 250);
+
+                }, 500);
+
+            }
+
+        }
+
+        $('#toggleSidenavBtn').click(function() {
+
+            $(this).toggleClass('active');
+
+            toggleSidenav();
+            
+            sidenavOpen = !sidenavOpen;
+
+        });
+
+        $('body').on('click', '#homeSection, #lovedSection, #folderSection, #archiveSection, #trashSection', function(e) {
+        
+            $('.page').removeClass('active');
+            $(this).addClass('active');
+
+            $('.notes').animate({'opacity': 0}, 500);
+
+            setTimeout(function() {
+
+                $('.notes').animate({'opacity': 1}, 500);
+
+            });
+
+        });
+
+        $('body').on('click', '#newFolderInit', function() {
+
+            $('#newFolderInit').addClass('active');
+
+            setTimeout(function() {
+
+                $('#newFolderInit').removeClass('active');
+
+            }, 250);
+
+        });
+
+
+        /* Edit folder */
+
+        editFolderFormShown = false;
+
+        $('body').on('click', '.edit-folder-btn-init', function() {
+
+            editFolderFormShown = true;
+
+            editFolderBtn = $(this);
+
+            editFolderBtn.addClass('active');
+
+            setTimeout(function() {
+
+                editFolderBtn.removeClass('active');
+
+            }, 250);
+ 
+            editingFolderUID = $(this).siblings('#folderUID').val();
+            previousTitle = $(this).siblings('.page-title').children('span').text();
+
+            $('#editFolderTitle').val(previousTitle);
+            $('#deleteFolderUID').val(editingFolderUID);
+
+            $('.edit-folder').css('display', 'flex');
+            $('.edit-folder').animate({'opacity': 1}, 250);
+
+        });
+
+            /* Folder title checks (emptiness) & (uniqueness) */
+
+        document.getElementById('editFolderTitle').addEventListener('input', function() {
+        
+            if ($(this).val().trim().length === 0) {
+
+                $('.edit-folder-btn').prop('disabled', true);
+
+            } else {
+
+                newTitle = $(this).val();
+
+                titleUnique = true;
+
+                $('.folders').children('.page').each(function() {
+
+                    title = $(this).children('.page-title').children('span').text();
+                        
+                    if (title == newTitle) {
+
+                        titleUnique = false;
+
+                    }
+
+                });
+                
+                if (titleUnique) {
+
+                    $('.edit-folder-btn').prop('disabled', false);
+
+                } else {
+
+                    $('.edit-folder-btn').prop('disabled', true);
+
+                }        
+
+            }
+
+        }, false);
+
+            /* Close form */
+        $('#closeEditFolderForm, .edit-folder-btn, .delete-folder-btn').click(function() { 
+
+            editFolderFormShown = false;
+
+            $('.edit-folder-btn-init').removeClass('active');
+
+            $('.edit-folder').animate({'opacity': 0}, 250);
+
+            setTimeout(function() {
+
+                $('.edit-folder').css('display', 'none');
+
+            }, 250);
+
+        });
+
+        $('#closeEditFolderForm').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('#closeEditFolderForm').removeClass('active');
+
+            }, 250);
+
+        });
+
+        $('.edit-folder-btn-init').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('.edit-folder-btn-init').removeClass('active');
+
+            }, 250);
+
+        });
+
+        $('.delete-folder-btn').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('.delete-folder-btn').removeClass('active');
+
+            }, 250);
+
+        });
+        
+            /* Redirect to home section if folder has been deleted */
+        $('.delete-folder-btn').click(function() {
+
+            document.getElementById('homeSection').click();
+
+        });
+
+            /* Update folder title */
+        $('.edit-folder-btn').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('.edit-folder-btn').removeClass('active');
+
+            }, 250)
+
+            $('.folders').children('.page').each(function() {
+
+                if ($(this).children('#folderUID').val() == editingFolderUID) {
+
+                    $(this).children('.page-title').children('span').text($('#editFolderTitle').val());
+
+                }
+
+            });
+
+            $('.note-section-title').text($('#editFolderTitle').val());
+
+            /* Submit ajax request only if the title has changed */
+
+            if ($('#editFolderTitle').val() != previousTitle) {
+
+                $.ajax({
+
+                    type: 'POST',
+
+                    url: "{% url 'app:edit-folder' %}",
+
+                    data: {
+
+                        'csrfmiddlewaretoken': "{{ csrf_token }}",
+                        'u': editingFolderUID,
+                        't': $('#editFolderTitle').val(),
+
+                    }
+
+                });
+
+            }
+
+        });
+
+        /* Icon bug */
+
+        setInterval(function() {
+
+            if ($('.page').width() == '55') {
+
+                $('.edit-folder-btn-init').hide();
+
+                $('.page-title').css('opacity', 0);
+
+            }
+
+        }, 10);
+
+    </script>
+
+    <!-- New note -->
+    <script>
+        
+        /* Extension & Condensation */
+
+        newNoteOpen = false;
+
+        $('.new-note-title').focus(function() {
+
+            newNoteFolders = [];
+            $('#newNoteFolders').val('');
+
+            if ($('#currentFolder').val()) {
+
+                currentFolderUID = $('#currentFolder').val();
+
+                newNoteFolders.push(currentFolderUID);
+                $('#newNoteFolders').val(newNoteFolders.join(' '));
+
+            }
+
+            if (!newNoteOpen) {
+
+                newNoteOpen = true;
+
+                $('.new-note').addClass('open');
+                setTimeout(function() {
+
+                    $('.new-note-rte, #newNoteContentCE, .new-note-folders, .create-note-btn').animate({'opacity': 1}, 750);
+
+                }, 750);
+
+                $('.new-note-title').attr('placeholder', 'Заголовок');
+                $('#newNoteContentCE').focus();
+
+            }
+
+        });
+
+        function clearNewNoteStyle() {
+
+            $('#boldBtnNew').removeClass('active');
+            $('#italicBtnNew').removeClass('active');
+            $('#underlineBtnNew').removeClass('active');
+            $('#strikeBtnNew').removeClass('active');
+            $('#ulBtnNew').removeClass('active');
+            $('#olBtnNew').removeClass('active');
+
+        }
+
+        $('#closeNewNote, .create-note-btn').click(function() {
+                  
+            $('.new-note-rte, #newNoteContentCE, .new-note-folders, .create-note-btn').animate({'opacity': 0}, 250);
+            
+            setTimeout(function() {
+                
+                $('.new-note').removeClass('open');
+                newNoteOpen = false;   
+                
+            }, 250);
+            
+            $('.new-note-title').attr('placeholder', 'Я помню чудное мгновение...');
+
+            clearNewNoteStyle();
+
+            /* Close folder form */
+            $('#folderBtnNew').removeClass('active');
+
+            $('.new-note-folders-form').animate({'opacity': 0}, 250);
+
+            setTimeout(function() {
+
+                $('.new-note-folders-form').hide();
+                
+            }, 250);
+
+            newFolderFormSearchOpen = false;
+
+        });
+
+        $('#closeNewNote').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('#closeNewNote').removeClass('active');
+
+            }, 250);
+
+        })
+
+        $('.create-note-btn').click(function() {
+
+            $(this).addClass('active');
+            setTimeout(function() {
+
+                $('.create-note-btn').removeClass('active');
+
+            }, 250);
+
+            /* After the notes are swapped into the DOM, clear all the new note form fields */
+            
+            document.body.addEventListener('htmx:afterSwap', function(evt) {
+
+                if (evt.detail.target === document.getElementsByClassName('notes')[0]) {
+
+                    $('#newNoteContentCE').html('');
+                    $('.new-note-title, #newNoteTitle, #newNoteContent').val('');
+
+                }
+    
+            });
+
+            clearNewNoteStyle();
+
+        });
+
+        /* Filters */
+
+            /* UI */
+        $('#newNoteLove, #newNotePin').click(function() {
+
+            $(this).toggleClass('active');
+
+        });
+
+            /* Love */
+        $('#newNoteLove').click(function() {
+
+            $('#newNoteLoved').prop('checked', !$('#newNoteLoved').prop('checked'));
+
+        });
+
+            /* Pin */
+        $('#newNotePin').click(function() {
+
+            $('#newNotePinnedCB').prop('checked', !$('#newNotePinnedCB').prop('checked'));
+
+        });
+
+        /* RTE */
+        
+        /* formatting check function */
+
+        function newStyleCheck() {
+
+            if (document.queryCommandState('bold')) {$('#boldBtnNew').addClass('active');} else {$('#boldBtnNew').removeClass('active');}
+            if (document.queryCommandState('italic')) {$('#italicBtnNew').addClass('active');} else {$('#italicBtnNew').removeClass('active');}
+            if (document.queryCommandState('underline')) {$('#underlineBtnNew').addClass('active');} else {$('#underlineBtnNew').removeClass('active');}
+            if (document.queryCommandState('strikeThrough')) {$('#strikeBtnNew').addClass('active');} else {$('#strikeBtnNew').removeClass('active');}
+            
+            if (document.queryCommandState('insertUnorderedList')) {$('#ulBtnNew').addClass('active');} else {$('#ulBtnNew').removeClass('active');}
+            if (document.queryCommandState('insertOrderedList')) {$('#olBtnNew').addClass('active');} else {$('#olBtnNew').removeClass('active');}
+
+        }
+
+        /* Remove forbidden style if text has been pasted */
+
+        document.getElementById('newNoteContentCE').addEventListener('paste', function(e) {
+
+            e.preventDefault();
+            var text = e.clipboardData.getData("text/plain");
+            document.execCommand("insertHTML", false, text);
+
+        });
+
+        /* formatting check events */
+
+        $('#newNoteContentCE').keyup(function() {
+
+            newStyleCheck();
+
+        });
+
+        $('#newNoteContentCE').click(function() {
+
+            newStyleCheck();
+
+        });
+
+        /* formatting */
+
+        $('#boldBtnNew').click(function() {
+
+            $('#newNoteContentCE').focus();
+            document.execCommand('bold');
+            $('#newNoteContentCE').focus();
+
+            newStyleCheck();
+
+        });
+
+        $('#italicBtnNew').click(function() {
+
+            $('#newNoteContentCE').focus();
+            document.execCommand('italic');
+            $('#newNoteContentCE').focus();
+
+            newStyleCheck();
+
+        });
+
+        $('#underlineBtnNew').click(function() {
+            
+            $('#newNoteContentCE').focus();
+            document.execCommand('underline');
+            $('#newNoteContentCE').focus();
+
+            newStyleCheck();
+
+        });
+
+        $('#strikeBtnNew').click(function() {
+            
+            $('#newNoteContentCE').focus();
+            document.execCommand('strikeThrough');
+            $('#newNoteContentCE').focus();
+
+            newStyleCheck();
+
+        });
+
+        $('#ulBtnNew').click(function() {
+
+            $('#newNoteContentCE').focus();
+            document.execCommand('insertUnorderedList');
+            $('#newNoteContentCE').focus();
+
+            newStyleCheck();
+
+        });
+
+        $('#olBtnNew').click(function() {
+
+            $('#newNoteContentCE').focus();
+            document.execCommand('insertOrderedList');
+            $('#newNoteContentCE').focus();
+            
+            newStyleCheck();
+
+        });
+    
+    </script>
+
+</html>

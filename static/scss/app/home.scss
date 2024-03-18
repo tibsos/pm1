@@ -3,7 +3,7 @@ $light-text: #1E2330;
 $light-placeholder: #6e7267;
 
 $dark-theme: #151718;
-$dark-text: #a3a7ab;
+$dark-text:     ;
 $dark-placeholder: #6e7072;
 
 $topnav-height: 70px;
@@ -23,6 +23,13 @@ body {
     overflow-y: auto;
 
     transition: background 1s ease-in-out;
+
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
 
 }
 
@@ -463,6 +470,44 @@ svg {
                 cursor: pointer;
                 transform: scale(0.2);
             
+            }
+
+        }
+
+        #loginBtn {
+
+            position: absolute;
+            right: 5px;
+
+            height: $topnav-height;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            transition: box-shadow 0.75s ease-in-out;
+
+            div {
+
+                width: 50px;
+                height: 50px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+
+                border-radius: 50px;
+
+                box-shadow:  3px 3px 8px #d8cec4,
+                    -3px -3px 8px #fffffa;
+            }
+
+            .auth-btn.in {
+
+                box-shadow: inset 3px 3px 8px #d8cec4,
+                        inset -3px -3px 8px #fffffa;
+    
             }
 
         }
@@ -3130,6 +3175,24 @@ body.dark {
 
                 box-shadow: inset 4px 4px 8px #0e1011,
                     inset -4px -4px 8px #1c1e1f;
+
+            }
+
+            #loginBtn {
+
+                .auth-btn {
+
+                    box-shadow:  4px 4px 8px #0e1011,
+                    -4px -4px 8px #1c1e1f;
+
+                }
+
+                .auth-btn.in {
+
+                    box-shadow: inset 4px 4px 8px #0e1011,
+                        inset -4px -4px 8px #1c1e1f;
+
+                }
 
             }
     

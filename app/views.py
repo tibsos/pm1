@@ -135,61 +135,78 @@ def check_subscription_expiration(request):
 
 """ APP """
 
-max_folders = 2
-max_notes = 5
-
-@lr
 def app(request):
 
-    folders = Folder.objects.filter(author = request.user)
-    notes = Note.objects.filter(author = request.user).filter(deleted = False).filter(archived = False)
+    if request.user.is_authenticated:
 
-    user_premium = request.user.profile.premium
-    
-    c = {}
+        folders = Folder.objects.filter(author = request.user)
+        notes = Note.objects.filter(author = request.user).filter(deleted = False).filter(archived = False)
 
-    if user_premium and not request.user.profile.premium_friend_offer_shown:
+        user_premium = request.user.profile.premium
         
-        c['first_friend_offer'] = True
+        c = {}
 
-        request.user.profile.premium_friend_offer_shown = True
-        request.user.profile.save()
+        if user_premium and not request.user.profile.premium_friend_offer_shown:
+            
+            c['first_friend_offer'] = True
 
+            request.user.profile.premium_friend_offer_shown = True
+            request.user.profile.save()
+
+        else:
+
+            c['first_friend_offer'] = False
+
+        if request.user.profile.invited_friends.all().count() < 2 and user_premium and not request.user.profile.invited_by:
+
+            c['friend_offer'] = True
+
+        else:
+
+            c['friend_offer'] = False 
+
+        c['user'] = request.user
+        c['profile'] = request.user.profile
+        c['premium'] = request.user.profile.premium
+
+        c['home'] = True
+
+        c['pinned_notes'] = notes.filter(pinned = True)
+        c['other_notes'] = notes.filter(pinned = False)
+
+        c['folders'] = folders
+
+        user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
+
+        # Check if the User-Agent contains a string that is common for mobile devices
+        is_mobile = 'mobile' in user_agent or 'android' in user_agent or 'iphone' in user_agent
+
+        if is_mobile:
+
+            return render(request, 'home_mobile.html', c)
+
+        else: 
+
+            return render(request, 'home.html', c)
+        
     else:
 
-        c['first_friend_offer'] = False
+        c = {}
 
-    if request.user.profile.invited_friends.all().count() < 2 and user_premium and not request.user.profile.invited_by:
+        c['home'] = True
 
-        c['friend_offer'] = True
+        user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
 
-    else:
+        # Check if the User-Agent contains a string that is common for mobile devices
+        is_mobile = 'mobile' in user_agent or 'android' in user_agent or 'iphone' in user_agent
 
-        c['friend_offer'] = False 
+        if is_mobile:
 
-    c['user'] = request.user
-    c['profile'] = request.user.profile
-    c['premium'] = request.user.profile.premium
+            return render(request, 'home-mobile-anonym.html', c)
 
-    c['home'] = True
+        else:
 
-    c['pinned_notes'] = notes.filter(pinned = True)
-    c['other_notes'] = notes.filter(pinned = False)
-
-    c['folders'] = folders
-
-    user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
-
-    # Check if the User-Agent contains a string that is common for mobile devices
-    is_mobile = 'mobile' in user_agent or 'android' in user_agent or 'iphone' in user_agent
-
-    if is_mobile:
-
-        return render(request, 'home_mobile.html', c)
-
-    else: 
-
-        return render(request, 'home.html', c)
+            return render(request, 'home-anonym.html', c)
 
 # Note sections
 

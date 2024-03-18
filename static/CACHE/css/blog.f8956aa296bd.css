@@ -1,0 +1,82 @@
+/* line 4, static/scss/blog/blog.scss */
+body {
+  background: #f6eadf; }
+
+/* line 10, static/scss/blog/blog.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 17, static/scss/blog/blog.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 23, static/scss/blog/blog.scss */
+::-webkit-scrollbar-thumb {
+  background: #1E2330;
+  border-radius: 50px; }
+
+/* line 31, static/scss/blog/blog.scss */
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/* line 33, static/scss/blog/blog.scss */
+.main {
+  position: relative;
+  top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 100px; }
+  /* line 44, static/scss/blog/blog.scss */
+  .main #latestPost {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 30px;
+    box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa; }
+    /* line 60, static/scss/blog/blog.scss */
+    .main #latestPost .image {
+      position: relative;
+      top: 20px;
+      width: 770px;
+      height: 400px; }
+      /* line 68, static/scss/blog/blog.scss */
+      .main #latestPost .image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px; }
+    /* line 82, static/scss/blog/blog.scss */
+    .main #latestPost .text {
+      position: relative;
+      top: 20px; }
+      /* line 87, static/scss/blog/blog.scss */
+      .main #latestPost .text h2 {
+        font-weight: normal; }
+  /* line 97, static/scss/blog/blog.scss */
+  .main .posts {
+    position: relative;
+    top: 100px; }
+  /* line 104, static/scss/blog/blog.scss */
+  .main .post {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    border-radius: 30px;
+    box-shadow: 3px 3px 8px #d8cec4, -3px -3px 8px #fffffa; }
+    /* line 116, static/scss/blog/blog.scss */
+    .main .post .image {
+      position: relative;
+      left: 5px;
+      width: 290px;
+      height: 100px; }
+      /* line 124, static/scss/blog/blog.scss */
+      .main .post .image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 30px;
+        object-fit: cover; }

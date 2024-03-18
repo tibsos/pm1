@@ -20,7 +20,7 @@ folder_urlpatterns = [
 
 notes_urlpatterns = [
 
-    path('home/', app, name = 'app'),
+    path('home', app, name = 'app'),
     path('dom/', home, name = 'home'),
 
     path('loved/', loved, name = 'loved'),

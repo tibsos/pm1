@@ -8,6 +8,12 @@ $dark-placeholder: #6e7072;
 
 $topnav-height: 70px;
 
+a {
+
+    text-decoration: none;
+    color: inherit;
+
+}
 
 body {
 
@@ -484,46 +490,6 @@ svg {
 
         }
 
-        .premium-btn {
-
-            position: relative;
-            top: 7.5px;
-            left: 70px;
-
-            width: 55px;
-            height: 55px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            float: left;
-
-            border-radius: 50px;
-
-            box-shadow:  3px 3px 8px #d8cec4,
-                -3px -3px 8px #fffffa;
-
-            cursor: pointer;
-
-            transition: box-shadow 1s ease-in-out;
-
-            #crownSVG {
-
-                width: 40px;
-                height: 40px;
-
-            }
-
-        }
-
-        .premium-btn.in {
-
-            box-shadow: inset 3px 3px 8px #d8cec4,
-                inset -3px -3px 8px #fffffa;
-
-        }
-
         .mode {
 
             position: absolute;
@@ -549,50 +515,40 @@ svg {
 
         }
 
-        .profile {
+        #loginBtn {
 
             position: absolute;
-            right: 10px;
+            right: 5px;
 
             height: $topnav-height;
-            width: 60px;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            float: left;
+            transition: box-shadow 0.75s ease-in-out;
 
-            cursor: pointer;
+            div {
 
-            .initials {
-
-                width: 55px;
-                height: 53px;
+                width: 50px;
+                height: 50px;
 
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-                padding-top: 2px;
+                flex-direction: row;
 
                 border-radius: 50px;
 
                 box-shadow:  3px 3px 8px #d8cec4,
-                -3px -3px 8px #fffffa;
-
-                font-weight: bold;
-                font-size: 18px;
-
-                transition: all 1s ease-in-out;
-
+                    -3px -3px 8px #fffffa;
             }
 
-            .initials.active {
+            .auth-btn.in {
 
-                box-shadow:  inset 3px 3px 8px #d8cec4,
-                    inset -3px -3px 8px #fffffa;
-        
+                box-shadow: inset 3px 3px 8px #d8cec4,
+                        inset -3px -3px 8px #fffffa;
+    
             }
 
         }

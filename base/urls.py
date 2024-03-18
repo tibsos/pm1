@@ -6,7 +6,7 @@ app_name = 'base'
 
 urlpatterns = [
 
-    path('', l, name = 'l'),
+    path('', l, name = 'landing'),
 
     path('contact/', c, name = 'c'),
     path('c/', cs, name = 'cs'), # submit contact form

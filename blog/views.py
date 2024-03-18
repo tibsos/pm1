@@ -8,6 +8,7 @@ def blog(request):
 
     c['user'] = request.user
     c['latest_post'] = Post.objects.latest('created_at')
+    c['posts'] = Post.objects.all()
 
     return render(request, 'blog.html', c)
 

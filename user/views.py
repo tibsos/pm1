@@ -45,7 +45,7 @@ def log_in(request):
         if u:
 
             login(request, u)
-            return redirect('/home/')
+            return redirect('/home')
 
         else: 
 
@@ -95,7 +95,7 @@ def register(request):
         login(request, user)
         
 
-        return redirect('/home/')
+        return redirect('/home')
 
    
 
@@ -157,7 +157,7 @@ def invited_register(request, premium_invite_uid):
             user = authenticate(username = username, password = password)
             login(request, user)
 
-            return redirect('/home/')
+            return redirect('/home')
         c = {}
 
         c['u'] = request.user
