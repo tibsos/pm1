@@ -629,6 +629,25 @@
 
                 <div 
                     class="page" 
+                    id="tasksSection"
+                    hx-get="{% url 'app:tasks' %}"
+                    hx-target=".notes"
+                    hx-trigger="click delay:0.5s">
+
+                    <div class="icon">
+
+                        <svg style="fill: #000; padding-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="24.806" height="21.933" viewBox="0 0 24.806 21.933">
+                            <path id="Icon_awesome-heart" data-name="Icon awesome-heart" d="M22.4,3.747a6.576,6.576,0,0,0-9.04.666l-.954.994-.954-.994a6.576,6.576,0,0,0-9.04-.666,7.08,7.08,0,0,0-.48,10.178L11.3,23.707a1.508,1.508,0,0,0,2.195,0l9.375-9.781A7.076,7.076,0,0,0,22.4,3.747Z" transform="translate(0.001 -2.248)"/>
+                        </svg>
+
+                    </div>
+
+                    <span class="page-title" style="color: #e31b23;">Задачи</span>
+
+                </div>
+
+                <div 
+                    class="page" 
                     id="lovedSection"
                     hx-get="{% url 'app:loved' %}"
                     hx-target=".notes"
@@ -1017,8 +1036,6 @@
             $('.first-note').hide();
 
         });
-
-       
 
     </script>
 

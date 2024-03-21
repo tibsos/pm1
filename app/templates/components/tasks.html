@@ -1,0 +1,48 @@
+<div class="wrapper">
+
+    <div class="create-task">
+
+        <form 
+            hx-post="{% url 'app:create-task' %}" 
+            hx-trigger="submit" 
+            hx-target="#allTasks">
+
+            <input 
+                type="text"
+                name="title"
+                id="newTaskTitle"
+                placeholder="Название задачи">
+
+            <button type="submit">+</button>
+
+        </form>
+
+    </div>
+
+    <span class="note-section-title">✔️ Задачи</span>
+    
+    <div id="allTasks">
+
+        {% for task in tasks %}
+        
+            <div class="task">
+
+                <span>{{ task.title }}</span>
+
+                <input 
+                    type="checkbox"
+                    class="task-completed">
+
+            </div>
+        
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<script>
+
+    $('.new-note').hide();
+
+</script>

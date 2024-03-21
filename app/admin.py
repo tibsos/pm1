@@ -1,6 +1,7 @@
 from django.contrib import admin as a
 
 from .models import *
+from .task_models import *
 
 @a.register(Photo)
 class PhotoAdmin(a.ModelAdmin):
@@ -27,3 +28,7 @@ a.site.register(Folder)
 @a.register(UserPayment)
 class UserPaymentAdmin(a.ModelAdmin):
     list_display = ('profile', 'paid_at', )
+
+@a.register(Task)
+class TaskAdmin(a.ModelAdmin):
+    list_display = ['user', 'created_at', 'updated_at']

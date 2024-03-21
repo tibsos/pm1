@@ -11,6 +11,7 @@ import datetime
 from django.contrib.auth.models import User
 
 from .models import *
+from .task_models import *
 
 from uuid import uuid4 as u4
 from yookassa import Configuration, Payment
@@ -20,7 +21,6 @@ from django.views.decorators.csrf import csrf_exempt
 # REAL
 Configuration.account_id = 960322
 Configuration.secret_key = 'live_8C0vHeO91zTwiXBNSZl1JgXcy01ztZPuNN_4DVjYeX4'
-
 
 
 """ PAYMENT """
@@ -227,6 +227,22 @@ def home(request):
     return render(request, 'components/notes.html', c)
 
 @lr
+def tasks(request):
+
+    c = {}
+
+    c['user'] = request.user
+
+    c['tasks'] = True
+
+    tasks = Task.objects.filter(user = request.user)
+
+    c['tasks'] = tasks.filter(completed = False)
+    c['completed_tasks'] = tasks.filter(completed = True)
+
+    return render(request, 'components/tasks.html', c)
+
+@lr
 def loved(request):
 
     notes = Note.objects.filter(author = request.user).filter(deleted = False).filter(archived = False).filter(loved = True)
@@ -280,6 +296,23 @@ def trash(request):
     c['deleted_notes'] = notes
 
     return render(request, 'components/notes.html', c)
+
+# Tasks
+
+@lr
+def create_task(request):
+
+    task_title = request.POST.get('title')
+
+    Task.objects.create(user = request.user, title = task_title)
+
+    tasks = 
+
+    c = {}
+
+
+
+    return render(request, 'components/tasks.html', c)
 
 # Mobile
 

@@ -81,71 +81,6 @@
 
             </form>
 
-            <!-- Premium btn -->
-
-            {% if not premium %}
-
-                <div class="premium-offer">
-
-                    <div class="wrapper">
-
-                        <div id="closePremiumOfferBtn">×</div>
-
-                        <video loop autoplay muted
-                            id="premiumOfferVid"
-                            src="{% static 'mp4/premium-offer-vid.mp4' %}"></video>
-
-                        <span class="cta-text">Пишите сколько угодно!</span>
-
-                        <a href="{% url 'app:initiate-payment' %}"><button id="upgradeBtn">Улучшить за 97₽/мес</button></a>
-
-                    </div>
-
-                </div>
-
-            {% endif %}
-
-            {% if premium and friend_offer %}
-
-                {% if first_friend_offer %}
-                    <div class="premium-offer" style="display: flex; opacity: 1;">                    
-                {% else %}
-                    <div class="premium-offer">
-                {% endif %}
-
-                    <div class="wrapper" style="height: 440px;">
-
-                        <div id="closePremiumOfferBtn">×</div>
-
-                        <img src="{% static 'img/friends_working.avif' %}">
-
-                        <span class="cta-text-friend">Вместе веселее!</span>
-                        <span class="cta-text-invite">Пригласите двух друзей по этой ссылке и они получат премиум <u>бесплатно</u>!</u></span>
-
-                        <div class="invite-link">
-
-                            <input type="text" id="inviteLink" value="bloknot-ik.ru/register/{{ profile.premium_invite_uid }}/" />
-
-                            <button id="copyLinkBtn">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" width="19.011" height="23.764" viewBox="0 0 19.011 23.764">
-                                    <g id="Icon_ionic-ios-copy" data-name="Icon ionic-ios-copy" transform="translate(-4.5 -1.125)">
-                                      <path id="Контур_1" data-name="Контур 1" d="M24.353,6.028h4.456a.3.3,0,0,0,.3-.3h0a1.382,1.382,0,0,0-.5-1.055L24.793,1.5a1.852,1.852,0,0,0-1.02-.366h0a.366.366,0,0,0-.366.366V5.088A.948.948,0,0,0,24.353,6.028Z" transform="translate(-5.595 -0.002)"/>
-                                      <path id="Контур_2" data-name="Контур 2" d="M18.195,5.086V1.125H11.709a1.589,1.589,0,0,0-1.584,1.584V19.344a1.589,1.589,0,0,0,1.584,1.584H23.591a1.589,1.589,0,0,0,1.584-1.584V7.313H20.423A2.231,2.231,0,0,1,18.195,5.086Z" transform="translate(-1.664)"/>
-                                      <path id="Контур_3" data-name="Контур 3" d="M7.074,22.061V5.625h-.99A1.589,1.589,0,0,0,4.5,7.209V24.636A1.589,1.589,0,0,0,6.084,26.22H18.758a1.589,1.589,0,0,0,1.584-1.584v-.99H8.659A1.589,1.589,0,0,1,7.074,22.061Z" transform="translate(0 -1.332)"/>
-                                    </g>
-                                </svg>
-
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            {% endif %}
-
             <!-- Profile dropdown btn -->
             <div class="profile-dropdown">
 
@@ -974,76 +909,6 @@
 
     </script>
 
-
-   <!-- Premium restrictions -->
-
-   {% if not user.profile.premium %}
-
-   <script>
-
-       /* Notes */
-
-       setInterval(function() {
-
-                if ($('.note-section').children('.note').length >= 3) {
-
-                    $('#newNoteNotAllowed').show();
-                    $('#newNoteAllowed').hide();
-
-            }
-
-            /* Folders */
-
-            if ($('.folders').children('.page').length >= 1) {
-
-                $('#newFolderInit').addClass('notAllowed');
-                $('#createFolderInNoteNew').hide();
-                $('#createFolderInNote').hide();
-                
-            }
-
-       }, 100);
-       
-   </script>
-
-{% endif %}
-
-    <!-- Friend premium -->
-    <script>
-
-        $('#copyLinkBtn').click(function() {
-
-            $('#inviteLink').select();
-            document.execCommand('copy');
-            document.getSelection().removeAllRanges();
-
-            $('.invite-link').animate({
-
-                'opacity': 0,
-
-            }, 500);
-
-            setTimeout(function() {
-
-                $('.invite-link').html('');
-                $('.invite-link').html(`
-                
-                    <span class='finish-invite'>Ссылка скопирована! <br> Отправьте ее своим друзьям 😌</span>
-
-                `);
-
-                $('.invite-link').animate({
-
-                    'opacity': 1,
-
-                }, 500);
-
-            }, 500);
-
-        })
-
-    </script>
-
     <!-- Mode -->
     <script>
 
@@ -1600,57 +1465,6 @@
 
     <!-- Pop-ups -->
 
-    <script>
-
-        /* Premium */
-
-        premiumPopUpOpen = false;
-
-        $('.premium-btn').click(function() { 
-
-            $(this).addClass('in');
-
-            setTimeout(function() {
-
-                $('.premium-btn').removeClass('in');
-
-            }, 250);
-
-            premiumPopUpOpen = true;
-
-            $('.premium-offer').css('display', 'flex');
-            $('.premium-offer').animate({
-
-                'opacity': 1,
-
-            }, 500);
-
-        });
-
-        $('#closePremiumOfferBtn').click(function() {
-
-            premiumPopUpOpen = false;
-
-            $(this).addClass('active');
-
-            $('.premium-offer').animate({
-
-                'opacity': 0,
-
-            }, 250);
-
-            setTimeout(function() {
-
-                $('.premium-offer').hide();
-
-                $('#closePremiumOfferBtn').removeClass('active');
-
-            }, 250);
-
-        });
-
-    </script>
-
     <!-- Search notes -->
     <script>
 
@@ -1716,19 +1530,6 @@
 
         });
 
-        $('#newNoteNotAllowed').click(function() {
-
-            premiumPopUpOpen = true;
-
-                $('.premium-offer').css('display', 'flex');
-                $('.premium-offer').animate({
-
-                    'opacity': 1,
-
-                }, 500);
-
-        })
-
         /* Get UID of newly added note and paste it to current note props */
 
         document.body.addEventListener('htmx:afterSwap', function(evt) {
@@ -1760,28 +1561,13 @@
 
         $('#newFolderInit').click(function() {
 
-            if ($(this).hasClass('notAllowed')) {
+            folderFormShown = true;
 
-                premiumPopUpOpen = true;
+            $('#newFolderTitle').val('');
+            $('.create-folder-btn').prop('disabled', true);
 
-                $('.premium-offer').css('display', 'flex');
-                $('.premium-offer').animate({
-
-                    'opacity': 1,
-
-                }, 500);
-
-            } else {
-
-                folderFormShown = true;
-
-                $('#newFolderTitle').val('');
-                $('.create-folder-btn').prop('disabled', true);
-
-                $('.create-folder').css('display', 'flex');
-                $('.create-folder').animate({'opacity': 1}, 250);
-
-            }
+            $('.create-folder').css('display', 'flex');
+            $('.create-folder').animate({'opacity': 1}, 250);
 
         });
 

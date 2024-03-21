@@ -6,6 +6,13 @@ app_name = 'app'
 
 urlpatterns = []
 
+tasks_urlpatterns = [
+
+    path('tasks', tasks, name = 'tasks'),
+    path('create-task', create_task, name = 'create-task'),
+
+]
+
 folder_urlpatterns = [
 
     path('create-folder/', create_folder, name = 'create-folder'),
@@ -72,5 +79,6 @@ mobile_urlpatterns = [
 urlpatterns += folder_urlpatterns
 urlpatterns += notes_urlpatterns
 urlpatterns += note_urlpatterns
+urlpatterns += tasks_urlpatterns
 urlpatterns += payment_urlpatterns
 urlpatterns += mobile_urlpatterns
