@@ -306,13 +306,23 @@ def create_task(request):
 
     Task.objects.create(user = request.user, title = task_title)
 
-    tasks = 
-
     c = {}
 
+    tasks = Task.objects.filter(user = request.user)
 
+    c['tasks'] = tasks.filter(completed = False)
+    c['completed_tasks'] = tasks.filter(completed = True)
 
     return render(request, 'components/tasks.html', c)
+
+@lr
+def complete_task(request):
+
+    task = Task.objects.get(uid = request.POST.get('u'))
+    task.completed = not task.completed
+    task.save()
+
+    return HttpResponse('k')
 
 # Mobile
 

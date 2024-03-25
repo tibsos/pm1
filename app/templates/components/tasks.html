@@ -1,48 +1,47 @@
-<div class="wrapper">
+<div id="allTasks">
 
-    <div class="create-task">
+    {% for task in tasks %}
+    
+        <div class="task">
 
-        <form 
-            hx-post="{% url 'app:create-task' %}" 
-            hx-trigger="submit" 
-            hx-target="#allTasks">
+            <span>{{ task.title }}</span>
 
             <input 
                 type="text"
-                name="title"
-                id="newTaskTitle"
-                placeholder="Название задачи">
+                class="taskUID"
+                value="{{ task.uid }}" hidden>
 
-            <button type="submit">+</button>
+            <input 
+                type="checkbox"
+                class="task-completed">
 
-        </form>
-
-    </div>
-
-    <span class="note-section-title">✔️ Задачи</span>
+        </div>
     
-    <div id="allTasks">
-
-        {% for task in tasks %}
-        
-            <div class="task">
-
-                <span>{{ task.title }}</span>
-
-                <input 
-                    type="checkbox"
-                    class="task-completed">
-
-            </div>
-        
-        {% endfor %}
-
-    </div>
+    {% endfor %}
 
 </div>
 
 <script>
 
-    $('.new-note').hide();
+    $('.task-completed').click(function() {
+
+        taskUID = $(this).siblings('.taskUID').val();
+        
+        $.ajax({
+
+            type: 'POST', 
+
+            url: "{% url 'app:complete-task' %}",
+
+            data: {
+
+                'csrfmiddlewaretoken': "{{ csrf_token }}",
+                'u': taskUID,
+
+            }
+
+        })
+
+    });
 
 </script>

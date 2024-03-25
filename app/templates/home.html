@@ -631,7 +631,7 @@
                     class="page" 
                     id="tasksSection"
                     hx-get="{% url 'app:tasks' %}"
-                    hx-target=".notes"
+                    hx-target="#allTasks"
                     hx-trigger="click delay:0.5s">
 
                     <div class="icon">
@@ -914,6 +914,7 @@
                 </div>
 
             </div>
+
             <!-- Notes -->
             <div class="notes">
 
@@ -926,6 +927,39 @@
                     <button class="cta-btn">Создать заметку</button>
 
                 </div>
+
+            </div>
+
+            <!-- Tasks -->
+
+            <div class="new-task">
+
+                <div class="create-task">
+
+                    <form 
+                        hx-post="{% url 'app:create-task' %}" 
+                        hx-trigger="submit" 
+                        hx-target=".tasks">
+            
+                        <input 
+                            type="text"
+                            name="title"
+                            id="newTaskTitle"
+                            placeholder="Название задачи">
+            
+                        <button type="submit">+</button>
+            
+                    </form>
+            
+                </div>
+            
+                <span class="note-section-title">✔️ Задачи</span>
+
+            </div>
+
+            <div class="tasks">
+
+                {% include 'components/tasks.html' %}
 
             </div>
 
@@ -1015,6 +1049,20 @@
             return /\d/.test(myString);
         
         }
+
+    </script>
+
+    <!-- Tasks -->
+
+    <script>
+
+        $('#tasksSection').click(function() {
+
+            $('.new-note').hide();
+            $('.notes').hide();
+            $('.new-task').css('display', 'flex');
+
+        });
 
     </script>
 

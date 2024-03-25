@@ -2,8 +2,11 @@ from django.db import models as m
 
 from django.contrib.auth.models import User
 
+from uuid import uuid4 as u4
+
 class Task(m.Model):
 
+    uid = m.UUIDField(default = u4)
     user = m.ForeignKey(User, on_delete = m.CASCADE)
 
     title = m.TextField()

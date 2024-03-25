@@ -1929,7 +1929,7 @@ svg {
 
 }
 
-.new-note, .notes {
+.new-note, .notes, .new-task, .tasks {
 
     position: relative;
 
@@ -2713,6 +2713,28 @@ svg {
     }
 
 }
+
+
+/* Tasks */
+
+.new-task {
+
+    position: relative;
+    top: 200px;
+
+    flex-direction: column;
+
+    display: none;
+
+}
+
+.tasks {
+
+    position: relative;
+    top: 300px;
+
+}
+
 
 /* Premium offer */
 
