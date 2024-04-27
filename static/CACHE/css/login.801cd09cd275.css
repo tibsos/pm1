@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* line 3, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  color: #ffffff; }
+
+/* line 13, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+body {
+  background: #151718; }
+
+/* line 19, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+button {
+  outline: none; }
+
+/* line 25, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 32, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 38, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+::-webkit-scrollbar-thumb {
+  background: #FFF;
+  border-radius: 50px; }
+
+/* line 45, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+svg {
+  fill: #FFF; }
+
+/* line 53, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+#Icon_feather-mail path {
+  stroke: #FFF; }
+
+/* line 61, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+button:disabled {
+  opacity: 0.2; }
+
+/* line 68, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  /* line 79, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+  .main .wrapper {
+    position: relative;
+    width: 340px;
+    height: 490px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526; }
+    /* line 91, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+    .main .wrapper .brand {
+      position: relative;
+      top: 20px;
+      width: 100%;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      /* line 105, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper .brand .wrapper {
+        width: 79px;
+        height: 79px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1px 0 0 1px;
+        border-radius: 50px;
+        box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526;
+        cursor: pointer; }
+        /* line 123, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+        .main .wrapper .brand .wrapper svg {
+          transform: scale(2); }
+    /* line 133, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+    .main .wrapper h1 {
+      position: relative;
+      top: 46px;
+      width: 340px;
+      text-align: center;
+      font-weight: normal;
+      font-size: 25px;
+      margin: 0; }
+    /* line 148, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+    .main .wrapper form {
+      position: relative;
+      top: 70px; }
+      /* line 153, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .fields {
+        width: 100%; }
+        /* line 157, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+        .main .wrapper form .fields div {
+          position: relative;
+          left: 4%;
+          width: 80%; }
+          /* line 164, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div svg:first-child {
+            position: absolute;
+            left: 15px;
+            top: 16px;
+            cursor: pointer; }
+          /* line 174, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div svg:nth-child(2) {
+            position: absolute;
+            right: -25px;
+            top: 19px;
+            opacity: 0; }
+          /* line 184, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div #email {
+            top: 10px;
+            left: 10px;
+            transform: scale(0.75); }
+          /* line 193, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div #lock {
+            top: 9px;
+            left: 10px;
+            transform: scale(0.75); }
+          /* line 202, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div input {
+            width: calc(100% - 30px);
+            height: 47px;
+            margin-bottom: 15px;
+            padding: 6px 20px 0 50px;
+            color: #fff;
+            border-radius: 50px;
+            border: none;
+            background: none;
+            box-shadow: inset 5px 5px 8px #08090a, inset -5px -5px 8px #222526;
+            font-size: 18px; }
+          /* line 224, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div input:focus {
+            outline: none; }
+          /* line 230, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+          .main .wrapper form .fields div .show-password-btn {
+            position: absolute;
+            left: 240px;
+            top: 0px; }
+            /* line 236, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+            .main .wrapper form .fields div .show-password-btn #hidden {
+              position: absolute;
+              top: 16px;
+              right: 178px;
+              opacity: 1;
+              display: none;
+              cursor: pointer; }
+      /* line 255, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .error {
+        position: absolute;
+        top: 65px;
+        left: 40px;
+        color: red;
+        opacity: 0;
+        transform: scale(1.2); }
+      /* line 269, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .error.reset {
+        top: 60px; }
+      /* line 275, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .unique {
+        position: absolute;
+        left: 20px;
+        top: -21px;
+        opacity: 0;
+        color: red; }
+      /* line 287, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .e {
+        display: block;
+        margin: 0 0 10px 20px;
+        color: red; }
+      /* line 296, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form a {
+        position: relative;
+        top: 5px;
+        left: 10%;
+        text-decoration: none;
+        color: #FFF; }
+      /* line 307, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form a:hover {
+        color: red; }
+      /* line 313, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+      .main .wrapper form .btns {
+        position: relative;
+        top: 40px; }
+        /* line 318, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+        .main .wrapper form .btns a {
+          left: 0; }
+        /* line 324, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+        .main .wrapper form .btns button {
+          position: relative;
+          left: 5%;
+          width: 90%;
+          height: 50px;
+          padding-top: 4px;
+          margin-bottom: 15px;
+          opacity: 1;
+          background: none;
+          color: #fff;
+          box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526;
+          font-size: 18px; }
+        /* line 348, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+        .main .wrapper form .btns button.in {
+          box-shadow: inset 5px 5px 8px #08090a, inset -5px -5px 8px #222526; }
+  /* line 368, c:/users/следователь/desktop/b444/static/scss/auth/login.scss */
+  .main .wrapper.mistake {
+    height: 530px; }

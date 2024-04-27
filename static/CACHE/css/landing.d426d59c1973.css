@@ -1,0 +1,413 @@
+@charset "UTF-8";
+/* line 6, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+body, html {
+  margin: 0;
+  color: #ffffff;
+  width: 100%;
+  background: #151718; }
+
+/* line 17, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+button {
+  outline: none; }
+
+/* line 23, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 30, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 36, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 50px; }
+
+/* line 45, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 46, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 47, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 49, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+.top-nav {
+  position: relative;
+  top: 20px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 59, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .top-nav .brand {
+    position: relative;
+    left: 30px;
+    width: 300px;
+    cursor: pointer; }
+    /* line 68, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #ffffff;
+      width: 300px; }
+    /* line 78, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .brand svg {
+      position: relative;
+      left: 15px;
+      transform: scale(1.8);
+      fill: #ffffff;
+      float: left; }
+    /* line 90, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      width: 300px;
+      font-size: 40px; }
+  /* line 105, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -3px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 115, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 122, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .btns div {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+      float: left; }
+      /* line 144, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .top-nav .btns div svg {
+        position: absolute;
+        left: 20px;
+        fill: #ffffff; }
+      /* line 153, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .top-nav .btns div .home {
+        transform: scale(1.3); }
+      /* line 159, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .top-nav .btns div .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 167, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .top-nav .btns div .login {
+        transform: scale(1.3); }
+      /* line 174, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .top-nav .btns div span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 186, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #ffffff;
+      cursor: pointer; }
+
+/* line 198, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+.main {
+  position: relative;
+  width: 100%; }
+  /* line 203, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1122px;
+    overflow: hidden;
+    backdrop-filter: blur(190px);
+    -webkit-backdrop-filter: blur(180px); }
+    /* line 217, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .content .info {
+      position: relative;
+      width: 100%;
+      height: 1000px;
+      overflow: hidden; }
+      /* line 226, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .text {
+        position: relative;
+        top: 220px;
+        left: 125px;
+        width: calc(50% - 125px);
+        float: left; }
+        /* line 236, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text span {
+          font-size: 100px;
+          font-weight: bold;
+          text-shadow: 1px 1px 3px #ffffff; }
+        /* line 245, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text h2 {
+          font-weight: normal;
+          font-size: 52px; }
+        /* line 252, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text button {
+          position: relative;
+          top: 30px;
+          height: 70px;
+          width: 450px;
+          padding: 10px;
+          box-shadow: 1px 1px 4px #b9b9b7, -1px -1px 4px #ffffff;
+          border: none;
+          border-radius: 100px;
+          font-family: Comfortaa;
+          font-size: 30px;
+          cursor: pointer;
+          color: #ffffff; }
+        /* line 278, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text button.in {
+          box-shadow: inset 1px 1px 4px #b9b9b7, inset -1px -1px 4px #ffffff; }
+    /* line 289, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .content .img {
+      position: relative;
+      top: 30px;
+      width: 50%;
+      float: right;
+      overflow: hidden; }
+      /* line 300, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .img img {
+        position: relative; }
+
+/* line 313, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+.bottom-nav {
+  position: relative;
+  top: -70px;
+  left: -15px;
+  width: 100%; }
+  /* line 321, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .bottom-nav .links {
+    position: relative;
+    left: 5px;
+    bottom: 9px;
+    float: left; }
+    /* line 329, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .bottom-nav .links ul {
+      list-style-type: none; }
+      /* line 333, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .bottom-nav .links ul li {
+        display: inline-block;
+        margin-right: 30px;
+        /* Link hover effect */ }
+        /* line 339, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li a {
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 23px; }
+          /* line 346, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+          .bottom-nav .links ul li a .copyright {
+            width: 275px;
+            font-weight: normal;
+            font-size: 27px; }
+        /* line 359, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before, .bottom-nav .links ul li .link:after, .bottom-nav .links ul li .link > span:before, .bottom-nav .links ul li .link > span:after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease; }
+        /* line 367, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link, .bottom-nav .links ul li .link > span {
+          position: relative;
+          color: #ffffff;
+          text-decoration: none;
+          line-height: 24px; }
+        /* line 376, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link {
+          display: inline-flex;
+          padding-top: 10px;
+          padding-bottom: 5px;
+          overflow: hidden; }
+        /* line 385, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #492059;
+          transform: translateX(-100%); }
+        /* line 396, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:hover:before {
+          transform: translateX(0); }
+  /* line 408, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .bottom-nav .social-media {
+    position: absolute;
+    top: 34px;
+    right: 32px; }
+    /* line 414, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .bottom-nav .social-media svg {
+      fill: #ffffff;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out; }
+    /* line 424, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .bottom-nav .social-media svg:hover {
+      fill: #30AADD; }
+
+@media screen and (max-width: 1330px) {
+  /* line 438, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .circles {
+    height: 900px; }
+    /* line 442, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .circles .big {
+      width: 850px;
+      height: 850px; }
+    /* line 449, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .circles .medium {
+      width: 550px;
+      height: 550px; }
+    /* line 456, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .circles .small {
+      width: 350px;
+      height: 350px; }
+  /* line 465, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .content {
+    height: 1050px; }
+    /* line 471, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .content .info .text {
+      top: 170px;
+      left: 100px; }
+      /* line 476, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .text span {
+        font-size: 85px; }
+      /* line 482, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .text h2 {
+        font-size: 50px; }
+      /* line 488, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .text button {
+        height: 55px;
+        width: 320px;
+        font-size: 23px; }
+        /* line 495, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text button h1 {
+          font-size: 23px; }
+  /* line 511, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 524, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -120px; }
+    /* line 528, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .bottom-nav .social-media {
+      top: 5px;
+      right: 20px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 547, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 554, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 560, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .top-nav .btns #homeBtn, .main .top-nav .btns #logoutBtn, .main .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 562, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 573, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 579, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 585, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 593, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 600, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 612, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 618, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; }
+    /* line 622, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .content .info {
+      height: 800px; }
+      /* line 626, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .text {
+        top: 200px;
+        left: 40px;
+        width: 100%; }
+        /* line 633, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text span {
+          font-size: 55px; }
+        /* line 639, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text h2 {
+          font-size: 30px; }
+        /* line 645, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+        .main .content .info .text button {
+          height: 55px;
+          width: 270px;
+          font-size: 20px; }
+      /* line 656, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .main .content .info .img {
+        width: 100%;
+        display: none; }
+  /* line 670, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 683, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .bottom-nav {
+    left: -30px;
+    top: 40px; }
+    /* line 694, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .bottom-nav .links ul li a {
+      font-size: 16px; }
+      /* line 698, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+      .bottom-nav .links ul li a .copyright {
+        width: 190px;
+        margin: 0;
+        font-size: 19px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 726, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 731, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+    .main .top-nav .brand h1 {
+      display: none; }
+  /* line 741, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .circles {
+    height: 800px; }
+  /* line 747, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .content {
+    height: 950px; } }
+
+@media screen and (max-width: 589px) {
+  /* line 761, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 768, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; } }
+
+@media screen and (min-width: 850px) and (max-width: 915px) {
+  /* line 780, c:/users/следователь/desktop/b444/static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -140px; } }

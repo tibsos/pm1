@@ -77,9 +77,6 @@ def register(request):
         user.set_password(password)
         user.save()
 
-        user.profile.name = name
-        user.profile.initials = ''.join(letter[0].upper() for letter in name.split(' '))[0:3]
-
         uid = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(7))
 
         while True:

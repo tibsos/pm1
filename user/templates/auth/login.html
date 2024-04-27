@@ -7,46 +7,12 @@
 
     <head>
 
-                <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-EG2SLVG8BT"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-EG2SLVG8BT');
-        </script>
-
-        <!-- Yandex.Metrika counter -->
-        <script type="text/javascript" >
-            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-        
-            ym(96442185, "init", {
-                clickmap:true,
-                trackLinks:true,
-                accurateTrackBounce:true,
-                webvisor:true
-            });
-        </script>
-        <noscript><div><img src="https://mc.yandex.ru/watch/96442185" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-        <!-- /Yandex.Metrika counter -->
-
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>
-            
-            Бесплатный, но стильный онлайн блокнот для записи заметок
-
-        </title>
-
-        <title>Войти в мой Блокнотик</title>
+        <title>Войти в Щиток</title>
 
         <link rel="sitemap" type="application/xml" href="{% static 'sitemap.xml' %}">
 
@@ -97,7 +63,7 @@
     
                     </a>
         
-                    <h1>Войти в Блокнотик</h1>
+                    <h1>Войти в Щиток</h1>
     
                     <form method="POST">
     
@@ -126,7 +92,7 @@
     
                                 <div class="input-container">
 
-                                    <input type="text" name="u" id="e" value="Электронная почта" autocomplete="x">
+                                    <input type="text" name="u" id="e" placeholder="Электронная почта" autocomplete="x">
 
                                 </div>
                                 
@@ -150,7 +116,7 @@
     
                                 <div class="input-container">
 
-                                    <input type="text" name="p" id="p" value="Пароль" autocomplete="x">
+                                    <input type="password" name="p" id="p" placeholder="Пароль" autocomplete="x">
 
                                 </div>
 
@@ -212,7 +178,7 @@
 
                 </a>
     
-                <h1>Войти в Блокнотик</h1>
+                <h1>Войти в Щиток</h1>
 
                 <form method="POST">
 
@@ -239,7 +205,7 @@
 
                             <svg id="ee" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" " role="img" aria-label="Warning Icon "><title>Warning Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.999756C4.13401 0.999756 1 4.13376 1 7.99976C1 11.8657 4.13401 14.9998 8 14.9998C11.866 14.9998 15 11.8657 15 7.99976C15 4.13376 11.866 0.999756 8 0.999756ZM0 7.99976C0 3.58148 3.58172 -0.000244141 8 -0.000244141C12.4183 -0.000244141 16 3.58148 16 7.99976C16 12.418 12.4183 15.9998 8 15.9998C3.58172 15.9998 0 12.418 0 7.99976ZM7.5 8.99951V3.99999H8.5V8.99951H7.5ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="currentColor"></path></svg>
 
-                            <input type="text" name="u" id="e" value="Электронная почта" autocomplete="x">
+                            <input type="text" name="u" id="e" placeholder="Электронная почта" autocomplete="x">
 
                         </div>
                         
@@ -259,7 +225,7 @@
 
                             <svg id="pe" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class=" " role="img" aria-label="Warning Icon "><title>Warning Icon</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0.999756C4.13401 0.999756 1 4.13376 1 7.99976C1 11.8657 4.13401 14.9998 8 14.9998C11.866 14.9998 15 11.8657 15 7.99976C15 4.13376 11.866 0.999756 8 0.999756ZM0 7.99976C0 3.58148 3.58172 -0.000244141 8 -0.000244141C12.4183 -0.000244141 16 3.58148 16 7.99976C16 12.418 12.4183 15.9998 8 15.9998C3.58172 15.9998 0 12.418 0 7.99976ZM7.5 8.99951V3.99999H8.5V8.99951H7.5ZM9 11C9 11.5523 8.55228 12 8 12C7.44772 12 7 11.5523 7 11C7 10.4477 7.44772 10 8 10C8.55228 10 9 10.4477 9 11Z" fill="currentColor"></path></svg>
 
-                            <input type="text" name="p" id="p" value="Пароль" autocomplete="x">
+                            <input type="password" name="p" id="p" placeholder="Пароль" autocomplete="x">
 
                             <div class="show-password-btn">
 
@@ -283,7 +249,7 @@
 
                         <button type="submit" id="l" disabled>Войти</button>
 
-                        <a href="{% url 'user:register' %}">
+                        <a href="/register">
 
                             <button type="button" id="na">У меня нет аккаунта</button>
 
@@ -360,59 +326,13 @@
                 
             });
 
+            $('#e').focus();
+
         });
 
     </script>
 
     <script>
-
-        $('input').focus(function() {
-
-            field = $(this);
-
-            field.css('color', '#1E2330');
-
-            fieldName = field.val();
-            
-            if (fieldName == 'Электронная почта' || fieldName == 'Пароль') {
-
-                field.val('');
-
-            }
-
-            if (fieldName == 'Пароль') {
-
-                field.attr('type', 'password');
-
-            }
-
-        });
-
-        $('input').focusout(function() {
-
-            field = $(this);
-
-            fieldID = field.attr('id');
-            fieldValue = field.val();
-
-            if (fieldValue == '') {
-
-                field.css('color', '#6e7267');
-
-                if (fieldID == 'e') {
-
-                    field.val('Электронная почта');
-
-                } else {
-
-                    field.attr('type', 'text');
-                    field.val('Пароль');
-
-                }
-
-            }
-
-        });
 
         function delay(callback, ms) {
 

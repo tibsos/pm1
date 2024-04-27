@@ -9,10 +9,6 @@ class Profile(m.Model):
 
     user = m.OneToOneField(User, on_delete = m.CASCADE, related_name = 'profile')
 
-    name = m.CharField(max_length = 100)
-
-    initials = m.CharField(max_length = 3)
-
     premium = m.BooleanField(default = False)
     premium_since = m.DateTimeField(blank = True, null = True)
     premium_until = m.DateTimeField(blank = True, null = True)
@@ -35,7 +31,7 @@ class Profile(m.Model):
 
     class Meta:
 
-        ordering = ['-name']
+        ordering = ['-user']
 
 @receiver(post_save, sender = User)
 def create_user_profile(sender, instance, created, **kwargs):

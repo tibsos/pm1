@@ -1,4 +1,7 @@
-$text-color: #1E2330;
+$text-color: #ffffff;
+
+$dark-theme: #151718;
+$dark-text: #a3a7ab;
 
 body, html {
 
@@ -6,6 +9,8 @@ body, html {
     color: $text-color;
 
     width: 100%;
+
+    background: $dark-theme;
     
 }
 
@@ -109,8 +114,8 @@ button {
 
         .auth-btn.in {
 
-            box-shadow: inset 1px 1px 4px #b9b9b7,
-                inset -1px -1px 4px #ffffff;
+            box-shadow: inset 5px 5px 8px #08090a,
+                    inset -5px -5px 8px #222526;
 
         }
 
@@ -131,8 +136,8 @@ button {
 
             cursor: pointer;
 
-            box-shadow:  1px 1px 4px #b9b9b7,
-                    -1px -1px 4px #ffffff;
+            box-shadow:  5px 5px 8px #08090a,
+                        -5px -5px 8px #222526;
 
             float: left;
             
@@ -195,70 +200,6 @@ button {
     position: relative;
     width: 100%;
 
-    .circles {
-
-        position: absolute;
-        left: -20px;
-        top: 100px;
-
-        width: 100%;
-        height: 1000px;
-
-        overflow: hidden;
-
-        div {
-
-            position: absolute;
-
-            transform: scale(1);
-
-            border-radius: 1000px;
-
-        }
-
-        .big {
-
-            top: 20px;
-
-            width: 1000px;
-            height: 1000px;
-            
-            background-color: #e9812d;
-
-            transition: all 3s ease-in-out;
-
-        }
-
-        .medium {
-
-            top: 350px;
-            left: 100px;
-
-            width: 550px;
-            height: 550px;
-
-            background-color: #efca59;
-
-            transition: all 1.5s ease-in-out;
-
-        }
-
-        .small {
-
-            top: 50px;
-            left: 500px;
-
-            width: 400px;
-            height: 400px;
-
-            background-color: #efa4c1;
-
-            transition: all 1s ease-in-out;
-
-        }
-
-    }
-
     .content {
 
         position: absolute;
@@ -266,11 +207,9 @@ button {
         left: 0;
 
         width: 100%;
-        height: 1122px;
+        height: 1152px;
 
         overflow: hidden;
-
-        background: rgba(255, 255, 255, 0.25);
 
         backdrop-filter: blur( 190px );
         -webkit-backdrop-filter: blur( 180px );
@@ -308,6 +247,8 @@ button {
                     font-weight: normal;
                     font-size: 52px;
 
+                    line-height: 65px;
+
                 }
 
                 button {
@@ -320,10 +261,10 @@ button {
 
                     padding: 10px;
 
-                    background: rgba(255, 255, 255, 0.2);
+                    background: none;
 
-                    box-shadow: 1px 1px 4px #b9b9b7,
-                        -1px -1px 4px #ffffff;
+                    box-shadow:  5px 5px 8px #08090a,
+                        -5px -5px 8px #222526;
 
                     border: none;
                     border-radius: 100px;
@@ -335,13 +276,12 @@ button {
 
                     color: $text-color;
 
-
                 }
 
                 button.in {
 
-                    box-shadow: inset 1px 1px 4px #b9b9b7,
-                        inset -1px -1px 4px #ffffff;
+                    box-shadow: inset 5px 5px 8px #08090a,
+                        inset -5px -5px 8px #222526;
 
                 }
 
@@ -376,7 +316,7 @@ button {
 .bottom-nav {
 
     position: relative;
-    top: -70px;
+    top: -30px;
     left: -15px;
 
     width: 100%;
