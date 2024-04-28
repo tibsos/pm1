@@ -2,7 +2,6 @@ from django.shortcuts import render, HttpResponse
 
 from user.models import Profile
 from analytics.models import Funnel
-from app.models import Folder, Note
 
 from django.utils import timezone
 from .utils import get_ip_country_city
