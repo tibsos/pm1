@@ -62,15 +62,29 @@ def create_password(request):
     return render(request, 'components/passwords.html', {'passwords': passwords})
 
 @lr
-def update_password(request):
+def get_password_info(request, uid):
+
+    password = Password.objects.get(uid = uid)
+
+    data = {
+
+        'l': password.url,
+        'p': password.password.decode('utf-8'),
+        'n': password.note,
+
+    }
+
+    return JsonResponse(data, safe = False)
+
+@lr
+def update_password(request, uid):
     
-    uid = request.POST.get('i')
     password_object = Password.objects.get(uid = uid)
     
     url = request.POST.get('l')
     title = request.POST.get('t')
     username = request.POST.get('u')
-    password = request.POST.get('p').encode('utf-8')
+    password = request.POST.get('p')
     note = request.POST.get('n')
     
     password_object.url = url

@@ -7,9 +7,22 @@ app_name = 'app'
 urlpatterns = [
     
     path('home', app, name = 'app'),
-    
-    path('cp', create_password, name = 'create-password'),
-    path('up', update_password, name = 'update-password'),
-    path('dp', delete_password, name = 'delete-password'),
-    
+
 ]
+
+htmx_urlpatterns = [
+
+    path('cp', create_password, name = 'create-password'),
+
+]
+
+ajax_urlpatterns = [
+
+    path('gpi/<uuid:uid>', get_password_info, name = 'get-password-info'),
+    path('dp', delete_password, name = 'delete-password'),
+    path('up/<uuid:uid>', update_password, name = 'update-password'),
+
+]
+
+urlpatterns += htmx_urlpatterns
+urlpatterns += ajax_urlpatterns

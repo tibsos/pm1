@@ -28,7 +28,7 @@ class Password(m.Model):
     url = m.URLField(blank = True, null = True)
     username = m.TextField(blank = True)
     password = m.BinaryField(blank = True)
-    note = m.TextField(blank = True)
+    note = m.TextField(blank = True, null = True)
     
     created_at = m.DateTimeField(auto_now_add = True)
     updated_at = m.DateTimeField(auto_now = True)

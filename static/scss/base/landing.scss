@@ -49,7 +49,7 @@ button {
 .top-nav {
 
     position: relative;
-    top: 20px;
+    top: 60px;
     
     width: 100%;
     height: 50px;
@@ -58,8 +58,8 @@ button {
 
     .brand {
 
-        position: relative;
-        left: 30px;
+        position: absolute;
+        left: 10px;
 
         width: 300px;
 
@@ -75,15 +75,36 @@ button {
         }
 
        
-        svg {
+        #logoWrapper {
 
             position: relative;
-            left: 15px;
+            top: -40px;
+            left: 55px;
 
-            transform: scale(1.8);
-            fill: $text-color;
+            width: 150px;
+            height: 150px;
 
-            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 200px;
+
+            cursor: pointer;
+
+            box-shadow: 5px 5px 8px #08090a,
+                    -5px -5px 8px #222526;
+
+            .safe-logo {
+
+                position: relative;
+    
+                transform: scale(0.7);
+                fill: $text-color;
+    
+                float: left;
+    
+            }
 
         }
 
@@ -105,7 +126,7 @@ button {
     .btns {
 
         position: absolute;
-        bottom: -3px;
+        bottom: -30px;
         right: 50px;
 
         height: 60px;
@@ -198,12 +219,13 @@ button {
 .main {
 
     position: relative;
+    
     width: 100%;
 
     .content {
 
         position: absolute;
-        top: 0;
+        top: 50px;
         left: 0;
 
         width: 100%;
@@ -217,8 +239,9 @@ button {
         .info {
 
             position: relative;
+            top: 100px;
 
-            width: 100%;
+            width: 90%;
             height: 1000px;
 
             overflow: hidden;
@@ -229,7 +252,12 @@ button {
                 top: 220px;
                 left: 125px;
 
-                width: calc(50% - 125px);
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+  
+                flex-direction: column;
 
                 float: left;
 
