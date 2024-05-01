@@ -375,7 +375,7 @@
                                 rows="10"
                                 placeholder="Записка..."></textarea>
 
-                            <button type="submit" id="createNewPassword">Создать</button>
+                            <button type="submit" id="createNewPassword" disabled>Создать</button>
 
                         </form>
 
@@ -387,85 +387,14 @@
 
             <div id="editPasswordForm">
 
-                <div class="wrapper">
-
-                    <div id="closeEditPasswordForm">×</div>
-
-                    <span id="editPasswordHeading">Изменить пароль</span>
-
-                    <div class="new-password-form-wrapper">
-
-                        <form>
-
-                            <input 
-                                name="l" 
-                                type="text" 
-                                id="editPasswordURL" 
-                                placeholder="Ссылка" />
-
-                            <input 
-                                name='t' 
-                                type="text" 
-                                id="editPasswordName" 
-                                placeholder="Заголовок" />
-
-                            <input 
-                                name='u' 
-                                type="text" 
-                                id="edit`PasswordLogin" 
-                                placeholder="Логин" />
-
-                            <input 
-                                name='p' 
-                                type="password" 
-                                id="editPasswordPassword" 
-                                placeholder="Пароль" />
-
-                            <textarea 
-                                name="n" 
-                                id="editPasswordNote" 
-                                cols="45" 
-                                rows="10"
-                                placeholder="Записка..."></textarea>
-
-                            <button type="button" id="savePasswordEdit">Сохранить</button>
-
-                        </form>
-
-                    </div>
-                    
-                </div>
-
-        </div>
+                {% include 'components/edit-password.html' %}
+                
+            </div>
 
     </body>
     
     <!-- Password -->
     <script>
-
-        /* Close edit form */
-
-        $('#savePasswordEdit, #closeEditPasswordForm').click(function() {
-
-            btn = $(this);
-
-            btn.addClass('active')
-
-            $('#editPasswordForm').animate({
-
-                'opacity': 0,
-
-            }, 250);
-
-            setTimeout(function() {
-
-                $('#editPasswordForm').hide();
-                btn.removeClass('active');
-
-            }, 250);
-
-        });
-
 
         $('#newPasswordURL').focus(function() {
 
@@ -503,6 +432,14 @@
         });
 
         $('#createNewPassword').click(function() {
+
+            $(this).addClass('active');
+
+            setTimeout(function() {
+
+                $('#createNewPassword').removeClass('active');
+
+            }, 250);
 
             $('#firstPasswordForm').animate({
 

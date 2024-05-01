@@ -984,6 +984,14 @@ svg {
 
             }
 
+            #createNewPassword.active {
+
+                box-shadow: inset 3px 3px 8px #d8cec4,
+                    inset -3px -3px 8px #fffffa;
+
+
+            }
+
         }
 
 
@@ -1135,6 +1143,33 @@ svg {
 
             box-shadow: inset 3px 3px 8px #d8cec4,
                 inset -3px -3px 8px #fffffa;
+
+        }
+
+        #editPasswordPassword {
+
+            padding-right: 50px;
+            width: 285px;
+
+        } 
+
+        .show-password-btn {
+
+            position: absolute;
+            top: 234px;
+            right: 67px;
+
+            svg {
+
+                cursor: pointer;
+
+            }
+
+            #hidden {
+
+                display: none;
+
+            }
 
         }
 

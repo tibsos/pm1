@@ -13,14 +13,14 @@ urlpatterns = [
 htmx_urlpatterns = [
 
     path('cp', create_password, name = 'create-password'),
+    path('gpi/<uuid:uid>', get_password_info, name = 'get-password-info'),
 
 ]
 
 ajax_urlpatterns = [
 
-    path('gpi/<uuid:uid>', get_password_info, name = 'get-password-info'),
     path('dp', delete_password, name = 'delete-password'),
-    path('up/<uuid:uid>', update_password, name = 'update-password'),
+    path('up', update_password, name = 'update-password'),
 
 ]
 

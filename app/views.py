@@ -66,33 +66,34 @@ def get_password_info(request, uid):
 
     password = Password.objects.get(uid = uid)
 
-    data = {
+    c = {}
 
-        'l': password.url,
-        'p': password.password.decode('utf-8'),
-        'n': password.note,
+    c['password'] = password
+    c['password_password'] = password.password.decode()
 
-    }
-
-    return JsonResponse(data, safe = False)
+    return render(request, 'components/edit-password.html', c)
 
 @lr
-def update_password(request, uid):
+def update_password(request):
+
+    print('f')
+    uid = request.POST.get('i')
+    print('f')
     
     password_object = Password.objects.get(uid = uid)
+    print('f')
     
-    url = request.POST.get('l')
-    title = request.POST.get('t')
-    username = request.POST.get('u')
-    password = request.POST.get('p')
-    note = request.POST.get('n')
+    password_object.url = request.POST.get('l')
+    password_object.title = request.POST.get('t')
+    password_object.username = request.POST.get('u')
+    password_object.password = request.POST.get('p').encode()
+    password_object.note = request.POST.get('n')
     
-    password_object.url = url
-    password_object.title = title
-    password_object.username = username
-    password_object.password = password
-    password_object.note = note
-    
+    print('f')
+    password_object.save()
+
+    print('f')
+
     return HttpResponse('K')
 
 @lr

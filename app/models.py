@@ -24,10 +24,10 @@ class Password(m.Model):
     
     user = m.ForeignKey(User, on_delete = m.CASCADE, related_name = 'users_password')
     
-    title = m.TextField()
+    title = m.TextField(blank = True, null = True)
     url = m.URLField(blank = True, null = True)
-    username = m.TextField(blank = True)
-    password = m.BinaryField(blank = True)
+    username = m.TextField(blank = True, null = True)
+    password = m.BinaryField(blank = True, null = True)
     note = m.TextField(blank = True, null = True)
     
     created_at = m.DateTimeField(auto_now_add = True)
