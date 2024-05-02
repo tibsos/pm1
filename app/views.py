@@ -36,7 +36,26 @@ def app(request):
     else: 
 
         return render(request, 'home.html', c)
-    
+
+@lr
+def search(request):
+
+    query = request.POST.get('q')
+
+    c = {}
+
+    found_passwords = set(list(Password.objects.filter(user = request.user).filter(title__contains = query)) + list(Password.objects.filter(user = request.user).filter(username__contains = query)) + list(Password.objects.filter(user = request.user).filter(note__contains = query)))
+
+    c['passwords'] = found_passwords
+
+    return render(request, 'components/passwords.html', c)
+
+
+@lr 
+def cancel_search(request):
+
+    return render(request, 'components/passwords.html', {'passwords': Password.objects.filter(user = request.user)})
+
 @lr
 def create_password(request):
     

@@ -185,78 +185,25 @@
     
                         <form>
     
-                            <!-- Folder query -->
-                            <input 
-                                type="text" 
-                                name="f" 
-                                class="folderSearch"
-                                hidden />
-    
                             <!-- Note title/content query -->
                             <input 
                                 type="text"
                                 id="noteSearch" 
                                 name="q" 
-                                placeholder="Искать пароль">
-    
-                            <!-- Note section queries -->
-    
-                                <!-- Loved -->
-                            <input 
-                                type="checkbox" 
-                                name="l" 
-                                class="loved-search"
-                                hidden />
-    
-                                <!-- Archived -->
-                            <input 
-                                type="checkbox" 
-                                name="a" 
-                                class="archive-search"
-                                hidden />
-    
-                                <!-- Trash search -->
-                            <input 
-                                type="checkbox" 
-                                name="t" 
-                                class="trash-search"
-                                hidden />
+                                placeholder="Искать пароль"
+                                hx-post="{% url 'app:search' %}"
+                                hx-target="#passwordList"
+                                hx-trigger="input changed delay:0.25s">
                                 
                         </form>
     
                         <form>
     
-                            <!-- Folder query -->
-                            <input 
-                                type="text" 
-                                name="f" 
-                                class="folderSearch"
-                                hidden />
-                        
-                            <!-- Note section queries -->
-    
-                                <!-- Loved -->
-                            <input 
-                                type="checkbox" 
-                                name="l" 
-                                class="loved-search"
-                                hidden />
-    
-                                <!-- Archived -->
-                            <input 
-                                type="checkbox" 
-                                name="a" 
-                                class="archive-search"
-                                hidden />
-    
-                                <!-- Trash search -->
-                            <input 
-                                type="checkbox" 
-                                name="t" 
-                                class="trash-search"
-                                hidden />
-    
-                            <button id="cancelSearch">×</button>
+                            <button 
+                                hx-post="{% url 'app:cancel-search' %}"
+                                hx-target=".notes"
+                                hx-trigger="click delay:0.5s"
+                                id="cancelSearch">×</button>
                         
                         </form>
     
@@ -972,151 +919,7 @@
             
         }, 750));
 
-        /* Subscription  */
-
-            /* Render form */
-        $('#subscription').click(function() {
-
-            subFormOpen = true;
-
-            $('.subscription-info').css('display', 'flex');
-            $('.subscription-info').animate({
-
-                'opacity': 1,
-
-            }, 250);
-
-        });
-
-            /* Close form */
-        $('#closeSubInfo').click(function() {
-
-            subFormOpen = false;
-
-            $('#closeSubInfo').addClass('active');
-
-            $('.subscription-info').animate({
-
-                'opacity': 0,
-
-            }, 250);
-
-            setTimeout(function() {
-
-                $('#closeSubInfo').removeClass('active');
-
-                $('.subscription-info').hide();
-
-
-            }, 250);
-
-        });
-
-        /* Cancel sub */
-
-        $('#cancelSub').click(function() {
-            
-            $('.cancel-subscription-confirmation').css('display', 'flex');
-            $('.cancel-subscription-confirmation').animate({
-
-                opacity: 1,
-
-            }, 250);
-
-        });
-
-        $('#cancelSubConfirmation, #cancelSubBtn').click(function() {
-
-            $('.cancel-subscription-confirmation').animate({
-
-                opacity: 0,
-
-            }, 250);
-
-            setTimeout(function() {
-
-                $('.cancel-subscription-confirmation').hide();
-
-            }, 250)
-
-        });
-
-        $('#cancelSubBtn').click(function() {
-
-            alert('Подписка отменена успешно.');
-
-            $('.subscription-info, #subscription    ').hide();
-
-            $.ajax({
-
-                type: 'POST',
-                
-                url: "{% url 'user:cancel-sub' %}",
-
-                data: {
-
-                    'csrfmiddlewaretoken': "{{ csrf_token }}"
-
-                }
-
-            })
-
-        });
-
-    </script>
-
-    <!-- Pop-ups -->
-
-    <script>
-
-    <!-- Search notes -->
-    <script>
-
-        /* Change placeholder depending on device width */
-
-        if ($(window).width() <= 775) {
-
-            $('#noteSearch').attr('placeholder', 'Искать');
-
-        } else {
-
-            $('#noteSearch').attr('placeholder', 'Искать пароль');
-
-        }
-
-        $(window).resize(function() {
-
-            if ($(window).width() <= 775) {
-
-                $('#noteSearch').attr('placeholder', 'Искать');
-
-            } else {
-
-                $('#noteSearch').attr('placeholder', 'Искать пароль');
-
-            }
-
-        });
-
-        document.getElementById('noteSearch').addEventListener('input', function() {
-
-            $('#cancelSearch').show();
-            $('#cancelSearch').animate({'opacity': 1}, 250);
-
-        }, false);
-
-        $('body').on('click', '#cancelSearch', function() {
-
-            $('#noteSearch').val('');
-            $(this).animate({'opacity': 0}, 250);
-
-            setTimeout(function() {
-
-                $('#cancelSearch').hide();
-
-            }, 250)   
-
-        });
+        
 
     </script>
 

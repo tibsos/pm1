@@ -15,6 +15,9 @@ htmx_urlpatterns = [
     path('cp', create_password, name = 'create-password'),
     path('gpi/<uuid:uid>', get_password_info, name = 'get-password-info'),
 
+    path('s', search, name = 'search'),
+    path('cs', cancel_search, name = 'cancel-search'),
+
 ]
 
 ajax_urlpatterns = [
