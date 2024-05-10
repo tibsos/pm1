@@ -21,8 +21,20 @@ from Crypto.Random import get_random_bytes
 def app(request):
     
     c = {}
+
+    vaults = Vault.objects.filter(user = request.user)
+
+    print(Password.objects.all())
+    print(Vault.objects.all())
+
+    print(vaults)
+
+    current_vault = vaults.order_by('-updated_at').first()
+    current_vault_passwords = current_vault.passwords.all()
     
-    c['passwords'] = Password.objects.filter(user = request.user)
+    c['vaults'] = vaults
+    c['current_vault'] = current_vault
+    c['passwords'] = current_vault_passwords
 
     user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
 
@@ -36,6 +48,13 @@ def app(request):
     else: 
 
         return render(request, 'home.html', c)
+
+@lr
+def vault_passwords(request):
+
+    c = {}
+
+    return render(request, 'components/passwords.html', c)
 
 @lr
 def search(request):
@@ -95,12 +114,9 @@ def get_password_info(request, uid):
 @lr
 def update_password(request):
 
-    print('f')
     uid = request.POST.get('i')
-    print('f')
     
     password_object = Password.objects.get(uid = uid)
-    print('f')
     
     password_object.url = request.POST.get('l')
     password_object.title = request.POST.get('t')
@@ -108,10 +124,7 @@ def update_password(request):
     password_object.password = request.POST.get('p').encode()
     password_object.note = request.POST.get('n')
     
-    print('f')
     password_object.save()
-
-    print('f')
 
     return HttpResponse('K')
 
@@ -124,14 +137,3 @@ def delete_password(request):
     password.delete()
     
     return HttpResponse('K')
-
-@lr
-def search_notes(request):
-
-    c = {}
-
-    query = request.POST.get('q')
-
-    notes1 = list(Note.objects.filter(author = request.user).filter(deleted = False).filter(archived = False).filter(title__contains = query))
-
-    return render(request, 'components/notes.html', c)

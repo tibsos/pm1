@@ -14,6 +14,7 @@ urlpatterns = [
     path('terms/', t, name = 't'),
     path('privacy/', p, name = 'p'),
     path('juridical-information/', j, name = 'j'),
+    path('data-protection/', dp, name = 'dp'),
     
     #path('online-payment-safety/', ops, name = 'ops'),
     #path('data-safety/', ds, name = 'ds'),

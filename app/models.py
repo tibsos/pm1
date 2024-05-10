@@ -17,12 +17,29 @@ from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from base64 import b64encode, b64decode
 
+class Vault(m.Model):
+
+    uid = m.UUIDField(default = u4)
+
+    user = m.ForeignKey(User, on_delete = m.CASCADE)
+
+    name = m.TextField()
+
+    passwords = m.ManyToManyField('Password', blank = True, related_name = 'vaults_passwords')
+
+    created_at = m.DateTimeField(auto_now_add = True)
+    updated_at = m.DateTimeField(auto_now = True)
+
+    def __str__(self):
+
+        return self.name
 
 class Password(m.Model):
     
     uid = m.UUIDField(default = u4)
     
     user = m.ForeignKey(User, on_delete = m.CASCADE, related_name = 'users_password')
+    vault = m.ForeignKey(Vault, on_delete = m.CASCADE, related_name = 'password_vault')
     
     title = m.TextField(blank = True, null = True)
     url = m.URLField(blank = True, null = True)

@@ -1,0 +1,12 @@
+{% for vault in vaults %}
+
+    <div class="vault">
+
+        <input type="text" class="vault-uid" id="{{ vault.uid }}" hidden />
+
+        <span class="vault-name">{{ vault.name }}</span>
+
+    </div>
+
+{% endfor %}
+

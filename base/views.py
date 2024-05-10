@@ -31,6 +31,9 @@ def p(request):
 def j(request):
     return render(request, 'info/juridical.html', {'u': request.user})
 
+def dp(request):
+    return render(request, 'info/data-protection.html', {'u': request.user})
+
 # Contact
 def c(request):
 

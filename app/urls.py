@@ -12,6 +12,8 @@ urlpatterns = [
 
 htmx_urlpatterns = [
 
+    path('v', vault_passwords, name = 'vault-passwords'),
+    
     path('cp', create_password, name = 'create-password'),
     path('gpi/<uuid:uid>', get_password_info, name = 'get-password-info'),
 

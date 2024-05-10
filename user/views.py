@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from user.models import Profile
+from app.models import *
 from analytics.models import Funnel
 
 import string
@@ -87,6 +88,8 @@ def register(request):
 
         user.profile.premium_invite_uid = uid
         user.profile.save()
+
+        Vault.objects.create(user = request.user, name = 'Основной')
 
         user = authenticate(username = username, password = password)
         login(request, user)

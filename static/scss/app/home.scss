@@ -737,7 +737,7 @@ svg {
 
 /* App */
 
-.account-preferences, #firstPasswordForm, #editPasswordForm {
+.account-preferences, #firstPasswordForm, #editPasswordForm, #newVaultForm {
 
     position: fixed;
     top: 0;
@@ -754,6 +754,161 @@ svg {
     background: rgba(0, 0, 0, 0.7);
 
     z-index: 10;
+
+}
+
+#newVaultForm {
+
+    .wrapper {
+
+        position: relative;
+
+        width: 400px;
+        height: 360px;
+
+        border-radius: 20px;
+
+        background: $light-theme;
+
+        #closeNewVaultForm {
+
+            position: relative;
+            top: 30px;
+            left: 20px;
+
+            font-weight: bold;
+            font-size: 30px;
+
+        }
+
+        #newVaultForm {
+
+            position: relative;
+            top: 70px;
+            left: 20px;
+
+            input {
+
+                width: 320px;
+
+                padding: 16px;
+                margin-bottom: 20px;
+
+            }
+
+            #createNewVault {
+
+                position: relative;
+                top: 20px;
+                left: 50px;
+
+                width: 250px;
+                height: 50px;
+
+                font-size: 22px;
+
+            }
+
+            #createNewVault.active {
+
+                box-shadow: inset 3px 3px 8px #d8cec4,
+                    inset -3px -3px 8px #fffffa;
+
+
+            }
+
+        }
+
+        #closeNewVaultForm {
+
+            position: absolute;
+
+            right: 20px;
+            top: 20px;
+
+            width: 50px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding-top: 2px;
+
+            border-radius: 50px;
+
+            box-shadow: 3px 3px 8px #d8cec4,
+                -3px -3px 8px #fffffa;
+
+            font-size: 40px;
+
+            cursor: pointer;
+
+        }
+
+        #closeNewVaultForm.active {
+
+            box-shadow: inset 3px 3px 8px #d8cec4,
+                inset -3px -3px 8px #fffffa;
+
+        }
+
+    }
+
+}
+
+.vaults {
+
+    position: relative;
+    top: 120px;
+    left: 1.5%;
+
+    width: 97%;
+
+    .vault {
+
+        position: relative;
+        width: auto;
+
+        display: inline-block;
+        
+        padding: 10px 15px 10px 15px;
+        margin-right: 20px;
+
+        border-radius: 1000px;
+
+        box-shadow: 3px 3px 8px #d8cec4,
+            -3px -3px 8px #fffffa;
+
+    }
+
+    .vault.current {
+
+        box-shadow: inset 3px 3px 8px #d8cec4,
+            inset -3px -3px 8px #fffffa;
+
+    }
+
+    #addVault {
+
+        position: relative;
+        top: 5px;
+
+        width: 35px;
+        height: 35px;
+
+        font-size: 30px;
+        font-weight: bold;
+
+    }
+
+    #addVault.in {
+
+        box-shadow: inset 3px 3px 8px #d8cec4,
+            inset -3px -3px 8px #fffffa;
+
+    }
+
 
 }
 
