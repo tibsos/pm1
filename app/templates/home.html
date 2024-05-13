@@ -97,7 +97,7 @@
 
                     <div id="closeAccountPreferences">×</div>
 
-                    <span class="form-title">Мой аккаунт</span>
+                    <span class="form-title"><strong>Мой аккаунт</strong></span>
 
                     <div class="fields">
 
@@ -330,6 +330,12 @@
                         <form hx-post="/cp" hx-target="#passwordList">
 
                             <input 
+                                type="text"
+                                name="v"
+                                id="newPasswordVault"
+                                hidden />
+
+                            <input 
                                 name="l" 
                                 type="text" 
                                 id="newPasswordURL" 
@@ -467,6 +473,12 @@
         });
 
         $('#createNewPassword').click(function() {
+
+            currentVaultUID = $('.current').children('.vault-uid').val();
+            alert(currentVaultUID)
+
+            $('#newPasswordVault').val(currentVaultUID);
+            alert(currentVaultUID)
 
             $(this).addClass('active');
 
