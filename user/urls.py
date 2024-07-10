@@ -30,6 +30,9 @@ urlpatterns = [
     path('cu/', change_username, name = 'cu'),
     path('cp/', change_password, name = 'cp'),
 
+    # Mode
+    path('cm/', change_mode, name = 'cm'),
+
     # Subscription
     path('cancel-sub', cancel_sub, name = 'cancel-sub')
 

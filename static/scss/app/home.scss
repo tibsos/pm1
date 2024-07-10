@@ -3644,6 +3644,50 @@ body.dark {
     
     }
 
+    .password, #addPasswordBtn {
+
+        box-shadow:  4px 4px 8px #0e1011,
+                -4px -4px 8px #1c1e1f;
+
+    }
+
+
+
+    #firstPasswordForm {
+
+        .wrapper {
+
+            background: $dark-theme;
+
+            box-shadow:  4px 4px 8px #0e1011,
+                -4px -4px 8px #1c1e1f;
+
+            #closeNewPasswordForm {
+
+                box-shadow: 4px 4px 8px #0e1011,
+                         -4px -4px 8px #1c1e1f;
+
+            }
+
+            #newPasswordForm {
+
+                form {
+
+                    #newPasswordText {
+
+                        box-shadow: inset 4px 4px 8px #0e1011,
+                            inset -4px -4px 8px #1c1e1f;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
     .new-note {
 
         .wrapper {

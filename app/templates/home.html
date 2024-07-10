@@ -15,7 +15,7 @@
         <title>Сейф</title>
         <meta name="description" content="Менеджер паролей | Сейф">
 
-        <link rel="icon" type="image/png" href="{% static 'logo.png' %}">
+        <link rel="icon" type="image/png" href="{% static 'logo.jpg' %}">
 
         <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
         <script src="{% static 'packages/htmx.min.js' %}"></script>
@@ -47,26 +47,6 @@
                             </svg>
         
                             <span>Мой аккаунт</span>
-                        
-                        </div>
-
-                    </a>
-
-                    <a href="/contact" target='_blank'>
-
-                        <div class="btn" id="myAccount">
-
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" version="1.1" id="Layer_1" viewBox="0 0 24 24" xml:space="preserve">
-                                <style type="text/css">
-                                    .st0{fill:none;}
-                                </style>
-                                <g id="surface1">
-                                    <path d="M12,2v7.1c1.2,0.4,2,1.5,2,2.8c0,0.5-0.1,1-0.4,1.4l2,1.6c0.1,0,0.2-0.1,0.4-0.1c0.6,0,1,0.4,1,1c0,0.6-0.4,1-1,1   c-0.6,0-1-0.4-1-1v-0.1l-2-1.6c-0.5,0.5-1.2,0.8-2,0.8c-1.7,0-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8v-7H9.9C6.4,2.5,3.5,5.4,3.1,9   c-0.3,2.2,0.3,4.2,1.5,5.8C5.5,16,6,17.3,6,18.8V22h9v-3h2c1.1,0,2-0.9,2-2v-3l1.5-0.6c0.4-0.2,0.6-0.8,0.4-1.2l-1.9-3   C18.6,5.5,15.7,2.5,12,2z M11,10.5c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S11.8,10.5,11,10.5z"/>
-                                </g>
-                                <rect class="st0" width="24" height="24"/>
-                                </svg>
-        
-                            <span>Поддержка</span>
                         
                         </div>
 
@@ -258,44 +238,6 @@
 
             </div>
 
-            <div id="newVaultForm">
-
-                <div class="wrapper">
-
-                    <div id="closeNewVaultForm">×</div>
-
-                    <span id="newVaultHeading">Новый сейф</span>
-
-                    <div id="newVaultForm">
-
-                        <form hx-post="/cv" hx-target=".vaults">
-
-                            <input 
-                                name='n' 
-                                type="text" 
-                                id="newVaultName" 
-                                placeholder="Заголовок" />
-
-                            <button type="submit" id="createNewVault" disabled>Создать</button>
-
-                        </form>
-
-                    </div>
-                    
-                </div>
-
-            </div>
-
-            <!-- Vaults -->
-
-            <div class="vaults">
-
-                {% include 'components/vaults.html' %}
-
-                <button id="addVault">+</button>
-
-            </div>
-
             <!-- Pwords -->
             <div class="passwords">
 
@@ -384,51 +326,38 @@
 
     </body>
 
-    <!-- Vault -->
+    <!-- Change mode -->
+
+    {% if dark_mode %}
+
+        <script>
+
+            $('.toggle-mode').click();
+            $('body').addClass('dark');
+
+        </script>
+
+    {% endif %}
 
     <script>
 
-        $('#addVault').click(function() {
+        
 
-            $('#newVaultForm').css('display', 'flex');
-            $('#newVaultForm').animate({
+        $('.mode').click(function() {
 
-                'opacity': 1,
+            $.ajax({
 
-            }, 100);
+                type: 'POST',
 
-        });
+                url: '/cm',
 
-        $('.vault').click(function() {
+                data: {
 
-            $('.vault').removeClass('current');
-            $(this).addClass('current');
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
 
-        });
-
-        /* When vaults loaded, style current vault */
-
-        currentVaultUID = '{{ current_vault.uid }}';
-
-        $('.vault').each(function() {
-
-            if ($(this).children('.vault-uid').attr('id') == currentVaultUID) {
-
-                $(this).addClass('current');
-
-            }
-
-        });
-
-        $('#addVault').click(function() {
-
-            $(this).addClass('in');
-
-            setTimeout(function() {
-
-                $('#addVault').removeClass('in');
-
-            }, 100);
+                }
+                
+            })
 
         });
 
@@ -475,10 +404,8 @@
         $('#createNewPassword').click(function() {
 
             currentVaultUID = $('.current').children('.vault-uid').val();
-            alert(currentVaultUID)
 
             $('#newPasswordVault').val(currentVaultUID);
-            alert(currentVaultUID)
 
             $(this).addClass('active');
 
@@ -559,8 +486,6 @@
             });
 
             $(this).parent().parent().remove();
-
-            alert($('#passwordList').children().length)
 
             if ($('#passwordList').children().length === 1) {
 

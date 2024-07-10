@@ -89,8 +89,6 @@ def register(request):
         user.profile.premium_invite_uid = uid
         user.profile.save()
 
-        Vault.objects.create(user = user, name = 'Основной')
-
         user = authenticate(username = username, password = password)
         login(request, user)
         
@@ -228,6 +226,17 @@ def cancel_sub(request):
 
     profile = request.user.profile
     profile.canceled = True
+    profile.save()
+
+    return HttpResponse('K')
+
+@lr
+def change_mode(request):
+
+    profile = request.user.profile
+
+    profile.dark_mode = True
+
     profile.save()
 
     return HttpResponse('K')

@@ -22,7 +22,8 @@ def app(request):
     
     c = {}
 
-    c['passwords'] = Password.objects.fi
+    c['dark_mode'] = request.user.profile.dark_mode
+    c['passwords'] = Password.objects.filter(user = request.user)
 
     user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
 
