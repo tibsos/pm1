@@ -89,7 +89,7 @@ def register(request):
         user.profile.premium_invite_uid = uid
         user.profile.save()
 
-        Vault.objects.create(user = request.user, name = 'Основной')
+        Vault.objects.create(user = user, name = 'Основной')
 
         user = authenticate(username = username, password = password)
         login(request, user)

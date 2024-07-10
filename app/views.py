@@ -22,19 +22,7 @@ def app(request):
     
     c = {}
 
-    vaults = Vault.objects.filter(user = request.user)
-
-    print(Password.objects.all())
-    print(Vault.objects.all())
-
-    print(vaults)
-
-    current_vault = vaults.order_by('-updated_at').first()
-    current_vault_passwords = current_vault.passwords.all()
-    
-    c['vaults'] = vaults
-    c['current_vault'] = current_vault
-    c['passwords'] = current_vault_passwords
+    c['passwords'] = Password.objects.fi
 
     user_agent = request.META.get('HTTP_USER_AGENT', '').lower()
 
