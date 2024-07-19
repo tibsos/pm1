@@ -1,0 +1,440 @@
+/* line 6, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+body, html {
+  margin: 0;
+  color: #ffffff;
+  width: 100%;
+  background: #151718; }
+
+/* line 17, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+button {
+  outline: none; }
+
+/* line 23, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* line 30, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px; }
+
+/* line 36, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 50px; }
+
+/* line 45, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+#homeBtn {
+  width: 100px; }
+
+/* line 46, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+#logoutBtn {
+  width: 120px; }
+
+/* line 47, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+#loginBtn {
+  width: 120px; }
+
+/* line 49, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+.top-nav {
+  position: relative;
+  top: 60px;
+  width: 100%;
+  height: 50px;
+  z-index: 10; }
+  /* line 59, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .top-nav .brand {
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    cursor: pointer; }
+    /* line 68, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .brand a {
+      text-decoration: none;
+      color: #ffffff;
+      width: 300px; }
+    /* line 78, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .brand #logoWrapper {
+      position: relative;
+      top: -40px;
+      left: 55px;
+      width: 150px;
+      height: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 200px;
+      cursor: pointer;
+      box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526; }
+      /* line 98, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .brand #logoWrapper .safe-logo {
+        position: relative;
+        transform: scale(0.7);
+        fill: #ffffff;
+        float: left; }
+    /* line 111, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .brand h1 {
+      position: relative;
+      left: 40px;
+      width: 300px;
+      font-size: 40px; }
+  /* line 126, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .top-nav .btns {
+    position: absolute;
+    bottom: -30px;
+    right: 50px;
+    height: 60px;
+    display: inline-block; }
+    /* line 136, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .btns .auth-btn.in {
+      box-shadow: inset 5px 5px 8px #08090a, inset -5px -5px 8px #222526; }
+    /* line 143, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .btns div {
+      position: relative;
+      height: 20px;
+      padding: 20px;
+      margin-left: 40px;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526;
+      float: left; }
+      /* line 165, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .btns div svg {
+        position: absolute;
+        left: 20px;
+        fill: #ffffff; }
+      /* line 174, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .btns div .home {
+        transform: scale(1.3); }
+      /* line 180, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .btns div .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 188, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .btns div .login {
+        transform: scale(1.3); }
+      /* line 195, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .top-nav .btns div span {
+        position: relative;
+        left: 45px;
+        top: 3px;
+        font-size: 20px; }
+    /* line 207, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .top-nav .btns a {
+      text-decoration: none;
+      color: #ffffff;
+      cursor: pointer; }
+
+/* line 219, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+.main {
+  position: relative;
+  width: 100%; }
+  /* line 225, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .content {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 1152px;
+    overflow: hidden;
+    backdrop-filter: blur(190px);
+    -webkit-backdrop-filter: blur(180px); }
+    /* line 239, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .content .info {
+      position: relative;
+      top: 100px;
+      width: 90%;
+      height: 1000px;
+      overflow: hidden; }
+      /* line 249, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .text {
+        position: relative;
+        top: 220px;
+        left: 125px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        float: left; }
+        /* line 264, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text .text-content {
+          width: 50%;
+          float: left; }
+          /* line 270, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+          .main .content .info .text .text-content h1 {
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 100px;
+            font-weight: bold;
+            text-shadow: 1px 1px 3px #ffffff; }
+          /* line 282, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+          .main .content .info .text .text-content h2 {
+            font-weight: normal;
+            font-size: 52px;
+            line-height: 65px; }
+          /* line 291, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+          .main .content .info .text .text-content button {
+            position: relative;
+            top: 30px;
+            height: 70px;
+            width: 450px;
+            padding: 10px;
+            background: none;
+            box-shadow: 5px 5px 8px #08090a, -5px -5px 8px #222526;
+            border: none;
+            border-radius: 100px;
+            font-family: Comfortaa;
+            font-size: 30px;
+            cursor: pointer;
+            color: #ffffff; }
+          /* line 318, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+          .main .content .info .text .text-content button.in {
+            box-shadow: inset 5px 5px 8px #08090a, inset -5px -5px 8px #222526; }
+        /* line 327, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text .text-illustration {
+          width: 50%;
+          float: right; }
+    /* line 340, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .content .img {
+      position: relative;
+      top: 30px;
+      width: 50%;
+      float: right;
+      overflow: hidden; }
+      /* line 351, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .img img {
+        position: relative; }
+
+/* line 364, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+.bottom-nav {
+  position: relative;
+  top: -30px;
+  left: -15px;
+  width: 100%; }
+  /* line 372, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .bottom-nav .links {
+    position: relative;
+    left: 5px;
+    bottom: 9px;
+    float: left; }
+    /* line 380, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .bottom-nav .links ul {
+      list-style-type: none; }
+      /* line 384, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .bottom-nav .links ul li {
+        display: inline-block;
+        margin-right: 30px;
+        /* Link hover effect */ }
+        /* line 390, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li a {
+          text-decoration: none;
+          color: #ffffff;
+          font-size: 23px; }
+          /* line 397, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+          .bottom-nav .links ul li a .copyright {
+            width: 275px;
+            font-weight: normal;
+            font-size: 27px; }
+        /* line 410, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before, .bottom-nav .links ul li .link:after, .bottom-nav .links ul li .link > span:before, .bottom-nav .links ul li .link > span:after {
+          content: '';
+          position: absolute;
+          transition: transform .5s ease; }
+        /* line 418, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link, .bottom-nav .links ul li .link > span {
+          position: relative;
+          color: #fff;
+          text-decoration: none;
+          line-height: 24px; }
+        /* line 427, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link {
+          display: inline-flex;
+          padding-top: 10px;
+          padding-bottom: 5px;
+          overflow: hidden; }
+        /* line 436, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:before {
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: #fff;
+          transform: translateX(-100%); }
+        /* line 447, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .bottom-nav .links ul li .link:hover:before {
+          transform: translateX(0); }
+  /* line 459, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .bottom-nav .social-media {
+    position: absolute;
+    top: 34px;
+    right: 32px; }
+    /* line 465, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .bottom-nav .social-media svg {
+      fill: #ffffff;
+      cursor: pointer;
+      transition: all 0.25s ease-in-out; }
+    /* line 475, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .bottom-nav .social-media svg:hover {
+      fill: #30AADD; }
+
+@media screen and (max-width: 1330px) {
+  /* line 489, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .circles {
+    height: 900px; }
+    /* line 493, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .circles .big {
+      width: 850px;
+      height: 850px; }
+    /* line 500, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .circles .medium {
+      width: 550px;
+      height: 550px; }
+    /* line 507, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .circles .small {
+      width: 350px;
+      height: 350px; }
+  /* line 516, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .content {
+    height: 1050px; }
+    /* line 522, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .content .info .text {
+      top: 170px;
+      left: 100px; }
+      /* line 527, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .text span {
+        font-size: 85px; }
+      /* line 533, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .text h2 {
+        font-size: 50px; }
+      /* line 539, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .text button {
+        height: 55px;
+        width: 320px;
+        font-size: 23px; }
+        /* line 546, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text button h1 {
+          font-size: 23px; }
+  /* line 562, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 575, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -120px; }
+    /* line 579, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .bottom-nav .social-media {
+      top: 5px;
+      right: 20px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 598, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+  /* line 605, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .top-nav .btns {
+    position: absolute;
+    bottom: -10px;
+    right: 10px; }
+    /* line 611, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .top-nav .btns #homeBtn, .main .top-nav .btns #logoutBtn, .main .top-nav .btns #loginBtn {
+      width: 30px; }
+    /* line 613, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .top-nav .btns .auth-btn {
+      position: relative;
+      right: 15px;
+      height: 30px;
+      justify-content: center;
+      margin-left: 30px; }
+      /* line 624, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn svg {
+        position: absolute; }
+      /* line 630, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .home {
+        transform: scale(1.3); }
+      /* line 636, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .logout {
+        margin-top: 3px;
+        transform: scale(1.2); }
+      /* line 644, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn .login {
+        transform: scale(1.3); }
+      /* line 651, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .top-nav .btns .auth-btn span {
+        display: none; }
+  /* line 663, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 669, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; }
+    /* line 673, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .content .info {
+      height: 800px; }
+      /* line 677, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .text {
+        top: 200px;
+        left: 40px;
+        width: 100%; }
+        /* line 684, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text span {
+          font-size: 55px; }
+        /* line 690, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text h2 {
+          font-size: 30px; }
+        /* line 696, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+        .main .content .info .text button {
+          height: 55px;
+          width: 270px;
+          font-size: 20px; }
+      /* line 707, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .main .content .info .img {
+        width: 100%;
+        display: none; }
+  /* line 721, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .img img {
+    bottom: 40px;
+    right: 160px;
+    transform: scale(0.8); }
+  /* line 734, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .bottom-nav {
+    left: -30px;
+    top: 40px; }
+    /* line 745, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .bottom-nav .links ul li a {
+      font-size: 16px; }
+      /* line 749, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+      .bottom-nav .links ul li a .copyright {
+        width: 190px;
+        margin: 0;
+        font-size: 19px; } }
+
+@media screen and (max-width: 850px) {
+  /* line 777, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .top-nav .brand {
+    top: 20px;
+    left: 20px; }
+    /* line 782, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+    .main .top-nav .brand h1 {
+      display: none; }
+  /* line 792, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .circles {
+    height: 800px; }
+  /* line 798, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .content {
+    height: 950px; } }
+
+@media screen and (max-width: 589px) {
+  /* line 812, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .circles {
+    height: 850px; }
+  /* line 819, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .main .content {
+    height: 1000px; } }
+
+@media screen and (min-width: 850px) and (max-width: 915px) {
+  /* line 831, c:/users/teo/desktop/pm1/new/pm1/static/scss/base/landing.scss */
+  .bottom-nav {
+    top: -140px; } }

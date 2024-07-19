@@ -261,55 +261,81 @@ button {
 
                 float: left;
 
-                span {
+                .text-content {
 
-                    font-size: 100px;
-                    font-weight: bold;
+                    width: 50%;
 
-                    text-shadow: 1px 1px 3px $text-color;
+                    float: left;
+
+                    h1 {
+
+                        margin: 0;
+                        margin-bottom: 20px;
     
+                        font-size: 100px;
+                        font-weight: bold;
+    
+                        text-shadow: 1px 1px 3px $text-color;
+        
+                    }
+    
+                    h2 {
+    
+                        font-weight: normal;
+                        font-size: 52px;
+    
+                        line-height: 65px;
+    
+                    }
+    
+                    button {
+    
+                        position: relative;
+                        top: 30px;
+    
+                        height: 70px;
+                        width: 450px;
+    
+                        padding: 10px;
+    
+                        background: none;
+    
+                        box-shadow:  5px 5px 8px #08090a,
+                            -5px -5px 8px #222526;
+    
+                        border: none;
+                        border-radius: 100px;
+    
+                        font-family: Comfortaa;
+                        font-size: 30px;
+    
+                        cursor: pointer;
+    
+                        color: $text-color;
+    
+                    }
+    
+                    button.in {
+    
+                        box-shadow: inset 5px 5px 8px #08090a,
+                            inset -5px -5px 8px #222526;
+    
+                    }  
+
                 }
 
-                h2 {
-
-                    font-weight: normal;
-                    font-size: 52px;
-
-                    line-height: 65px;
-
-                }
-
-                button {
+                .text-illustration {
 
                     position: relative;
-                    top: 30px;
+                    top: -550px;
+                    left: 800px;
 
-                    height: 70px;
-                    width: 450px;
+                    width: 50%;
 
-                    padding: 10px;
+                    float: right;
 
-                    background: none;
-
-                    box-shadow:  5px 5px 8px #08090a,
-                        -5px -5px 8px #222526;
-
-                    border: none;
-                    border-radius: 100px;
-
-                    font-family: Comfortaa;
-                    font-size: 30px;
-
-                    cursor: pointer;
-
-                    color: $text-color;
-
-                }
-
-                button.in {
-
-                    box-shadow: inset 5px 5px 8px #08090a,
-                        inset -5px -5px 8px #222526;
+                    transform: scale(0.7);
+                    
 
                 }
 
