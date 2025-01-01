@@ -25,12 +25,13 @@
         <link rel="icon" type="image/png" href="{% static 'logo.jpg' %}" media="(prefers-color-scheme: dark)">
 
         {% compress css %}
-        {% if not m %}
         
-        
-            <link rel="stylesheet" href="{% static 'scss/base/landing.scss' %}" type="text/x-scss">
-        
-        {% else %}
+            {% if not m %}
+            
+            
+                <link rel="stylesheet" href="{% static 'scss/base/landing.scss' %}" type="text/x-scss">
+            
+            {% else %}
         
             <link rel="stylesheet" href="{% static 'scss/base/landing-mobile.scss' %}" type="text/x-scss">
 
