@@ -10,9 +10,7 @@ DEBUG = False # local
 
 ALLOWED_HOSTS = [
     
-    'www.saf3.ru', 
     'saf3.ru', 
-    'https://saf3.ru', 
     'localhost',
     '127.0.0.1',
 
