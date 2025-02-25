@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'YunBcidlcV93KX9RsUQIwegRv-djG-upZWbekmV6-Pa80g-OMLDzIYY00E6nPkL23FD9eEA05xapZ4QKVLU9lqCpwGHgpTEqFIDHyNkzPkFOUH3mYvBOq3Rxk6KytuUeJslgPAFyeFI8y5IPCg-5VryBxfiwGyilpSiv1P0mukVHvxEX20-mnnu62WaQsKfCJKEra89xPDfNcNDTnvMon144Sqf90YMwHvEEdjkbcgdW0G28Ysvxw8xTsc0WK3b4wZMQEMbnujD3QLKBfbQZdTLbpnqcuE-NiOe8ZNSCk1bHhO70PycH_rirNfdAsojotjZdV4Im1rBqrqWcqHjlfUsC27TxGkPqkTZEAG-lzUkdMJ65EgObaAFOC2CGx3wtLJM5wHSagSG_V9EeHgSu4qzZQyK5PHRSDaOiIG4fAfsXMMveInmuC8ma7zavPmMQsY-6Os48SauBartwvvw4ig63hRAKA5c-I73qoGfmXbJWyXF3SdiI'
 
-DEBUG = False # local
+DEBUG = True # local
 
 ALLOWED_HOSTS = [
     
