@@ -1,5 +1,4 @@
 {% load static %}
-{% load compress %}
 
 <!DOCTYPE html>
 
@@ -26,20 +25,6 @@
         <meta name="keywords" content="блокнотик, блокнот онлайн, онлайн тетрадь, заметки онлайн, войти, вход, блокнот онлайн бесплатно, текстовик, программа для заметок, совместные заметки, голосовой блокнот онлайн, онлайн блокнот для записей">
 
         <link rel="icon" type="image/png" href="{% static 'logo.jpg' %}">
-
-        {% compress css %}
-        
-            {% if m %}
-                
-            <link rel="stylesheet" href="{% static 'scss/auth/login_mobile.scss' %}" type="text/x-scss">
-            
-            {% else %}
-            
-                <link rel="stylesheet" href="{% static 'scss/auth/login.scss' %}" type="text/x-scss">
-
-            {% endif %}
-        
-        {% endcompress %}
 
         <script src="{% static 'packages/jquery-3.6.1.min.js' %}"></script>
 
