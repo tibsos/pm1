@@ -37,6 +37,11 @@ INSTALLED_APPS = [
 
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://sdf3.ru',
+    # Add other trusted origins if needed
+]
+
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
