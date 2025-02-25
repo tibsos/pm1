@@ -35,8 +35,10 @@ INSTALLED_APPS = [
     'analytics',
 
     'blog',
-
 ]
+
+COMPRESS_STORAGE_ALIAS = 'default'  # Use the default storage backend
+
 
 CSRF_TRUSTED_ORIGINS = [
     'https://saf3.ru',
